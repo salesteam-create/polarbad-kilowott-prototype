@@ -2,6 +2,19 @@ import sys
 src, dst = sys.argv[1], sys.argv[2]
 s = open(src, encoding='utf-8').read()
 R = [
+("fMsg: 'I would like a price on ' + (x.quoteName || (x.brand === 'Polarbad' ? 'the Polarbad series' : 'the Arctic Spas ' + x.name + ' series'))","fMsg: 'Ønsker pris på ' + (x.quoteName || (x.brand === 'Polarbad' ? 'Polarbad serien' : 'Arctic Spas ' + x.name + '-serien'))"),
+("name: 'Swim spa Classic', tag: 'Swim spa'","name: 'Motstrøm Classic', tag: 'Motstrømsbasseng'"),
+("name: 'Swim spa Custom', tag: 'Swim spa'","name: 'Motstrøm Custom', tag: 'Motstrømsbasseng'"),
+("alt: 'Top view of the Arctic Spas Hudson swim spa'","alt: 'Arctic Spas Hudson motstrømsbasseng sett ovenfra'"),
+("alt: 'Top view of the Arctic Spas Polarbear swim spa'","alt: 'Arctic Spas Polarbear motstrømsbasseng sett ovenfra'"),
+("desc: 'Swim, train and relax at home, all year round. Arctic Spas Classic swim spas.'","desc: 'Svøm, tren og slapp av hjemme, hele året. Motstrømsbasseng fra Arctic Spas Classic.'"),
+("desc: 'The Custom swim spas, with the most options for swimming, training and relaxing.'","desc: 'Custom-motstrømsbassengene, med flest valg for svømming, trening og avslapning.'"),
+("seats: '9 seats', models: 'Hudson","seats: '9 plasser', models: 'Hudson"),
+("seats: '9 seats', models: 'Polarbear","seats: '9 plasser', models: 'Polarbear"),
+("price: 'NOK 349,000', was: '', min: 9, max: 9, quoteName: 'an Arctic Spas Classic swim spa'","price: '349 000 kr', was: '', min: 9, max: 9, quoteName: 'et Arctic Spas Classic motstrømsbasseng'"),
+("price: 'NOK 389,000', was: '', min: 9, max: 9, quoteName: 'an Arctic Spas Custom swim spa'","price: '389 000 kr', was: '', min: 9, max: 9, quoteName: 'et Arctic Spas Custom motstrømsbasseng'"),
+('Hot tubs and swim spas.<br><span class="soft">Clear prices.</span>','Massasjebad og motstrømsbasseng.<br><span class="soft">Tydelige priser.</span>'),
+
 ('Five places to slow down · Scroll sideways <span','Fem steder å senke skuldrene · Bla sidelengs <span'),
 ('<span class="disp">With family</span>','<span class="disp">Med familien</span>'),
 
@@ -461,6 +474,8 @@ R = [
 ("'Please enter a valid email address.'","'Skriv inn en gyldig e-postadresse.'"),
 ("'Hide the 3D tour' : 'Take a 3D tour'","'Skjul 3D-omvisningen' : 'Ta en 3D-tur'"),
 ('i Sandnes nå.</span>','i&nbsp;Sandnes&nbsp;nå.</span>'),
+("prefix: 'Price from', price: '349 000 kr'","prefix: 'Pris fra', price: '349 000 kr'"),
+("prefix: 'Price from', price: '389 000 kr'","prefix: 'Pris fra', price: '389 000 kr'"),
 ]
 missing=[]
 for en,no in R:

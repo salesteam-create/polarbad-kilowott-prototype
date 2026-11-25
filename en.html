@@ -772,6 +772,10 @@ p{text-wrap:pretty}
 
 @media (max-width:720px){.fh-g li{font-size:11.5px !important;padding:0 7px !important;letter-spacing:-.01em}}
 @media (max-width:380px){.fh-g li{font-size:11px !important;padding:0 5px !important}}
+
+/* tall swim spa images */
+.sp.on .sp-tub{max-height:470px;width:auto;max-width:400px}
+@media (max-width:720px){.sp.on .sp-tub{max-height:220px;max-width:178px}}
 </style>
 </helmet>
 
@@ -982,7 +986,7 @@ p{text-wrap:pretty}
     <div class="rv" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 32px;">
       <div class="head" style="max-width: 640px;">
         <span class="kicker"><b>02</b>Models and prices</span>
-        <h2 id="models-h" class="h2">Four series.<br><span class="soft">Clear prices.</span><sc-if value="{{showCro}}" hint-placeholder-val="{{ false }}"><span class="cro">A6</span><span class="cro">A7</span></sc-if></h2>
+        <h2 id="models-h" class="h2">Hot tubs and swim spas.<br><span class="soft">Clear prices.</span><sc-if value="{{showCro}}" hint-placeholder-val="{{ false }}"><span class="cro">A6</span><span class="cro">A7</span></sc-if></h2>
         <p class="lead">Every series is on the floor in Sandnes. Filter by how many people will share the tub.</p>
       </div>
       <div role="group" aria-label="Number of seats" style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center;">
@@ -1529,22 +1533,24 @@ class Component extends DCLogic {
       { id: 'polarbad', n: '01', brand: 'Polarbad', name: 'Polarbad series', tag: 'Best value', img: 'images/4d9d7965914aadf47b538dac1bee725d.webp', alt: 'Top view of the Polarbad Benidorm hot tub shell', desc: 'Polarbad’s own series. The most affordable way to your own hot tub.', seats: '6 to 7 seats', models: 'Benidorm, Valencia, Alicante', prefix: 'Price from', price: 'NOK 89,000', was: '', min: 6, max: 7 },
       { id: 'core', n: '02', brand: 'Arctic Spas', name: 'Core', tag: 'Campaign', img: 'images/ae2499cb7f6f77cc40e33935c0fa12e4.webp', alt: 'Top view of the Arctic Spas Lunar hot tub shell', desc: 'Arctic Spas quality at a lower price, built for the Nordic climate.', seats: 'Seat count on request', models: 'Lunar, Orion, Nova', prefix: 'Offer from', price: 'NOK 99,900', was: 'RRP 175,000', min: 0, max: 99 },
       { id: 'classic', n: '03', brand: 'Arctic Spas', name: 'Classic', tag: 'Campaign', img: 'images/d2e6b65d1d4b6f18a3456d7120fa9ef4.webp', alt: 'Top view of the Arctic Spas McKinley hot tub shell', desc: 'A lot of tub for the money. Forever Floor comes with every model.', seats: '3 to 7 seats', models: 'McKinley, Mustang, Totem, Eagle, Timberwolf, Whistler', prefix: 'Offer from', price: 'NOK 160,000', was: 'RRP 201,000', min: 3, max: 7 },
-      { id: 'custom', n: '04', brand: 'Arctic Spas', name: 'Custom', tag: 'Top of the range', img: 'images/86dc88a3f10bbb8a8bd7d640c0f4ecbb.webp', alt: 'Top view of the Arctic Spas Summit hot tub shell', desc: 'The flagship series with the most options. Forever Floor included, available with SpaBoy.', seats: '3 to 9 seats', models: 'Summit XL, Summit, Tundra, Kodiak, Klondiker, Yukon, Cub, Arctic Fox', prefix: 'Offer from', price: 'NOK 199,000', was: 'RRP 248,000', min: 3, max: 9 }
+      { id: 'custom', n: '04', brand: 'Arctic Spas', name: 'Custom', tag: 'Top of the range', img: 'images/86dc88a3f10bbb8a8bd7d640c0f4ecbb.webp', alt: 'Top view of the Arctic Spas Summit hot tub shell', desc: 'The flagship series with the most options. Forever Floor included, available with SpaBoy.', seats: '3 to 9 seats', models: 'Summit XL, Summit, Tundra, Kodiak, Klondiker, Yukon, Cub, Arctic Fox', prefix: 'Offer from', price: 'NOK 199,000', was: 'RRP 248,000', min: 3, max: 9 },
+      { id: 'swimc', n: '05', brand: 'Arctic Spas', name: 'Swim spa Classic', tag: 'Swim spa', img: 'images/5cf33629e2c593302cfa0e1d4fe6db67.webp', alt: 'Top view of the Arctic Spas Hudson swim spa', desc: 'Swim, train and relax at home, all year round. Arctic Spas Classic swim spas.', seats: '9 seats', models: 'Hudson, Wolverine, Kingfisher, Athabascan', prefix: 'Price from', price: 'NOK 349,000', was: '', min: 9, max: 9, quoteName: 'an Arctic Spas Classic swim spa' },
+      { id: 'swimx', n: '06', brand: 'Arctic Spas', name: 'Swim spa Custom', tag: 'Swim spa', img: 'images/38aef7fe4f991217992bf12289c6f286.webp', alt: 'Top view of the Arctic Spas Polarbear swim spa', desc: 'The Custom swim spas, with the most options for swimming, training and relaxing.', seats: '9 seats', models: 'Polarbear, Ocean, Okanagan', prefix: 'Price from', price: 'NOK 389,000', was: '', min: 9, max: 9, quoteName: 'an Arctic Spas Custom swim spa' }
     ];
     const SEATS = [{ id: 'all', label: 'All', a: 0, b: 99 }, { id: '3', label: '3 to 5', a: 3, b: 5 }, { id: '6', label: '6 to 7', a: 6, b: 7 }, { id: '8', label: '8 to 9', a: 8, b: 9 }];
     const seatOpts = SEATS.map((x) => Object.assign({ label: x.label, pick: () => self.setState({ seats: x.id }) }, chip(x.id === s.seats)));
     const sr = SEATS.find((x) => x.id === s.seats) || SEATS[0];
     const series = SERIES.filter((x) => x.max >= sr.a && x.min <= sr.b).map((x) => Object.assign({}, x, {
-      quote: () => self.setState({ fInterest: 'tubs', fMsg: 'I would like a price on ' + (x.brand === 'Polarbad' ? 'the Polarbad series' : 'the Arctic Spas ' + x.name + ' series') }),
+      quote: () => self.setState({ fInterest: 'tubs', fMsg: 'I would like a price on ' + (x.quoteName || (x.brand === 'Polarbad' ? 'the Polarbad series' : 'the Arctic Spas ' + x.name + ' series')) }),
       see: () => self.setState({ visit: 'store', bookOpen: true })
     }));
 
     // Series selector
     const matchIds = series.map((x) => x.id);
     const curId = matchIds.indexOf(s.selSeries) >= 0 ? s.selSeries : (matchIds[0] || s.selSeries);
-    const seriesList = SERIES.map((x) => { const sel = x.id === curId; return { n: x.n, name: x.name, from: x.price, brand: x.brand, tag: x.tag, img: x.img, alt: x.alt, desc: x.desc, seats: x.seats, models: x.models, prefix: x.prefix, price: x.price, was: x.was, cls: sel ? 'sp on' : 'sp', see: () => self.setState({ visit: 'store', bookOpen: true }), quote: () => self.setState({ fInterest: 'tubs', fMsg: 'I would like a price on ' + (x.brand === 'Polarbad' ? 'the Polarbad series' : 'the Arctic Spas ' + x.name + ' series') }), sel, op: matchIds.indexOf(x.id) >= 0 ? 1 : .35, fg: sel ? '#1e2422' : '#8a918d', fs: sel ? 'italic' : 'normal', lw: sel ? '36px' : '0px', pick: () => self.setState({ selSeries: x.id }) }; });
+    const seriesList = SERIES.map((x) => { const sel = x.id === curId; return { n: x.n, name: x.name, from: x.price, brand: x.brand, tag: x.tag, img: x.img, alt: x.alt, desc: x.desc, seats: x.seats, models: x.models, prefix: x.prefix, price: x.price, was: x.was, cls: sel ? 'sp on' : 'sp', see: () => self.setState({ visit: 'store', bookOpen: true }), quote: () => self.setState({ fInterest: 'tubs', fMsg: 'I would like a price on ' + (x.quoteName || (x.brand === 'Polarbad' ? 'the Polarbad series' : 'the Arctic Spas ' + x.name + ' series')) }), sel, op: matchIds.indexOf(x.id) >= 0 ? 1 : .35, fg: sel ? '#1e2422' : '#8a918d', fs: sel ? 'italic' : 'normal', lw: sel ? '36px' : '0px', pick: () => self.setState({ selSeries: x.id }) }; });
     const cur = (function (x) { return Object.assign({}, x, {
-      quote: () => self.setState({ fInterest: 'tubs', fMsg: 'I would like a price on ' + (x.brand === 'Polarbad' ? 'the Polarbad series' : 'the Arctic Spas ' + x.name + ' series') }),
+      quote: () => self.setState({ fInterest: 'tubs', fMsg: 'I would like a price on ' + (x.quoteName || (x.brand === 'Polarbad' ? 'the Polarbad series' : 'the Arctic Spas ' + x.name + ' series')) }),
       see: () => self.setState({ visit: 'store', bookOpen: true })
     }); })(SERIES.find((x) => x.id === curId) || SERIES[0]);
 

@@ -772,6 +772,10 @@ p{text-wrap:pretty}
 
 @media (max-width:720px){.fh-g li{font-size:11.5px !important;padding:0 7px !important;letter-spacing:-.01em}}
 @media (max-width:380px){.fh-g li{font-size:11px !important;padding:0 5px !important}}
+
+/* tall swim spa images */
+.sp.on .sp-tub{max-height:470px;width:auto;max-width:400px}
+@media (max-width:720px){.sp.on .sp-tub{max-height:220px;max-width:178px}}
 </style>
 </helmet>
 
@@ -982,7 +986,7 @@ p{text-wrap:pretty}
     <div class="rv" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 32px;">
       <div class="head" style="max-width: 640px;">
         <span class="kicker"><b>02</b>Modeller og priser</span>
-        <h2 id="modeller-h" class="h2">Fire serier.<br><span class="soft">Tydelige priser.</span><sc-if value="{{showCro}}" hint-placeholder-val="{{ false }}"><span class="cro">A6</span><span class="cro">A7</span></sc-if></h2>
+        <h2 id="modeller-h" class="h2">Massasjebad og motstrømsbasseng.<br><span class="soft">Tydelige priser.</span><sc-if value="{{showCro}}" hint-placeholder-val="{{ false }}"><span class="cro">A6</span><span class="cro">A7</span></sc-if></h2>
         <p class="lead">Alle seriene står utstilt i Sandnes. Filtrer på hvor mange som skal bade.</p>
       </div>
       <div role="group" aria-label="Antall plasser" style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center;">
@@ -1529,22 +1533,24 @@ class Component extends DCLogic {
       { id: 'polarbad', n: '01', brand: 'Polarbad', name: 'Polarbad serien', tag: 'Rimeligst', img: '/_blob/4d9d7965914aadf47b538dac1bee725d', alt: 'Polarbad Benidorm sett ovenfra', desc: 'Polarbads egen serie. Den rimeligste veien til eget massasjebad.', seats: '6 til 7 plasser', models: 'Benidorm, Valencia, Alicante', prefix: 'Pris fra', price: '89 000 kr', was: '', min: 6, max: 7 },
       { id: 'core', n: '02', brand: 'Arctic Spas', name: 'Core', tag: 'Kampanje', img: '/_blob/ae2499cb7f6f77cc40e33935c0fa12e4', alt: 'Arctic Spas Lunar sett ovenfra', desc: 'Arctic Spas-kvalitet til lavere pris, bygget for nordisk klima.', seats: 'Antall plasser på forespørsel', models: 'Lunar, Orion, Nova', prefix: 'Tilbud fra', price: '99 900 kr', was: 'Veil. 175 000', min: 0, max: 99 },
       { id: 'classic', n: '03', brand: 'Arctic Spas', name: 'Classic', tag: 'Kampanje', img: '/_blob/d2e6b65d1d4b6f18a3456d7120fa9ef4', alt: 'Arctic Spas McKinley sett ovenfra', desc: 'Mye bad for pengene. Forever Floor følger med alle modellene.', seats: '3 til 7 plasser', models: 'McKinley, Mustang, Totem, Eagle, Timberwolf, Whistler', prefix: 'Tilbud fra', price: '160 000 kr', was: 'Veil. 201 000', min: 3, max: 7 },
-      { id: 'custom', n: '04', brand: 'Arctic Spas', name: 'Custom', tag: 'Toppserien', img: '/_blob/86dc88a3f10bbb8a8bd7d640c0f4ecbb', alt: 'Arctic Spas Summit sett ovenfra', desc: 'Toppserien med flest valg. Forever Floor følger med, kan leveres med SpaBoy.', seats: '3 til 9 plasser', models: 'Summit XL, Summit, Tundra, Kodiak, Klondiker, Yukon, Cub, Arctic Fox', prefix: 'Tilbud fra', price: '199 000 kr', was: 'Veil. 248 000', min: 3, max: 9 }
+      { id: 'custom', n: '04', brand: 'Arctic Spas', name: 'Custom', tag: 'Toppserien', img: '/_blob/86dc88a3f10bbb8a8bd7d640c0f4ecbb', alt: 'Arctic Spas Summit sett ovenfra', desc: 'Toppserien med flest valg. Forever Floor følger med, kan leveres med SpaBoy.', seats: '3 til 9 plasser', models: 'Summit XL, Summit, Tundra, Kodiak, Klondiker, Yukon, Cub, Arctic Fox', prefix: 'Tilbud fra', price: '199 000 kr', was: 'Veil. 248 000', min: 3, max: 9 },
+      { id: 'swimc', n: '05', brand: 'Arctic Spas', name: 'Motstrøm Classic', tag: 'Motstrømsbasseng', img: '/_blob/5cf33629e2c593302cfa0e1d4fe6db67', alt: 'Arctic Spas Hudson motstrømsbasseng sett ovenfra', desc: 'Svøm, tren og slapp av hjemme, hele året. Motstrømsbasseng fra Arctic Spas Classic.', seats: '9 plasser', models: 'Hudson, Wolverine, Kingfisher, Athabascan', prefix: 'Pris fra', price: '349 000 kr', was: '', min: 9, max: 9, quoteName: 'et Arctic Spas Classic motstrømsbasseng' },
+      { id: 'swimx', n: '06', brand: 'Arctic Spas', name: 'Motstrøm Custom', tag: 'Motstrømsbasseng', img: '/_blob/38aef7fe4f991217992bf12289c6f286', alt: 'Arctic Spas Polarbear motstrømsbasseng sett ovenfra', desc: 'Custom-motstrømsbassengene, med flest valg for svømming, trening og avslapning.', seats: '9 plasser', models: 'Polarbear, Ocean, Okanagan', prefix: 'Pris fra', price: '389 000 kr', was: '', min: 9, max: 9, quoteName: 'et Arctic Spas Custom motstrømsbasseng' }
     ];
     const SEATS = [{ id: 'all', label: 'Alle', a: 0, b: 99 }, { id: '3', label: '3 til 5', a: 3, b: 5 }, { id: '6', label: '6 til 7', a: 6, b: 7 }, { id: '8', label: '8 til 9', a: 8, b: 9 }];
     const seatOpts = SEATS.map((x) => Object.assign({ label: x.label, pick: () => self.setState({ seats: x.id }) }, chip(x.id === s.seats)));
     const sr = SEATS.find((x) => x.id === s.seats) || SEATS[0];
     const series = SERIES.filter((x) => x.max >= sr.a && x.min <= sr.b).map((x) => Object.assign({}, x, {
-      quote: () => self.setState({ fInterest: 'tubs', fMsg: 'Ønsker pris på ' + (x.brand === 'Polarbad' ? 'Polarbad serien' : 'Arctic Spas ' + x.name + '-serien') }),
+      quote: () => self.setState({ fInterest: 'tubs', fMsg: 'Ønsker pris på ' + (x.quoteName || (x.brand === 'Polarbad' ? 'Polarbad serien' : 'Arctic Spas ' + x.name + '-serien')) }),
       see: () => self.setState({ visit: 'store', bookOpen: true })
     }));
 
     // Series selector
     const matchIds = series.map((x) => x.id);
     const curId = matchIds.indexOf(s.selSeries) >= 0 ? s.selSeries : (matchIds[0] || s.selSeries);
-    const seriesList = SERIES.map((x) => { const sel = x.id === curId; return { n: x.n, name: x.name, from: x.price, brand: x.brand, tag: x.tag, img: x.img, alt: x.alt, desc: x.desc, seats: x.seats, models: x.models, prefix: x.prefix, price: x.price, was: x.was, cls: sel ? 'sp on' : 'sp', see: () => self.setState({ visit: 'store', bookOpen: true }), quote: () => self.setState({ fInterest: 'tubs', fMsg: 'Ønsker pris på ' + (x.brand === 'Polarbad' ? 'Polarbad serien' : 'Arctic Spas ' + x.name + '-serien') }), sel, op: matchIds.indexOf(x.id) >= 0 ? 1 : .35, fg: sel ? '#1e2422' : '#8a918d', fs: sel ? 'italic' : 'normal', lw: sel ? '36px' : '0px', pick: () => self.setState({ selSeries: x.id }) }; });
+    const seriesList = SERIES.map((x) => { const sel = x.id === curId; return { n: x.n, name: x.name, from: x.price, brand: x.brand, tag: x.tag, img: x.img, alt: x.alt, desc: x.desc, seats: x.seats, models: x.models, prefix: x.prefix, price: x.price, was: x.was, cls: sel ? 'sp on' : 'sp', see: () => self.setState({ visit: 'store', bookOpen: true }), quote: () => self.setState({ fInterest: 'tubs', fMsg: 'Ønsker pris på ' + (x.quoteName || (x.brand === 'Polarbad' ? 'Polarbad serien' : 'Arctic Spas ' + x.name + '-serien')) }), sel, op: matchIds.indexOf(x.id) >= 0 ? 1 : .35, fg: sel ? '#1e2422' : '#8a918d', fs: sel ? 'italic' : 'normal', lw: sel ? '36px' : '0px', pick: () => self.setState({ selSeries: x.id }) }; });
     const cur = (function (x) { return Object.assign({}, x, {
-      quote: () => self.setState({ fInterest: 'tubs', fMsg: 'Ønsker pris på ' + (x.brand === 'Polarbad' ? 'Polarbad serien' : 'Arctic Spas ' + x.name + '-serien') }),
+      quote: () => self.setState({ fInterest: 'tubs', fMsg: 'Ønsker pris på ' + (x.quoteName || (x.brand === 'Polarbad' ? 'Polarbad serien' : 'Arctic Spas ' + x.name + '-serien')) }),
       see: () => self.setState({ visit: 'store', bookOpen: true })
     }); })(SERIES.find((x) => x.id === curId) || SERIES[0]);
 
