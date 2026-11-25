@@ -1439,8 +1439,8 @@ class Component extends DCLogic {
       return '';
     };
     // Typical Sandnes temperature for the month and time of day (real build: live from the Yr weather API)
-    const TYP = [1, 1, 3, 6, 10, 13, 15, 15, 12, 8, 5, 2][now.getMonth()];
-    const tNum = TYP + (hNow < 7 || hNow >= 20 ? -2 : (hNow >= 11 && hNow < 17 ? 1 : 0));
+    const TYP = [1, 1, 3, 6, 10, 13, 15, 15, 12, 8, 0, 2][now.getMonth()];
+    const tNum = TYP;
     const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
     const monthName = MONTHS[now.getMonth()];
     const tempNow = tNum < 0 ? '−' + Math.abs(tNum) : String(tNum);
