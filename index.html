@@ -780,12 +780,18 @@ p{text-wrap:pretty}
 /* partner logos */
 .plogos{display:flex !important;flex-direction:column;align-items:center !important;gap:22px !important;text-align:center}
 .plogos ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:28px 56px}
-.plogos li{display:flex;align-items:center;gap:12px}
+.plogos li{display:flex;flex-direction:column;align-items:center;gap:10px}
+.plogos li.pl-k{flex-direction:column}
+.plogos li span{font-size:14px !important}
 .plogos img{display:block;width:auto;filter:grayscale(1) contrast(1.1);opacity:.7;mix-blend-mode:multiply;transition:filter .4s,opacity .4s}
 .plogos li:hover img{filter:none;opacity:1}
 .pl-k img{width:44px;height:44px;border-radius:50%;object-fit:cover;mix-blend-mode:normal}
-.pl-k span{font-family:'Plus Jakarta Sans',sans-serif;font-size:17px;color:var(--ink);white-space:nowrap}
+.plogos li span{font-family:'Plus Jakarta Sans',sans-serif;font-size:17px;color:var(--ink);white-space:nowrap}
 @media (max-width:720px){.plogos ul{gap:24px 32px}.plogos li img{max-height:40px}.pl-k img{width:38px;height:38px}}
+
+.plogos ul{align-items:flex-start !important}
+.plogos li{display:grid !important;grid-template-rows:60px auto;justify-items:center;align-items:center;row-gap:12px}
+@media (max-width:720px){.plogos li{grid-template-rows:46px auto}}
 </style>
 </helmet>
 
@@ -1314,10 +1320,10 @@ p{text-wrap:pretty}
       <span style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--muted);">Stolt samarbeidspartner med</span>
       <ul>
         <li class="pl-k"><img src="images/1dc39d303180455336c64c5901c30af3.webp" alt="" loading="lazy"><span>Karsten Warholm</span></li>
-        <li><img src="images/3e70f8ce9f0b37e19ca69b8a75e7e3e1.webp" alt="Viking FK" loading="lazy" style="height: 44px;"></li>
-        <li><img src="images/a21ff4d3cfebbea4e36e5ec0e7463e99.webp" alt="Sandnes Håndballklubb" loading="lazy" style="height: 54px;"></li>
-        <li><img src="images/4e577712fa7c8493ee5e1a28563ed7f3.webp" alt="Lura IL" loading="lazy" style="height: 58px;"></li>
-        <li><img src="images/b6339215b7d6809a9004c2cf6adbf8d1.webp" alt="Figgjo Ski og Skiskyting" loading="lazy" style="height: 30px;"></li>
+        <li><img src="images/3e70f8ce9f0b37e19ca69b8a75e7e3e1.webp" alt="Viking FK" loading="lazy" style="height: 44px;"><span>Viking FK</span></li>
+        <li><img src="images/a21ff4d3cfebbea4e36e5ec0e7463e99.webp" alt="Sandnes Håndballklubb" loading="lazy" style="height: 54px;"><span>Sandnes Håndballklubb</span></li>
+        <li><img src="images/4e577712fa7c8493ee5e1a28563ed7f3.webp" alt="Lura IL" loading="lazy" style="height: 58px;"><span>Lura IL</span></li>
+        <li><img src="images/b6339215b7d6809a9004c2cf6adbf8d1.webp" alt="Figgjo Ski og Skiskyting" loading="lazy" style="height: 30px;"><span>Figgjo Ski og Skiskyting</span></li>
       </ul>
     </div>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(190px, 100%), 1fr)); gap: 40px;">
