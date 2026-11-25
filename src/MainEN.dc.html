@@ -776,6 +776,16 @@ p{text-wrap:pretty}
 /* tall swim spa images */
 .sp.on .sp-tub{max-height:470px;width:auto;max-width:400px}
 @media (max-width:720px){.sp.on .sp-tub{max-height:220px;max-width:178px}}
+
+/* partner logos */
+.plogos{display:flex !important;flex-direction:column;align-items:center !important;gap:22px !important;text-align:center}
+.plogos ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:28px 56px}
+.plogos li{display:flex;align-items:center;gap:12px}
+.plogos img{display:block;width:auto;filter:grayscale(1) contrast(1.1);opacity:.7;mix-blend-mode:multiply;transition:filter .4s,opacity .4s}
+.plogos li:hover img{filter:none;opacity:1}
+.pl-k img{width:44px;height:44px;border-radius:50%;object-fit:cover;mix-blend-mode:normal}
+.pl-k span{font-family:'Plus Jakarta Sans',sans-serif;font-size:17px;color:var(--ink);white-space:nowrap}
+@media (max-width:720px){.plogos ul{gap:24px 32px}.plogos li img{max-height:40px}.pl-k img{width:38px;height:38px}}
 </style>
 </helmet>
 
@@ -1300,17 +1310,15 @@ p{text-wrap:pretty}
 <!-- Footer -->
 <footer style="background: var(--sand); color: var(--body); padding-top: 96px; padding-bottom: 36px;">
   <div class="wrap" style="display: flex; flex-direction: column; gap: 56px;">
-    <div class="rv partners" style="display: flex; flex-wrap: wrap; gap: 14px 24px; align-items: center; padding-bottom: 32px; border-bottom: 1px solid var(--line);">
+    <div class="rv partners plogos">
       <span style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--muted);">Proud partner of</span>
-      <span class="disp" style="font-size: 20px; font-weight: 400; color: var(--ink); white-space: nowrap;">Karsten Warholm</span>
-      <span class="dot" aria-hidden="true"></span>
-      <span class="disp" style="font-size: 20px; font-weight: 400; color: var(--ink); white-space: nowrap;">Viking FK</span>
-      <span class="dot" aria-hidden="true"></span>
-      <span class="disp" style="font-size: 20px; font-weight: 400; color: var(--ink); white-space: nowrap;">Sandnes Håndballklubb</span>
-      <span class="dot" aria-hidden="true"></span>
-      <span class="disp" style="font-size: 20px; font-weight: 400; color: var(--ink); white-space: nowrap;">Lura IL</span>
-      <span class="dot" aria-hidden="true"></span>
-      <span class="disp" style="font-size: 20px; font-weight: 400; color: var(--ink); white-space: nowrap;">Figgjo Ski og Skiskyting</span>
+      <ul>
+        <li class="pl-k"><img src="/_blob/1dc39d303180455336c64c5901c30af3" alt="" loading="lazy"><span>Karsten Warholm</span></li>
+        <li><img src="/_blob/3e70f8ce9f0b37e19ca69b8a75e7e3e1" alt="Viking FK" loading="lazy" style="height: 44px;"></li>
+        <li><img src="/_blob/a21ff4d3cfebbea4e36e5ec0e7463e99" alt="Sandnes Håndballklubb" loading="lazy" style="height: 54px;"></li>
+        <li><img src="/_blob/4e577712fa7c8493ee5e1a28563ed7f3" alt="Lura IL" loading="lazy" style="height: 58px;"></li>
+        <li><img src="/_blob/b6339215b7d6809a9004c2cf6adbf8d1" alt="Figgjo Ski og Skiskyting" loading="lazy" style="height: 30px;"></li>
+      </ul>
     </div>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(190px, 100%), 1fr)); gap: 40px;">
       <div style="display: flex; flex-direction: column; gap: 12px;">
