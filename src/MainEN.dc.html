@@ -1,0 +1,1612 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Polarbad Sandnes homepage (prototype, English)</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;family=Mulish:ital,wght@0,400..800;1,400&amp;display=swap">
+<style>
+:root{
+  --ink:#1e2422;--ink-2:#2a322f;--bone:#f6f4ef;--paper:#fbfaf7;--sand:#ebe7df;--mist:#e2e6e0;
+  --text:#222826;--body:#4b5350;--muted:#525a57;--soft:#747c78;--line:rgba(30,36,34,.12);
+  --bronze:#7b5e3f;--gold:#c4a982;--gold-hi:#dccbae;
+  --r-lg:4px;--r-md:3px;--r-sm:2px;--stone:#e6e2da;--cedar:#2f3b35;
+  --shadow:0 40px 80px -45px rgba(30,36,34,.45);
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+body{margin:0;font-feature-settings:'kern','liga';font-size:16px;line-height:1.6;background:var(--bone);color:var(--text);font-family:'Mulish',system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+*{box-sizing:border-box}
+a{color:var(--ink)}a:hover{color:var(--bronze)}
+html{scroll-behavior:smooth}
+img{display:block;max-width:100%}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.disp{font-weight:400;font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-optical-sizing:auto;letter-spacing:-.028em;word-spacing:.05em;font-variant-numeric:lining-nums proportional-nums}
+
+.wrap{max-width:1280px;margin:0 auto;padding:0 48px}
+.sec{padding-top:152px;padding-bottom:152px}
+.h2{margin:0;font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-optical-sizing:auto;font-weight:350;font-size:clamp(2.44rem,4.2vw,4.12rem);line-height:1;letter-spacing:-.015em;color:var(--ink)}
+.h2 .soft{color:var(--soft)}
+.on-dark .h2{color:var(--bone)}
+.on-dark .h2 .soft{color:#a9b2ad}
+.lead{margin:0;font-size:18px;line-height:1.7;color:var(--body);max-width:560px}
+.on-dark .lead{color:#c8ccc8}
+.kicker{display:inline-flex;align-items:center;gap:14px;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--bronze)}
+.kicker b{font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-style:italic;font-weight:500;font-size:16.5px;letter-spacing:0;text-transform:none}
+.kicker::after{content:"";width:40px;height:1px;background:currentColor;opacity:.45;order:3}
+.on-dark .kicker{color:var(--gold-hi)}
+.head{display:flex;flex-direction:column;gap:22px;max-width:760px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:14px;min-height:54px;padding:0 22px 0 30px;border-radius:2px;font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border:1px solid transparent;cursor:pointer;font-family:inherit;transition:background .35s var(--ease),color .35s,border-color .35s,transform .35s var(--ease)}
+.btn .ic{width:22px;height:22px;background:transparent !important;display:inline-flex;align-items:center;justify-content:center;transition:transform .45s var(--ease)}
+.btn:hover .ic{transform:translateX(5px)}
+.btn:active{transform:scale(.985)}
+.btn.plain{padding:0 30px}
+.btn-dark{background:var(--ink);color:var(--bone)}.btn-dark .ic{background:rgba(246,244,239,.12)}.btn-dark:hover{background:var(--ink-2);color:#ffffff}
+.btn-gold{background:var(--bone);color:var(--ink)}.btn-gold .ic{background:rgba(30,36,34,.1)}.btn-gold:hover{background:#ffffff;color:var(--ink)}
+.btn-ghost-light{background:rgba(246,244,239,.06);color:var(--bone);border-color:rgba(246,244,239,.35);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}.btn-ghost-light:hover{border-color:var(--bone);color:#ffffff;background:rgba(246,244,239,.12)}
+.tlink{display:inline-flex;align-items:center;gap:8px;min-height:44px;font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);text-decoration:none;background:none;border:0;padding:0;cursor:pointer;font-family:inherit;position:relative}
+.tlink::after{content:"";position:absolute;left:0;right:40%;bottom:11px;height:1px;background:currentColor;opacity:.35;transition:opacity .3s,right .4s var(--ease)}
+.tlink:hover::after{opacity:1;right:0}
+.on-dark .tlink{color:var(--bone)}
+.chip{font:inherit;font-size:13px;font-weight:700;letter-spacing:.03em;padding:10px 18px;min-height:44px;border-radius:2px;border:1px solid;cursor:pointer;transition:background .25s,color .25s,border-color .25s}
+.field{display:flex;flex-direction:column;gap:8px;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.field input,.field textarea{font:inherit;font-weight:500;font-size:16px;letter-spacing:0;text-transform:none;padding:12px 2px;border:0;border-bottom:1px solid rgba(30,36,34,.42);border-radius:0;background:transparent;color:var(--text);min-height:52px;transition:border-color .25s,box-shadow .25s,background .25s}
+.field input:focus,.field textarea:focus{outline:none;border-bottom-color:var(--ink);box-shadow:0 1px 0 0 var(--ink)}
+.navlink{color:#ebe8e1;text-decoration:none;font-weight:500;font-size:12px;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;padding:8px 2px;position:relative}
+.navlink:hover{color:#ffffff}
+.navlink::after{content:"";position:absolute;left:0;right:0;bottom:2px;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
+.navlink:hover::after{transform:scaleX(1)}
+.cro{display:inline-flex;align-items:center;justify-content:center;min-width:30px;height:22px;padding:0 6px;border-radius:11px;background:#e8b23a;color:#1e2422;font-size:11px;font-weight:600;letter-spacing:.02em;vertical-align:middle;margin-left:8px;font-family:'Mulish',sans-serif;font-style:normal;text-transform:none}
+.faqbtn{width:100%;display:flex;justify-content:space-between;align-items:center;gap:24px;background:none;border:0;padding:28px 0;font:inherit;font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:22px;font-weight:400;letter-spacing:-.015em;color:var(--ink);cursor:pointer;text-align:left;min-height:44px}
+.faqbtn:hover{color:var(--bronze)}
+.tabbtn{background:none;border:0;padding:6px 0 16px;font:inherit;font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:21px;white-space:nowrap;font-weight:300;letter-spacing:-.015em;cursor:pointer;min-height:44px;border-bottom:1px solid transparent;margin-bottom:-1px;transition:color .3s,border-color .3s}
+.ph{object-fit:cover;width:100%;height:100%}
+.zoom{overflow:hidden}
+.zoom img{transition:transform 1.4s var(--ease)}
+@media (hover:hover){.zoom:hover img{transform:scale(1.04)}}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg)}
+.lift{transition:transform .6s var(--ease),box-shadow .6s var(--ease)}
+@media (hover:hover){.lift:hover{transform:translateY(-4px)}}
+.grain{position:absolute;inset:0;pointer-events:none;opacity:.06;background-image:radial-gradient(rgba(255,255,255,.7) 1px,transparent 1px);background-size:3px 3px;mix-blend-mode:overlay}
+.panel{margin:0;border-radius:0;overflow:hidden;position:relative}
+.dot{width:14px;height:1px;background:var(--gold);flex:none}
+.hdr>nav{order:-1}
+.hdr>div:last-child{justify-self:end}
+.cap{font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+@keyframes kb{from{transform:scale(1.1)}to{transform:scale(1)}}
+@keyframes rise{from{opacity:0;transform:translateY(105%)}to{opacity:1;transform:none}}
+@keyframes fadeup{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@keyframes steam{0%{opacity:0;transform:translate3d(0,40px,0) scale(.9)}35%{opacity:.5}100%{opacity:0;transform:translate3d(30px,-220px,0) scale(1.35)}}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(95,211,155,.55)}50%{box-shadow:0 0 0 6px rgba(95,211,155,0)}}
+@keyframes rvrise{from{transform:translateY(36px)}to{transform:none}}
+@keyframes settle{from{transform:scale(1.14)}to{transform:scale(1)}}
+.kb{animation:kb 26s var(--ease) both}
+.line{display:block;overflow:hidden;padding-bottom:.08em}
+.line>span{display:block;animation:rise 1.2s var(--ease) both}
+.d1{animation-delay:.15s !important}.d2{animation-delay:.3s !important}.d3{animation-delay:.45s !important}.d4{animation-delay:.7s !important}.d5{animation-delay:.9s !important}
+.fu{animation:fadeup 1.1s var(--ease) both}
+.steam{position:absolute;border-radius:50%;background:radial-gradient(closest-side,rgba(255,255,255,.5),rgba(255,255,255,0));filter:blur(18px);animation:steam 10s ease-in-out infinite;pointer-events:none}
+.glass{background:rgba(30,36,34,.52);border:1px solid rgba(246,244,239,.18);backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%);border-radius:var(--r-lg);padding:26px;color:var(--bone)}
+.temp-cold{color:#b9d2da;font-style:normal}
+.snow{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.snow i{position:absolute;top:-12px;border-radius:50%;background:#ffffff;animation:fall linear infinite;filter:blur(.4px)}
+@keyframes fall{from{transform:translate3d(0,-20px,0)}to{transform:translate3d(40px,980px,0)}}
+@keyframes slidein{from{transform:translateX(100%)}to{transform:none}}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+@keyframes diveZoom{from{transform:scale(1.04)}to{transform:scale(4.4)}}
+@keyframes diveWarm{from{opacity:0}to{opacity:1}}
+@keyframes diveOut{from{opacity:1;transform:none}to{opacity:0;transform:translateY(-48px)}}
+.drawer-wrap{position:fixed;inset:0;z-index:70;display:flex;justify-content:flex-end}
+.drawer-scrim{position:absolute;inset:0;width:100%;height:100%;background:rgba(30,36,34,.55);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);border:0;padding:0;cursor:pointer;animation:fadein .4s var(--ease) both}
+.drawer{position:relative;width:min(480px,100%);height:100%;overflow-y:auto;background:var(--bone);color:var(--text);padding:28px 32px 40px;display:flex;flex-direction:column;gap:22px;box-shadow:-40px 0 80px -30px rgba(0,0,0,.5);animation:slidein .6s var(--ease) both}
+.xbtn{width:44px;height:44px;border-radius:2px;border:1px solid var(--line);background:transparent;color:var(--ink);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:background .25s}
+.xbtn:hover{background:var(--sand)}
+.selector{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:72px;align-items:start}
+.srow{width:100%;display:flex;align-items:center;gap:16px;background:none;border:0;padding:26px 0;cursor:pointer;text-align:left;font:inherit;min-height:44px;transition:opacity .3s}
+@media (hover:hover){.srow:hover .disp{color:var(--ink) !important}}
+.anatomy{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:72px;align-items:center}
+.hs{position:absolute;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;border:1px solid var(--ink);font:inherit;font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-style:italic;font-size:17.5px;cursor:pointer;box-shadow:0 0 0 8px rgba(246,244,239,.4);transition:background .3s,color .3s,transform .4s var(--ease)}
+.hs:hover{transform:translate(-50%,-50%) scale(1.08)}
+.arow{width:100%;display:flex;align-items:baseline;background:none;border:0;padding:20px 0;cursor:pointer;text-align:left;font:inherit;min-height:44px}
+.split{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);min-height:920px}
+.split-img{min-height:520px}
+.split-copy{padding:136px clamp(24px,6vw,104px) 136px clamp(24px,5vw,88px);max-width:720px}
+.quote-grid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:96px;align-items:start}
+.hrow{display:grid;grid-template-columns:96px minmax(0,1fr) 124px;gap:18px;align-items:center}
+footer a{text-decoration:none}footer a:hover{text-decoration:underline}
+.moments{list-style:none;margin:0;padding:0 0 12px max(48px, calc((100% - 1280px) / 2 + 48px));display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:max(48px, calc((100% - 1280px) / 2 + 48px));scrollbar-width:thin;scrollbar-color:rgba(30,36,34,.25) transparent}
+.moments::after{content:"";flex:0 0 28px}
+.moments li{flex:0 0 clamp(260px,25vw,360px);scroll-snap-align:start}
+.moments figure{margin:0}
+.m-img{display:block;aspect-ratio:3 / 4;border-radius:var(--r-md)}
+.moments figcaption{display:flex;gap:14px;align-items:baseline;margin-top:16px}
+.moments figcaption .disp{font-size:22px;color:var(--ink)}
+.finishes{display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap;padding:36px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.sw{display:flex;flex-direction:column;align-items:center;gap:12px;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.sw span{width:60px;height:60px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(30,36,34,.12),0 12px 22px -14px rgba(30,36,34,.5)}
+.campaign{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:88px;align-items:start}
+.campaign-imgs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.c-offset{margin-top:104px}
+.journal{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.jcard{display:flex;flex-direction:column;gap:12px;text-decoration:none;color:var(--ink)}
+.jcard:hover{color:var(--ink)}
+.j-img{display:block;aspect-ratio:4 / 3;border-radius:var(--r-md);margin-bottom:8px}
+.j-title{font-size:25px;line-height:1.15;font-weight:400}
+.j-text{font-size:14.5px;line-height:1.65;color:var(--body)}
+@media (hover:hover){.jcard:hover .j-title{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px}}
+.trust{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:40px}
+.trust li{display:flex;flex-direction:column;gap:14px;padding-top:28px;border-top:1px solid rgba(30,36,34,.18)}
+.trust h3{margin:0 0 4px;font-size:24px;line-height:1.12;font-weight:400;color:var(--ink)}
+.trust p{margin:0;font-size:15px;line-height:1.7;color:var(--body)}
+.trust .cap{margin-top:auto;color:var(--bronze)}
+.team{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:72px;align-items:start;padding:56px 0;border-top:1px solid rgba(30,36,34,.16)}
+.role{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:16px 0;border-bottom:1px solid rgba(30,36,34,.12)}
+.role .disp{font-size:21px;color:var(--ink)}
+.role span:last-child{font-size:13px;color:var(--muted);text-align:right}
+.also{display:flex;flex-wrap:wrap;align-items:center;gap:8px 32px}
+.peace-hero .h2 .soft{color:#dccbae;font-style:italic}
+.peace-panel{background:var(--bone);padding:56px;border-radius:var(--r-md);box-shadow:0 50px 90px -50px rgba(30,36,34,.45)}
+.journal{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr) !important;grid-auto-rows:auto}
+.journal .jcard:first-child{grid-row:span 2}
+.journal .jcard:first-child .j-img{aspect-ratio:4 / 4.2}
+.journal .jcard:first-child .j-title{font-size:35px;line-height:1.08}
+.journal .jcard:not(:first-child) .j-img{aspect-ratio:16 / 9}
+.contact-dark .lead{color:#c8ccc8}
+.contact-dark .head ul{color:#e8e5dd !important}
+.contact-dark .head ul li{border-color:rgba(246,244,239,.16) !important}
+.contact-dark .guide{background:rgba(246,244,239,.08) !important;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.contact-dark .guide .disp{color:var(--bone) !important}
+.contact-dark .guide .field{color:#c8ccc8}
+.contact-dark .guide .field input{color:var(--bone);border-bottom-color:rgba(246,244,239,.45)}
+.contact-dark .guide .field input:focus{border-bottom-color:var(--bone);box-shadow:0 1px 0 0 var(--bone)}
+.contact-dark .guide .btn-dark{background:var(--bone);color:var(--ink)}
+.contact-dark .guide p{color:#a9dcbf !important}
+.contact-dark .guide p[role=alert]{color:#ffb4a6 !important}
+.dive-end{background:var(--ink);box-shadow:0 0 0 100vmax var(--ink);clip-path:inset(0 -100vmax)}
+.cbanner{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.4fr);background:var(--cedar);color:var(--bone);border-radius:var(--r-md);overflow:hidden}
+.story{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);background:var(--sand);position:relative}
+.story-img{position:relative;min-height:760px}
+.story-inset{position:absolute;right:-64px;bottom:96px;width:44%;aspect-ratio:4 / 3;border:10px solid var(--sand);border-radius:var(--r-md);overflow:hidden;box-shadow:var(--shadow);z-index:2}
+.story-copy{padding:136px clamp(24px,6vw,104px) 120px clamp(88px,8vw,140px);display:flex;flex-direction:column;justify-content:center;gap:44px;max-width:820px}
+.rhythm{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid rgba(30,36,34,.18)}
+.rhythm li{display:flex;flex-direction:column;gap:6px;padding:18px 14px 0 0}
+.rhythm .t{font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-style:italic;font-size:20px;color:var(--bronze)}
+.rhythm .d{font-size:14px;line-height:1.5;color:var(--body)}
+.expert{margin:0;display:flex;flex-direction:column;gap:10px;padding:24px 28px;background:rgba(246,244,239,.65);border-radius:var(--r-md)}
+.ph{filter:saturate(.95) contrast(1.02)}
+.grade-warm{filter:sepia(.14) saturate(.86) contrast(1.05) brightness(1.03)}
+.tbc,.tbc-b{display:none}
+.show-tbc .tbc{display:inline;background:rgba(232,178,58,.18);border-radius:2px}
+.show-tbc .tbc-b{display:list-item;list-style:none}
+.guides{width:100%;display:flex;flex-direction:column;gap:20px;margin-top:8px}
+.guides-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.gcard{display:grid;grid-template-columns:96px minmax(0,1fr);gap:16px;align-items:center;text-decoration:none;color:var(--ink)}
+.gcard:hover{color:var(--ink)}
+.g-img{display:block;aspect-ratio:1 / 1;border-radius:var(--r-sm)}
+.g-title{font-size:18.5px;line-height:1.2}
+@media (hover:hover){.gcard:hover .g-title{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}}
+.hero-cta{min-height:62px;padding:0 26px 0 34px;font-size:12.5px;box-shadow:0 20px 40px -18px rgba(0,0,0,.55)}
+.hero-cta2{min-height:62px}
+.sw img{width:64px;height:64px;border-radius:50%;object-fit:cover;box-shadow:inset 0 0 0 1px rgba(30,36,34,.12),0 12px 22px -14px rgba(30,36,34,.5)}
+.moments-wrap{position:relative}
+.moments-wrap::after{content:"";position:absolute;top:0;right:0;bottom:12px;width:120px;background:linear-gradient(90deg,rgba(246,244,239,0),var(--bone));pointer-events:none}
+@keyframes nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(6px)}}
+.nudge{display:inline-block;animation:nudge 1.6s ease-in-out infinite}
+.livedot{width:8px;height:8px;border-radius:4px;animation:pulse 2.4s ease-in-out infinite;flex:none}
+@supports (animation-timeline: view()){
+  .dive{view-timeline-name:--dive;view-timeline-axis:block}
+  .dive-img{animation:diveZoom linear both;animation-timeline:--dive;animation-range:contain 0% contain 100%}
+  .dive-warm{animation:diveWarm linear both;animation-timeline:--dive;animation-range:contain 35% contain 100%}
+  .dive-copy{animation:diveOut linear both;animation-timeline:--dive;animation-range:contain 0% contain 45%}
+  .rv{animation:rvrise linear both;animation-timeline:view();animation-range:entry 0% cover 20%}
+  .settle{animation:settle linear both;animation-timeline:view();animation-range:entry 0% exit 0%}
+}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none !important;transition:none !important;scroll-behavior:auto !important}
+}
+.bento{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.bento .tall{grid-row:span 2}
+.mosaic{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));grid-auto-rows:150px;gap:16px}
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.facts>div{padding:26px 28px;border-left:1px solid rgba(246,244,239,.14)}
+.facts>div:first-child{border-left:0;padding-left:0}
+.mbar{display:none}
+.m-scrim{display:none}
+.menu-toggle{display:none}
+@media (max-width:1080px){
+  .trust{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .facts>div:nth-child(3){border-left:0;padding-left:0}
+  .desknav{display:none !important}
+  .hdr{grid-template-columns:1fr auto !important}
+  .menu-toggle{display:inline-flex}
+  .hide-md{display:none !important}
+}
+@media (max-width:900px){
+  .selector,.anatomy,.split,.quote-grid,.campaign,.journal,.team,.cbanner,.story,.guides-grid{grid-template-columns:minmax(0,1fr) !important}
+  .story-img{min-height:520px}
+  .story-copy{padding:72px 22px}
+  .team{gap:40px}
+  .campaign{gap:48px}
+  .selector,.anatomy,.quote-grid{gap:48px}
+  .split-img{min-height:420px}
+  .split-copy{padding:72px 22px}
+  .bento{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:720px){
+  .wrap{padding:0 22px}
+  .sec{padding-top:72px;padding-bottom:72px}
+  .hero-cta,.hero-cta2{width:100%}
+  .moments-wrap::after{width:56px}
+  .mbar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:50;background:rgba(30,36,34,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-radius:2px;padding:8px;gap:8px}
+  .hide-sm{display:none !important}
+  .bento{grid-template-columns:minmax(0,1fr)}
+  .bento .tall{grid-row:auto}
+  .mosaic{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:130px}
+  .mosaic>*{grid-column:span 2 !important;grid-row:auto !important}
+  .facts{grid-template-columns:minmax(0,1fr)}
+  .drawer{padding:22px 20px 32px}
+  .facts>div{border-left:0;padding-left:0;border-top:1px solid rgba(246,244,239,.14)}
+  .tabbtn{font-size:17.5px}
+  .kicker::after{display:none}
+  .kicker{flex-wrap:wrap;row-gap:4px}
+  .dive{height:auto !important}
+  .dive-stage{position:relative !important;height:600px !important}
+  .dive-end{height:auto !important;padding-top:56px;padding-bottom:80px;flex-wrap:wrap}
+  .partners{flex-direction:column;align-items:flex-start;gap:6px}
+  .partners .dot{display:none}
+  .glass{padding:22px}
+  .trust{grid-template-columns:minmax(0,1fr);gap:28px}
+  .rhythm{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:18px}
+  .peace-panel{padding:28px 22px}
+  .journal .jcard:first-child{grid-row:auto}
+  .journal .jcard:first-child .j-title{font-size:27.5px}
+  .moments{padding-left:22px;scroll-padding-left:22px}
+  .moments li{flex-basis:76%}
+  .c-offset{margin-top:48px}
+  .m-scrim{display:block;position:absolute;inset:0;background:rgba(30,36,34,.5);pointer-events:none}
+  .hrow{grid-template-columns:84px minmax(0,1fr) 104px;gap:12px}
+  footer{padding-bottom:110px !important}
+}
+
+.price,.tnum{font-variant-numeric:tabular-nums lining-nums}
+h1.disp,h2.disp,.h2{text-wrap:balance}
+p{text-wrap:pretty}
+
+/* background storytelling */
+.hero-warm{position:absolute;inset:0;pointer-events:none;background:radial-gradient(26% 22% at 42% 30%,rgba(220,203,174,.2) 0%,rgba(220,203,174,0) 100%);mix-blend-mode:screen}
+.dive-photo{position:absolute;top:0;bottom:0;left:calc(50% - 50vw);right:50%;overflow:hidden}
+.dive-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.dive-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(270deg,var(--ink) 0%,rgba(30,36,34,.6) 22%,rgba(30,36,34,.1) 50%,rgba(30,36,34,0) 70%),linear-gradient(180deg,var(--ink) 0%,rgba(30,36,34,0) 18%,rgba(30,36,34,0) 82%,var(--ink) 100%)}
+.deg39{text-shadow:0 0 60px rgba(220,203,174,.25)}
+.models-sec{position:relative;padding-top:136px}
+.m-band{position:relative;height:440px;margin-bottom:112px;overflow:hidden}
+.m-band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.m-band::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(30,36,34,.15) 0%,rgba(30,36,34,0) 40%,var(--sand) 100%)}
+.stage{background:radial-gradient(62% 58% at 50% 46%,#fcfbf8 0%,var(--stone) 72%,#e0dbd1 100%)}
+.stage-name{position:absolute;left:0;right:0;bottom:-.12em;text-align:center;font-size:clamp(4rem,9vw,8.5rem);line-height:1;font-weight:300;white-space:nowrap;color:transparent;-webkit-text-stroke:1px rgba(30,36,34,.12);letter-spacing:-.04em;pointer-events:none}
+.stage-floor{position:absolute;left:22%;right:22%;bottom:13%;height:16%;border-radius:50%;background:radial-gradient(closest-side,rgba(30,36,34,.16),rgba(30,36,34,0))}
+.manifesto{position:relative;padding:176px 0 200px;margin-bottom:56px;overflow:hidden;color:var(--bone)}
+.why-sec{background:linear-gradient(180deg,#dde5e2 0%,var(--mist) 38%,var(--mist) 100%) !important}
+.heatmap{background:radial-gradient(circle at 50% 50%,rgba(220,203,174,.55) 0%,rgba(220,203,174,.22) 30%,rgba(169,211,230,.18) 56%,rgba(169,211,230,0) 72%),repeating-radial-gradient(circle at 50% 50%,rgba(138,90,51,0) 0 46px,rgba(138,90,51,.1) 46px 47px)}
+.story{background:linear-gradient(120deg,var(--sand) 40%,#efebe3 100%)}
+@media (max-width:720px){
+  .dive-photo{left:calc(50% - 50vw);right:calc(50% - 50vw);opacity:.55}
+  .m-band{height:260px;margin-bottom:64px}
+  .manifesto{padding:112px 0 136px}
+  .heatmap{background-size:auto}
+}
+
+.hero-pic{top:-40px !important;bottom:auto !important;height:1000px !important;-webkit-mask-image:linear-gradient(180deg,#000 72%,transparent 100%);mask-image:linear-gradient(180deg,#000 72%,transparent 100%)}
+@media (max-width:720px){
+  .hero{min-height:0 !important;padding-top:400px}
+  .hero-pic{top:0 !important;height:500px !important;object-position:42% 30% !important}
+  .hero .m-scrim{background:linear-gradient(180deg,rgba(30,36,34,.35) 0%,rgba(30,36,34,0) 30%,rgba(30,36,34,.7) 62%,var(--ink) 100%) !important;height:500px;bottom:auto}
+}
+
+/* series panels */
+.spanels{display:flex;gap:12px;height:620px}
+.sp{position:relative;flex:1 1 0;min-width:0;border-radius:4px;overflow:hidden;color:var(--bone);background:radial-gradient(120% 80% at 60% 40%,#34403b 0%,var(--ink) 72%);transition:flex-grow .9s var(--ease),opacity .4s,transform .5s var(--ease);isolation:isolate}
+.sp.on{flex-grow:4.4}
+.sp:not(.on):hover{flex-grow:1.3}
+.sp-hit{position:absolute;inset:0;z-index:4;background:transparent;border:0;cursor:pointer;padding:0}
+.sp.on .sp-hit{display:none}
+.sp-hit:focus-visible{outline:2px solid var(--gold);outline-offset:-4px}
+.sp-glow{position:absolute;left:50%;top:58%;width:520px;height:520px;border-radius:50%;transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(169,211,230,.28),rgba(169,211,230,0));opacity:.35;transition:left .9s var(--ease),top .9s var(--ease),opacity .6s;z-index:-1}
+.sp.on .sp-glow{left:73%;top:44%;opacity:1;animation:breathe 7s ease-in-out infinite}
+@keyframes breathe{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.12)}}
+.sp-tub{position:absolute;left:50%;top:62%;width:440px;max-width:none;height:auto;transform:translate(-50%,-50%) rotate(-12deg);opacity:.32;filter:grayscale(.5);transition:left .9s var(--ease),top .9s var(--ease),width .9s var(--ease),opacity .6s,filter .6s;pointer-events:none}
+.sp:not(.on):hover .sp-tub{opacity:.55;filter:none}
+.sp.on .sp-tub{left:73%;top:44%;width:300px;opacity:1;filter:drop-shadow(0 50px 50px rgba(0,0,0,.55));animation:tubspin 90s linear infinite}
+@keyframes tubspin{from{transform:translate(-50%,-50%) rotate(0deg)}to{transform:translate(-50%,-50%) rotate(360deg)}}
+.sp-top{position:absolute;left:24px;right:24px;top:22px;display:flex;justify-content:space-between;align-items:center;gap:10px;z-index:2}
+.sp-top .cap{color:#c8ccc8}
+.sp-tag{font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);background:var(--gold-hi);padding:6px 10px;border-radius:2px;white-space:nowrap;opacity:0;transition:opacity .4s}
+.sp.on .sp-tag{opacity:1}
+.sp-closed{position:absolute;left:22px;right:22px;bottom:26px;display:flex;flex-direction:column;gap:14px;align-items:flex-start;transition:opacity .35s;z-index:2}
+.sp-vname{writing-mode:vertical-rl;transform:rotate(180deg);font-size:40px;font-weight:300;line-height:1;white-space:nowrap}
+.sp-vprice{font-size:13px;font-weight:700;color:var(--gold-hi);white-space:nowrap}
+.sp.on .sp-closed{opacity:0;pointer-events:none}
+.sp-open{position:absolute;left:40px;bottom:40px;width:min(42%,380px);display:flex;flex-direction:column;gap:14px;opacity:0;transform:translateY(18px);transition:opacity .45s,transform .7s var(--ease);pointer-events:none;z-index:5}
+.sp.on .sp-open{opacity:1;transform:none;transition-delay:.35s;pointer-events:auto}
+.sp-name{font-size:clamp(2.6rem,4.4vw,4.2rem);line-height:1;font-weight:300;font-style:italic}
+.sp-desc{margin:0;font-size:15.5px;line-height:1.65;color:#d8d5cc}
+.sp-meta{font-size:13px;line-height:1.6;color:#a9b2ad}
+.sp-price{display:flex;flex-direction:column;gap:4px;padding-top:12px;border-top:1px solid rgba(246,244,239,.16)}
+.sp-price .disp{font-size:34px;line-height:1;color:var(--bone)}
+.sp-was{font-size:12.5px;color:#a9b2ad}
+.sp-cta{display:flex;gap:12px 26px;align-items:center;flex-wrap:wrap;margin-top:6px}
+
+/* series panels stacked vertically (desktop) */
+@media (min-width:721px){
+  .spanels{flex-direction:column;height:auto;gap:10px}
+  .sp{flex:none !important;height:116px;transition:height .9s var(--ease),opacity .4s}
+  .sp.on{height:580px}
+  .sp:not(.on):hover{height:128px}
+  .sp-top{left:36px;right:36px;top:50%;transform:translateY(-50%);justify-content:flex-start;gap:22px;transition:top .6s var(--ease),transform .6s var(--ease)}
+  .sp.on .sp-top{top:30px;transform:none;justify-content:space-between}
+  .sp-closed{left:96px;right:36px;top:50%;bottom:auto;transform:translateY(-50%);flex-direction:row;align-items:baseline;justify-content:space-between;gap:24px}
+  .sp-vname{writing-mode:horizontal-tb;transform:none;font-size:clamp(2rem,3.2vw,2.9rem);font-weight:300}
+  .sp-vprice{font-size:15px;margin-right:180px}
+  .sp-tub{left:86%;top:50%;width:300px}
+  .sp:not(.on):hover .sp-tub{opacity:.6}
+  .sp.on .sp-tub{left:72%;top:52%;width:380px}
+  .sp.on .sp-glow{left:72%;top:52%}
+  .sp-open{left:48px;bottom:48px;width:min(48%,500px)}
+}
+/* feature showcase */
+.feat{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:64px;align-items:center}
+.feat-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.fitem{border-bottom:1px solid var(--line);position:relative}
+.fitem::before{content:"";position:absolute;left:0;top:-1px;height:2px;width:0;background:var(--bronze);transition:width .8s var(--ease)}
+.fitem.on::before{width:100%}
+.frow{width:100%;display:flex;align-items:center;gap:18px;background:none;border:0;padding:24px 0;cursor:pointer;text-align:left;font:inherit;min-height:44px}
+.fn{font-size:13px;font-weight:700;letter-spacing:.1em;color:var(--bronze);width:28px;flex:none}
+.ft{font-size:clamp(1.4rem,2.2vw,1.9rem);font-weight:350;color:var(--soft);transition:color .35s,transform .5s var(--ease)}
+.fitem.on .ft,.frow:hover .ft{color:var(--ink)}
+.frow:hover .ft{transform:translateX(6px)}
+.fa{margin-left:auto;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);display:inline-flex;align-items:center;justify-content:center;color:var(--ink);flex:none;transition:background .35s,color .35s,transform .5s var(--ease),border-color .35s}
+.fitem.on .fa{background:var(--ink);color:var(--bone);border-color:var(--ink);transform:rotate(90deg)}
+.fx{display:grid;grid-template-rows:0fr;transition:grid-template-rows .6s var(--ease)}
+.fx>p{overflow:hidden;margin:0;padding-left:46px;font-size:15.5px;line-height:1.75;color:var(--body);max-width:500px}
+.fitem.on .fx{grid-template-rows:1fr}
+.fitem.on .fx>p{padding-bottom:24px}
+.feat-stage{position:relative;aspect-ratio:4 / 5;border-radius:4px;overflow:hidden;background:var(--ink);box-shadow:0 60px 100px -60px rgba(30,36,34,.6)}
+.fv{position:absolute;inset:0;margin:0;opacity:0;transition:opacity 1s var(--ease);background:radial-gradient(90% 70% at 50% 40%,#34403b 0%,var(--ink) 75%)}
+.fv.on{opacity:1}
+.fv::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(30,36,34,.85) 0%,rgba(30,36,34,0) 42%);pointer-events:none}
+.fv-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.04);transition:transform 10s linear}
+.fv.on .fv-img{transform:scale(1.16)}
+.fv-prod{position:absolute;left:10%;top:16%;width:80%;height:auto;filter:drop-shadow(0 40px 40px rgba(0,0,0,.5))}
+.fv.on .fv-prod{animation:float 6s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+.fv-stat{position:absolute;left:44px;right:44px;top:22%;display:flex;flex-direction:column;gap:14px;color:var(--bone)}
+.fv-num{font-size:clamp(2.6rem,4.4vw,4.3rem);line-height:1;font-weight:300;white-space:nowrap}
+.fv.on .fv-num{animation:rise 1.2s var(--ease) both}
+.fv-unit{font-size:19px;color:var(--gold-hi)}
+.fv-fine{font-size:13px;line-height:1.6;color:#a9b2ad;max-width:360px}
+.fv-cap{position:absolute;left:36px;right:36px;bottom:32px;z-index:2;display:flex;align-items:baseline;gap:18px;color:var(--bone)}
+.fv-cap .disp{font-size:clamp(1.3rem,2vw,1.7rem);font-weight:300;line-height:1.2}
+.fv-idx{font-size:13px;font-weight:700;letter-spacing:.1em;color:var(--gold-hi);flex:none}
+.fv-idx i{font-style:normal;opacity:.55}
+@media (prefers-reduced-motion: reduce){.sp.on .sp-tub,.sp.on .sp-glow,.fv.on .fv-prod{animation:none}.fv-img{transition:none}}
+@media (max-width:900px){
+  .feat{grid-template-columns:minmax(0,1fr);gap:40px}
+  .feat-stage{order:-1;aspect-ratio:4 / 3}
+}
+@media (max-width:720px){
+  .spanels{flex-direction:column;height:auto;gap:10px}
+  .sp{flex:none !important;height:92px;transition:height .8s var(--ease),opacity .4s}
+  .sp.on{height:740px}
+  .sp-closed{left:22px;right:22px;bottom:auto;top:44px;flex-direction:row;justify-content:space-between;align-items:baseline}
+  .sp-vname{writing-mode:horizontal-tb;transform:none;font-size:26px}
+  .sp-top{top:16px}
+  .sp-tub{width:200px;left:84%;top:50%}
+  .sp.on .sp-tub{left:50%;top:132px;width:178px}
+  .sp.on .sp-glow{left:50%;top:132px;width:360px;height:360px}
+  .sp-open{left:22px;right:22px;bottom:26px;width:auto}
+  .fv-stat{left:26px;right:26px;top:14%}
+  .fv-cap{left:22px;right:22px;bottom:20px}
+}
+
+.lang{display:inline-flex;align-items:center;padding:3px;border:1px solid rgba(246,244,239,.28);border-radius:2px}
+.lang-o{display:inline-flex;align-items:center;justify-content:center;min-width:34px;min-height:36px;padding:0 6px;font-size:11.5px;font-weight:700;letter-spacing:.12em;color:#c8ccc8;text-decoration:none;border-radius:1px;transition:background .3s,color .3s}
+.lang-o:hover{color:#ffffff}
+.lang-o.is-cur{background:var(--bone);color:var(--ink)}
+.lang-o.is-cur:hover{color:var(--ink)}
+@media (max-width:1240px){.hdr-right .hide-md{display:none !important}}
+@media (max-width:480px){.hdr-loc{display:none}}
+
+/* finder: northern lights sky */
+.sky{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.sky-base{position:absolute;inset:0;background:linear-gradient(180deg,#111614 0%,var(--ink) 45%,#26302c 100%)}
+.stars i{position:absolute;border-radius:50%;background:#f6f4ef;opacity:.25;animation:twinkle 5s ease-in-out infinite}
+@keyframes twinkle{0%,100%{opacity:.15;transform:scale(.8)}50%{opacity:.85;transform:scale(1.15)}}
+.aurora{position:absolute;filter:blur(44px);mix-blend-mode:screen;opacity:.92;border-radius:50%}
+.a1{left:-10%;top:-18%;width:75%;height:62%;background:linear-gradient(100deg,rgba(95,211,184,0) 0%,rgba(95,211,184,.55) 35%,rgba(120,200,170,.25) 60%,rgba(95,211,184,0) 100%);transform:rotate(-8deg);animation:aur1 18s ease-in-out infinite alternate}
+.a2{left:30%;top:-24%;width:70%;height:58%;background:linear-gradient(80deg,rgba(80,170,200,0) 0%,rgba(80,170,200,.45) 40%,rgba(140,120,210,.3) 75%,rgba(140,120,210,0) 100%);transform:rotate(6deg);animation:aur2 22s ease-in-out infinite alternate}
+.a3{left:5%;top:4%;width:60%;height:34%;background:linear-gradient(95deg,rgba(95,211,184,0) 0%,rgba(150,230,190,.3) 50%,rgba(95,211,184,0) 100%);animation:aur3 26s ease-in-out infinite alternate;opacity:.6}
+@keyframes aur1{0%{transform:translate(0,0) rotate(-8deg) scaleY(1)}50%{transform:translate(6%,4%) rotate(-4deg) scaleY(1.2)}100%{transform:translate(12%,-2%) rotate(-10deg) scaleY(.9)}}
+@keyframes aur2{0%{transform:translate(0,0) rotate(6deg)}50%{transform:translate(-8%,6%) rotate(2deg) scaleY(1.25)}100%{transform:translate(-14%,0) rotate(9deg)}}
+@keyframes aur3{0%{transform:translate(0,0) skewX(0)}100%{transform:translate(20%,8%) skewX(-12deg)}}
+.sky-warm{position:absolute;right:4%;bottom:6%;width:60%;height:70%;background:radial-gradient(closest-side,rgba(220,203,174,.2),rgba(220,203,174,0));animation:breathe 8s ease-in-out infinite}
+.ridge{position:absolute;left:0;right:0;bottom:0;width:100%;height:240px}
+.ridge .r1{fill:#1d2622;opacity:.9}
+.ridge .r2{fill:#121715}
+@media (prefers-reduced-motion: reduce){.aurora,.stars i,.sky-warm{animation:none}}
+@media (max-width:720px){.ridge{height:140px}.aurora{filter:blur(32px)}}
+
+/* opening hours: simple list */
+.hours{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.hours li{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px;color:var(--body)}
+.hd{display:inline-flex;align-items:center;gap:12px}
+.ht{font-variant-numeric:tabular-nums;color:var(--text)}
+.htoday{display:none;font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--bronze)}
+.hours li.is-today{color:var(--ink);font-weight:700}
+.hours li.is-today .ht{color:var(--ink)}
+.hours li.is-today .htoday{display:inline}
+.hours li.is-today .hd::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold);flex:none}
+.hours li.is-closed .ht{color:var(--soft);font-style:italic}
+
+/* mobile: sticky bar is the main action, lighter effects */
+.mbar-call{flex:none;width:52px;min-height:52px;display:inline-flex;align-items:center;justify-content:center;color:var(--bone);border:1px solid rgba(246,244,239,.35);border-radius:2px}
+@media (max-width:720px){
+  .mbar{padding:8px 8px calc(8px + env(safe-area-inset-bottom));left:10px;right:10px;bottom:10px;box-shadow:0 18px 40px -12px rgba(0,0,0,.5)}
+  .mbar .btn{font-size:12px;letter-spacing:.1em}
+  .hero-btns{display:none !important}
+  footer{padding-bottom:110px}
+  .aurora{animation:none !important;filter:blur(22px);mix-blend-mode:normal;opacity:.55}
+  .stars i,.sky-warm,.sp.on .sp-glow{animation:none !important}
+  .snow,.steam,.grain{display:none !important}
+  .kb,.dive-img,.settle{animation:none !important}
+  .sp.on .sp-tub{animation:none !important;transform:translate(-50%,-50%) rotate(-8deg)}
+  .fv-img,.fv.on .fv-img{transition:none;transform:none}
+  .fv.on .fv-prod{animation:none}
+  .zoom img{transition:none}
+}
+
+/* mobile tap targets (44px) */
+@media (max-width:720px){
+  header a[href="#top"]{min-height:44px}
+  .lang-o{min-width:44px;min-height:44px}
+  footer a,a[href^="mailto:"],a[href^="tel:"],a[href*="g.page"],a[href*="personvern"]{display:inline-flex;align-items:center;min-height:44px}
+  p a[href^="tel:"],p a[href^="mailto:"]{display:inline;min-height:0;padding:12px 0}
+  .consent{padding:10px 0;min-height:44px}
+  .consent input{width:24px !important;height:24px !important}
+}
+
+/* contrast on photos */
+#top .kicker,#top h1{text-shadow:0 2px 18px rgba(30,36,34,.6)}
+#top .kicker{align-self:flex-start;background:rgba(30,36,34,.55);padding:7px 12px;border-radius:2px;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.dive-copy{z-index:1}
+.dive-copy .kicker,.dive-copy p{text-shadow:0 2px 24px rgba(30,36,34,.75)}
+@media (max-width:720px){
+  .dive-copy::before{content:"";position:absolute;left:-20px;right:-20px;top:50%;height:440px;transform:translateY(-50%);background:radial-gradient(closest-side,rgba(30,36,34,.9),rgba(30,36,34,.35) 80%,rgba(30,36,34,0));z-index:-1}
+  .dive-photo{opacity:.3}
+  #top .kicker{background:none;padding:0;-webkit-backdrop-filter:none;backdrop-filter:none}
+  .manifesto > div[aria-hidden="true"]{background:linear-gradient(0deg,var(--bone) 0%,rgba(30,36,34,0) 14%),rgba(30,36,34,.74) !important}
+  .fv::after{background:linear-gradient(0deg,rgba(30,36,34,.95) 0%,rgba(30,36,34,.7) 32%,rgba(30,36,34,0) 62%)}
+}
+
+/* finder: classy winter evening (replaces aurora) */
+.sky-base{background:linear-gradient(180deg,#171d1b 0%,var(--ink) 48%,#2b3531 100%) !important}
+.sky-glow{position:absolute;inset:0;background:radial-gradient(60% 70% at 78% 60%,rgba(220,203,174,.14) 0%,rgba(220,203,174,0) 70%),radial-gradient(50% 60% at 12% 10%,rgba(232,229,221,.07) 0%,rgba(232,229,221,0) 70%)}
+.ridge .r1{fill:#2a3430 !important;opacity:.85}
+.ridge .r2{fill:#181e1c !important}
+.fsnow i{filter:none}
+.fsnow i:nth-child(3n){filter:blur(1.5px)}
+@media (max-width:720px){
+  .snow.fsnow{display:block !important}
+  .fsnow i:nth-child(n+15){display:none}
+}
+
+/* Step in: living steam over the tub */
+.tub-breath{animation:tubBreath 26s ease-in-out infinite alternate;transform-origin:50% 70%}
+@keyframes tubBreath{from{transform:scale(1) translateY(0)}to{transform:scale(1.09) translateY(-1.5%)}}
+.vapor{position:absolute;left:5%;width:80%;height:46%;bottom:18%;border-radius:50%;background:radial-gradient(closest-side,rgba(255,255,255,.55),rgba(255,255,255,0));filter:blur(22px);opacity:0;pointer-events:none;animation:vaporRise 16s ease-in-out infinite}
+.vapor.v2{left:25%;width:70%;animation-duration:19s;animation-delay:-5s}
+.vapor.v3{left:-5%;width:65%;bottom:28%;animation-duration:22s;animation-delay:-11s}
+.vapor.v4{left:35%;width:60%;bottom:10%;animation-duration:17s;animation-delay:-14s}
+@keyframes vaporRise{0%{transform:translate(0,25%) scale(.75);opacity:0}30%{opacity:.75}70%{opacity:.45}100%{transform:translate(12%,-55%) scale(1.35);opacity:0}}
+.glint{position:absolute;left:38%;top:62%;width:34%;height:22%;border-radius:50%;background:radial-gradient(closest-side,rgba(255,250,235,.6),rgba(255,250,235,0));mix-blend-mode:screen;animation:glint 5.5s ease-in-out infinite;pointer-events:none}
+@keyframes glint{0%,100%{opacity:.35;transform:scale(.9)}50%{opacity:.9;transform:scale(1.08)}}
+@media (prefers-reduced-motion: reduce){.tub-breath,.vapor,.glint{animation:none}.vapor{opacity:.4}}
+@media (max-width:720px){.tub-breath{animation:none}.vapor.v3,.vapor.v4{display:none}.vapor{filter:blur(16px)}}
+
+/* finder: cinematic dusk spa (replaces starry sky) */
+.cine{background:var(--ink)}
+.cine-img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:60% 40%;filter:saturate(1.05) brightness(.95);animation:cineDrift 40s ease-in-out infinite alternate}
+@keyframes cineDrift{from{transform:scale(1) translate(0,0)}to{transform:scale(1.07) translate(-1.5%,-1%)}}
+.cine-grade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(30,36,34,.9) 0%,rgba(30,36,34,.7) 28%,rgba(30,36,34,.2) 52%,rgba(30,36,34,0) 70%),linear-gradient(180deg,rgba(30,36,34,.35) 0%,rgba(30,36,34,0) 30%,rgba(30,36,34,0) 62%,rgba(30,36,34,.55) 100%)}
+.cine-warm{position:absolute;inset:0;background:radial-gradient(55% 40% at 55% 58%,rgba(255,196,150,.32) 0%,rgba(255,196,150,0) 70%);mix-blend-mode:soft-light;animation:hearth 12s ease-in-out infinite}
+@keyframes hearth{0%,100%{opacity:.8}45%{opacity:1}60%{opacity:.88}}
+.cine-mist{position:absolute;left:-20%;width:80%;height:30%;bottom:16%;border-radius:50%;background:radial-gradient(closest-side,rgba(240,244,248,.4),rgba(240,244,248,0));filter:blur(30px);animation:mist 46s linear infinite}
+.cine-mist.m2{left:40%;bottom:24%;height:22%;animation-duration:60s;animation-delay:-25s;opacity:.7}
+@keyframes mist{from{transform:translateX(-10%)}to{transform:translateX(60%)}}
+.cine-fade{position:absolute;inset:0;background:linear-gradient(180deg,var(--ink) 0%,rgba(30,36,34,0) 14%)}
+.cine-fade::after{content:"";position:absolute;left:0;right:0;bottom:0;height:150px;background:linear-gradient(180deg,rgba(235,231,223,0) 0%,rgba(235,231,223,.55) 60%,var(--sand) 100%)}
+@media (max-width:720px){.models-sec{padding-top:88px}.cine-fade::after{height:150px}}
+.cine .fsnow i{opacity:.45 !important}
+#finder .qcard, #finn .qcard{box-shadow:0 50px 90px -40px rgba(0,0,0,.65)}
+@media (prefers-reduced-motion: reduce){.cine-img,.cine-warm,.cine-mist{animation:none}}
+@media (max-width:720px){.cine-img{animation:none;object-position:62% 40%}.cine-grade{background:linear-gradient(180deg,rgba(30,36,34,.88) 0%,rgba(30,36,34,.6) 40%,rgba(30,36,34,.25) 100%)}.cine-mist.m2{display:none}}
+
+.cinfo{margin:0;max-width:420px;border-top:1px solid var(--line)}
+.cinfo>div{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
+.cinfo dd{margin:0}
+.cinfo a{font-size:16px;color:var(--ink);text-decoration:none;letter-spacing:.01em;font-variant-numeric:tabular-nums;transition:color .3s}
+.cinfo a:hover{color:var(--bronze)}
+
+.dive-copy .kicker,.dive-copy p{text-shadow:0 2px 28px rgba(30,36,34,.85),0 0 2px rgba(30,36,34,.4)}
+
+/* winter edition badge (hero) */
+.wbadge{position:absolute;z-index:6;top:150px;right:max(48px,calc((100% - 1280px) / 2 + 48px));display:flex;align-items:center;gap:16px;padding:14px 18px 14px 14px;border-radius:999px;text-decoration:none;color:var(--bone);background:linear-gradient(135deg,rgba(47,59,53,.86),rgba(30,36,34,.82));border:1px solid rgba(220,203,174,.45);box-shadow:0 22px 50px -22px rgba(0,0,0,.7),inset 0 1px 0 rgba(255,255,255,.08);-webkit-backdrop-filter:blur(14px) saturate(130%);backdrop-filter:blur(14px) saturate(130%);overflow:hidden;isolation:isolate;animation:wbIn 1.2s cubic-bezier(.16,1,.3,1) 1.1s both,wbFloat 7s ease-in-out 2.4s infinite;transition:border-color .4s,transform .4s}
+.wbadge:hover{color:var(--bone);border-color:var(--gold-hi)}
+.wbadge:hover .wb-arrow{transform:translateX(3px);background:var(--gold-hi);color:var(--ink)}
+@keyframes wbIn{from{opacity:0;transform:translateX(40px)}to{opacity:1;transform:none}}
+@keyframes wbFloat{0%,100%{translate:0 0}50%{translate:0 -6px}}
+.wb-glow{position:absolute;inset:-40%;z-index:-1;background:radial-gradient(closest-side,rgba(220,203,174,.28),rgba(220,203,174,0));animation:wbGlow 4.5s ease-in-out infinite}
+@keyframes wbGlow{0%,100%{opacity:.35}50%{opacity:.9}}
+.wb-ring{flex:none;width:46px;height:46px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:var(--gold-hi);border:1px solid rgba(220,203,174,.5);background:rgba(220,203,174,.08)}
+.wb-ring svg{animation:wbSpin 24s linear infinite}
+@keyframes wbSpin{to{transform:rotate(360deg)}}
+.wb-text{display:flex;flex-direction:column;line-height:1.1}
+.wb-label{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-hi);overflow:hidden;white-space:nowrap;animation:wbType 1s cubic-bezier(.16,1,.3,1) 1.6s both}
+@keyframes wbType{from{opacity:0;transform:translateX(-12px);letter-spacing:.5em}to{opacity:1;transform:none;letter-spacing:.2em}}
+.wb-main{font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:20px;font-weight:300;letter-spacing:-.02em;margin-top:5px;white-space:nowrap}
+.wb-main b{font-weight:600;background:linear-gradient(100deg,#dccbae 0%,#fff7e8 45%,#c4a982 70%,#dccbae 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:wbGold 5s ease-in-out infinite}
+@keyframes wbGold{0%,100%{background-position:100% 0}50%{background-position:0 0}}
+.wb-sub{font-size:12px;color:#c8ccc8;margin-top:3px;white-space:nowrap}
+.wb-arrow{flex:none;width:30px;height:30px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(220,203,174,.4);color:var(--gold-hi);transition:transform .4s,background .4s,color .4s}
+.wb-shine{position:absolute;top:0;bottom:0;left:-60%;width:40%;z-index:2;pointer-events:none;background:linear-gradient(100deg,rgba(255,255,255,0) 0%,rgba(255,248,232,.28) 50%,rgba(255,255,255,0) 100%);transform:skewX(-18deg);animation:wbShine 6.5s ease-in-out 2.6s infinite}
+@keyframes wbShine{0%{left:-60%}22%,100%{left:130%}}
+@media (prefers-reduced-motion: reduce){.wbadge,.wb-glow,.wb-ring svg,.wb-label,.wb-main b,.wb-shine{animation:none !important}}
+@media (max-width:720px){
+  .wbadge{bottom:auto;right:auto;left:20px;top:300px;padding:10px 14px 10px 10px;gap:12px;animation:wbIn 1.1s cubic-bezier(.16,1,.3,1) .8s both}
+  .wb-ring{width:38px;height:38px}.wb-ring svg{width:18px;height:18px;animation:none}
+  .wb-main{font-size:17px}.wb-sub{font-size:11px}.wb-arrow{width:26px;height:26px}
+  .wb-shine{animation-delay:2s}
+}
+
+/* footer opening hours */
+.fhours{display:flex;flex-wrap:wrap;align-items:baseline;gap:14px 40px;padding-top:26px;border-top:1px solid var(--line)}
+.fh-title{font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);flex:none}
+.fhours ul{list-style:none;margin:0;padding:0;flex:1;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:10px 18px}
+.fhours li{display:flex;flex-direction:column;gap:3px;font-size:13.5px}
+.fh-day{color:var(--muted)}
+.fh-time{color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+@media (max-width:900px){.fhours ul{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (max-width:560px){.fhours ul{grid-template-columns:repeat(2,minmax(0,1fr))}.fhours li{flex-direction:row;justify-content:space-between;gap:10px;padding:4px 0}}
+
+@media (min-width:901px){
+  .store-info{display:grid !important;grid-template-columns:minmax(0,1fr);column-gap:96px;row-gap:28px;align-items:start}
+  .store-info>p{grid-column:1;grid-row:1}
+  .store-info>.cinfo{grid-column:2;grid-row:1 / span 2;max-width:none}
+  .store-info>div:not(.cinfo){grid-column:1;grid-row:2}
+  .store-info>sc-if,.store-info>div[style*="height: 220px"]{grid-column:1 / -1}
+}
+@media (max-width:720px){
+  .fhours{flex-direction:column;align-items:stretch;gap:14px}
+  .fhours ul{grid-template-columns:minmax(0,1fr) !important;gap:0}
+  .fhours li{flex-direction:row;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--line)}
+}
+
+.fhours ul.fh-g{display:flex !important;flex-wrap:wrap;gap:8px 28px}
+.fh-g li{flex-direction:row !important;gap:8px !important;padding:0 !important;border:0 !important;font-size:13.5px}
+.fh-g li+li::before{content:"·";color:var(--soft);margin-right:20px}
+@media (max-width:720px){.fhours ul.fh-g{gap:8px 22px}.fh-g li+li::before{display:none}}
+
+/* hours: single line */
+.fhours{flex-wrap:nowrap !important;align-items:center !important;flex-direction:row !important;gap:28px !important}
+.fhours ul.fh-g{flex-wrap:nowrap !important;flex:0 1 auto !important;white-space:nowrap;gap:0 !important}
+.fh-g li{white-space:nowrap}
+.fh-g li+li::before{display:inline !important;content:"·";margin:0 14px !important;color:var(--soft)}
+@media (max-width:720px){
+  .fhours{gap:10px !important;justify-content:space-between}
+  .fh-title{display:none}
+  .fhours ul.fh-g{font-size:12px;width:100%;justify-content:space-between}
+  .fh-g li{font-size:12px !important;gap:4px !important}
+  .fh-g li+li::before{margin:0 6px !important}
+}
+@media (max-width:380px){.fh-g li{font-size:11px !important;gap:3px !important;letter-spacing:-.01em}.fh-g li+li::before{margin:0 4px !important}}
+
+/* team with faces */
+.team{grid-template-columns:minmax(0,1fr) !important;gap:48px !important}
+.team>div:first-child{max-width:760px}
+.tgrid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:24px}
+.tm{display:flex;flex-direction:column;gap:6px}
+.tm-img{aspect-ratio:4 / 5;border-radius:var(--r-md);overflow:hidden;background:var(--stone);margin-bottom:12px}
+.tm-img img{width:100%;height:100%;object-fit:cover;filter:saturate(.85) contrast(1.02);transition:transform 1.2s var(--ease),filter .6s}
+.tm:hover .tm-img img{transform:scale(1.04);filter:none}
+.tm-name{font-size:19px;color:var(--ink);line-height:1.2}
+.tm-role{font-size:13.5px;color:var(--body)}
+.tm-area{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--bronze);margin-top:2px}
+@media (max-width:900px){.tgrid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:560px){.tgrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 14px}.tm-name{font-size:17px}}
+
+/* blend dive zoom into "Step in" */
+.dive-seam{position:relative;z-index:2;height:0}
+.dive-seam::before{content:"";position:absolute;left:0;right:0;top:-240px;height:240px;background:linear-gradient(180deg,rgba(30,36,34,0) 0%,rgba(30,36,34,.7) 55%,var(--ink) 100%);pointer-events:none;z-index:1}
+.dive-photo{-webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 30%,#000 85%,transparent 100%);mask-image:linear-gradient(180deg,transparent 0%,#000 30%,#000 85%,transparent 100%)}
+
+/* site-wide seasonal snowfall */
+.site-snow{position:fixed;inset:0;z-index:35;pointer-events:none;overflow:hidden}
+.site-snow i{position:absolute;top:-10px;border-radius:50%;background:#fff;box-shadow:0 0 3px rgba(70,84,80,.35);animation-name:siteFall,siteSway;animation-timing-function:linear,ease-in-out;animation-iteration-count:infinite,infinite;animation-direction:normal,alternate;will-change:transform}
+.site-snow i:nth-child(4n){filter:blur(1.2px)}
+@keyframes siteFall{from{translate:0 -2vh}to{translate:0 104vh}}
+@keyframes siteSway{from{transform:translateX(-14px)}to{transform:translateX(14px)}}
+@media (max-width:720px){.site-snow i:nth-child(n+19){display:none}}
+@media (prefers-reduced-motion: reduce){.site-snow{display:none}}
+
+/* promotional sale bar (top) */
+.pbar{position:relative;z-index:45;display:flex;align-items:center;height:42px;overflow:hidden;text-decoration:none;color:#ebe8e1;background:linear-gradient(90deg,#26302c 0%,#2f3b35 50%,#26302c 100%);border-bottom:1px solid rgba(220,203,174,.28)}
+.pbar:hover{color:#ebe8e1}
+.pbar::after{content:"";position:absolute;top:0;bottom:0;left:-30%;width:22%;background:linear-gradient(100deg,rgba(255,255,255,0),rgba(255,244,222,.16),rgba(255,255,255,0));transform:skewX(-20deg);animation:pbShine 7s ease-in-out 1.5s infinite;pointer-events:none}
+@keyframes pbShine{0%{left:-30%}35%,100%{left:120%}}
+.pb-track{flex:1;display:flex;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 6%,#000 94%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 6%,#000 94%,transparent 100%)}
+.pb-run{display:flex;flex:none;white-space:nowrap;animation:pbScroll 46s linear infinite}
+.pbar:hover .pb-run,.pbar:focus-visible .pb-run{animation-play-state:paused}
+@keyframes pbScroll{from{transform:translateX(0)}to{transform:translateX(-100%)}}
+.pb-item{display:inline-block;white-space:pre;font-size:12.5px;letter-spacing:.06em;line-height:42px}
+.pb-item b{font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-hi)}
+.pb-item em{font-style:normal;font-weight:700;background:linear-gradient(100deg,#dccbae 0%,#fff7e8 45%,#c4a982 70%,#dccbae 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:wbGold 5s ease-in-out infinite}
+.pb-sep{display:inline-block;margin:0 22px;color:var(--gold);font-size:10px;opacity:.8}
+.pb-cta{flex:none;display:inline-flex;align-items:center;gap:8px;height:100%;padding:0 22px;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);background:var(--gold-hi);transition:background .3s}
+.pbar:hover .pb-cta{background:#efe3cc}
+.pb-cta svg{transition:transform .3s}.pbar:hover .pb-cta svg{transform:translateX(3px)}
+#top{scroll-margin-top:0}
+@media (max-width:720px){.pbar{height:38px}.pb-item{font-size:11.5px;line-height:38px}.pb-cta{padding:0 14px;font-size:10px}.pb-run{animation-duration:34s}}
+@media (prefers-reduced-motion: reduce){.pb-run,.pbar::after,.pb-item em{animation:none}}
+
+/* vertical rotating campaign ribbon (hero) */
+.vribbon{position:absolute;z-index:6;top:170px;right:max(24px,calc((100% - 1280px) / 2 + 8px));width:46px;height:420px;display:flex;flex-direction:column;align-items:center;text-decoration:none;color:var(--bone);border-radius:999px;background:linear-gradient(180deg,rgba(47,59,53,.88),rgba(30,36,34,.86));border:1px solid rgba(220,203,174,.5);box-shadow:0 24px 50px -24px rgba(0,0,0,.7),inset 0 1px 0 rgba(255,255,255,.08);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);overflow:hidden;isolation:isolate;animation:vrIn 1.2s cubic-bezier(.16,1,.3,1) 1s both,vrFloat 7s ease-in-out 2.2s infinite}
+@keyframes vrIn{from{opacity:0;transform:translateY(-30px)}to{opacity:1;transform:none}}
+@keyframes vrFloat{0%,100%{translate:0 0}50%{translate:0 -8px}}
+.vribbon:hover{color:var(--bone);border-color:var(--gold-hi)}
+.vr-cap{flex:none;width:46px;height:46px;display:flex;align-items:center;justify-content:center;color:var(--gold-hi);border-bottom:1px solid rgba(220,203,174,.25)}
+.vr-cap svg{animation:wbSpin 18s linear infinite}
+.vr-go{border-bottom:0;border-top:1px solid rgba(220,203,174,.25);background:var(--gold-hi);color:var(--ink)}
+.vr-go svg{animation:vrNudge 2.4s ease-in-out infinite}
+@keyframes vrNudge{0%,100%{transform:translateY(-2px)}50%{transform:translateY(3px)}}
+.vr-track{flex:1;width:100%;overflow:hidden;display:flex;flex-direction:column;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 14%,#000 86%,transparent 100%);mask-image:linear-gradient(180deg,transparent 0,#000 14%,#000 86%,transparent 100%)}
+.vr-run{flex:none;display:flex;flex-direction:column;align-items:center;animation:vrScroll 22s linear infinite}
+.vribbon:hover .vr-run{animation-play-state:paused}
+@keyframes vrScroll{from{transform:translateY(0)}to{transform:translateY(-100%)}}
+.vr-item{writing-mode:vertical-rl;white-space:pre;font-size:12.5px;letter-spacing:.08em;padding:10px 0}
+.vr-item b{font-weight:700;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-hi)}
+.vr-item em{font-style:normal;font-weight:700;background:linear-gradient(180deg,#dccbae 0%,#fff7e8 45%,#c4a982 70%,#dccbae 100%);background-size:100% 220%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:vrGold 5s ease-in-out infinite}
+@keyframes vrGold{0%,100%{background-position:0 100%}50%{background-position:0 0}}
+.vr-item i{font-style:normal;color:var(--gold);font-size:10px;margin:14px 0;opacity:.85}
+.vribbon::after{content:"";position:absolute;left:0;right:0;top:-40%;height:30%;background:linear-gradient(180deg,rgba(255,255,255,0),rgba(255,244,222,.2),rgba(255,255,255,0));animation:vrShine 6s ease-in-out 2.5s infinite;pointer-events:none}
+@keyframes vrShine{0%{top:-40%}35%,100%{top:120%}}
+@media (max-width:720px){.vribbon{top:118px;right:14px;width:38px;height:250px;animation:vrIn 1.1s cubic-bezier(.16,1,.3,1) .8s both}.vr-cap{width:38px;height:38px}.vr-item{font-size:11px}.vr-cap svg{animation:none}}
+@media (prefers-reduced-motion: reduce){.vribbon,.vr-run,.vr-cap svg,.vr-go svg,.vr-item em,.vribbon::after{animation:none !important}}
+
+/* realistic snow: soft flakes, depth layers, gentle drift */
+.site-snow i,.snow i,.fsnow i{background:radial-gradient(circle at 50% 50%,#fff 0%,rgba(255,255,255,.92) 40%,rgba(244,248,250,.45) 70%,rgba(244,248,250,0) 100%) !important;box-shadow:none !important;border-radius:50%}
+.site-snow{mix-blend-mode:normal}
+.site-snow i{box-shadow:0 0 1.5px rgba(120,140,148,.3) !important}
+/* far layer: tiny, crisp-soft, slow */
+.site-snow i:nth-child(3n+1){transform-origin:center;filter:blur(.3px);scale:1.1;animation-duration:30s,9s !important;opacity:.75 !important}
+/* mid layer */
+.site-snow i:nth-child(3n+2){filter:blur(.6px);scale:1.6;opacity:.9 !important;animation-duration:22s,7s !important}
+/* near layer: larger bokeh flakes, faster, out of focus */
+.site-snow i:nth-child(3n){filter:blur(1.8px);scale:2.8;animation-duration:15s,6s !important;opacity:.7 !important}
+.snow i:nth-child(3n),.fsnow i:nth-child(3n){filter:blur(2px) !important;scale:1.7}
+.snow i:nth-child(3n+1),.fsnow i:nth-child(3n+1){filter:blur(.3px) !important;scale:.7}
+@keyframes siteSway{0%{transform:translateX(-16px) rotate(0deg)}50%{transform:translateX(6px) rotate(140deg)}100%{transform:translateX(18px) rotate(260deg)}}
+
+/* opening hours: clean single line */
+.fhours{padding-top:22px !important;gap:20px !important;border-top:1px solid var(--line)}
+.fh-title{font-size:11px !important;letter-spacing:.18em !important;color:var(--ink) !important}
+.fhours ul.fh-g{gap:0 !important}
+.fh-g li{display:inline-block !important;font-size:13px !important;color:var(--body);font-variant-numeric:tabular-nums;padding:0 14px !important;border-left:1px solid var(--line) !important;line-height:1}
+.fh-g li:first-child{border-left:0 !important;padding-left:0 !important}
+.fh-g li+li::before{display:none !important}
+@media (max-width:720px){.fh-g li{font-size:12px !important;padding:0 9px !important}}
+@media (max-width:380px){.fh-g li{font-size:11px !important;padding:0 7px !important}}
+
+/* opening hours: small heading above the line */
+.fhours{flex-direction:column !important;align-items:flex-start !important;gap:12px !important}
+.fh-title{display:block !important;font-size:11px !important;font-weight:600;letter-spacing:.18em !important;text-transform:uppercase;color:var(--ink) !important}
+
+@media (max-width:720px){.mf-copy{align-items:flex-start !important;text-align:left !important}}
+</style>
+</helmet>
+
+<div class="{{tbcClass}}" style="min-height: 100vh; background: var(--bone); color: var(--text); font-family: 'Mulish', system-ui, sans-serif; overflow-x: clip;">
+
+<!-- Promotional sale bar -->
+<a class="pbar" href="#contact" onClick="{{askCampaign}}" aria-label="Winter edition: up to 30% off selected models. Ask for campaign prices">
+  <span class="pb-track" aria-hidden="true"><span class="pb-run"><span class="pb-item"><b>Winter edition</b><span class="pb-sep" aria-hidden="true">✦</span>Up to <em>30% off</em> selected models<span class="pb-sep" aria-hidden="true">✦</span>Ask for campaign prices in Sandnes<span class="pb-sep" aria-hidden="true">❄</span></span><span class="pb-item"><b>Winter edition</b><span class="pb-sep" aria-hidden="true">✦</span>Up to <em>30% off</em> selected models<span class="pb-sep" aria-hidden="true">✦</span>Ask for campaign prices in Sandnes<span class="pb-sep" aria-hidden="true">❄</span></span><span class="pb-item"><b>Winter edition</b><span class="pb-sep" aria-hidden="true">✦</span>Up to <em>30% off</em> selected models<span class="pb-sep" aria-hidden="true">✦</span>Ask for campaign prices in Sandnes<span class="pb-sep" aria-hidden="true">❄</span></span><span class="pb-item"><b>Winter edition</b><span class="pb-sep" aria-hidden="true">✦</span>Up to <em>30% off</em> selected models<span class="pb-sep" aria-hidden="true">✦</span>Ask for campaign prices in Sandnes<span class="pb-sep" aria-hidden="true">❄</span></span></span><span class="pb-run"><span class="pb-item"><b>Winter edition</b><span class="pb-sep" aria-hidden="true">✦</span>Up to <em>30% off</em> selected models<span class="pb-sep" aria-hidden="true">✦</span>Ask for campaign prices in Sandnes<span class="pb-sep" aria-hidden="true">❄</span></span><span class="pb-item"><b>Winter edition</b><span class="pb-sep" aria-hidden="true">✦</span>Up to <em>30% off</em> selected models<span class="pb-sep" aria-hidden="true">✦</span>Ask for campaign prices in Sandnes<span class="pb-sep" aria-hidden="true">❄</span></span><span class="pb-item"><b>Winter edition</b><span class="pb-sep" aria-hidden="true">✦</span>Up to <em>30% off</em> selected models<span class="pb-sep" aria-hidden="true">✦</span>Ask for campaign prices in Sandnes<span class="pb-sep" aria-hidden="true">❄</span></span><span class="pb-item"><b>Winter edition</b><span class="pb-sep" aria-hidden="true">✦</span>Up to <em>30% off</em> selected models<span class="pb-sep" aria-hidden="true">✦</span>Ask for campaign prices in Sandnes<span class="pb-sep" aria-hidden="true">❄</span></span></span></span>
+  <span class="pb-cta">See offer <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+</a>
+
+<!-- Floating header -->
+<header style="position: sticky; top: 0; z-index: 40; padding: 0; height: 0; overflow: visible;">
+  <div class="wrap" style="position: relative; top: 16px;">
+    <div class="hdr" style="display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 20px; height: 72px; padding: 0 12px 0 28px; border-radius: 2px; background: rgba(30,36,34,.74); backdrop-filter: blur(18px) saturate(150%); -webkit-backdrop-filter: blur(18px) saturate(150%); border: 1px solid rgba(246,244,239,.12); color: var(--bone);">
+      <a href="#top" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--bone);" aria-label="Polarbad Sandnes, back to top">
+        <svg viewBox="0 0 870.31 206.89" fill="currentColor" aria-hidden="true" style="display: block; height: 34px; width: 143px; flex: none;"><path d="M680,56.18q-16.11,0-32.79-.68c-71-2.85-143.11-14.33-212.86-25.44S292.4,7.48,221.51,4.65C142.11,1.5,72.65,9.79,9.16,30c-.23.07-5.57,1.76-8.35,2.34L0,28.42c2.58-.53,7.9-2.22,8-2.23C71.89,5.83,141.79-2.53,221.67.66,292.8,3.49,365.06,15,434.94,26.11c69.63,11.09,141.63,22.55,212.39,25.4,79.24,3.18,148.57-5,211.93-25.07l.82-.26,1.24,3.8-.83.27C805.57,47.64,746.24,56.18,680,56.18Z"></path><path d="M680,206.89q-17.06,0-34.72-.75c-70.35-3-141.82-14.36-210.93-25.36-69.76-11.1-141.9-22.59-212.8-25.41C142.1,152.21,72.65,160.5,9.16,180.72L8,176.91c63.94-20.36,133.85-28.71,213.72-25.53,71.13,2.83,143.39,14.33,213.27,25.45,69,11,140.35,22.34,210.47,25.31,78.53,3.33,147.23-4.45,210-23.79l.13,0c2.26-.69,9.84-3,12.37-3.65l.49,1.91,1.69-1.13.2,1.87-1.42,1.23c-2.41.63-9.92,2.91-12.17,3.59l-.13,0C802.81,198.74,744.74,206.89,680,206.89Z"></path><path fill-rule="evenodd" d="M532.05,83.79c3.42,6.42,3.87,12.79,3.87,20.69v54.71q23.57,3,47.13,5.29c15.89,1.41,31-27.85-3.51-42.18,25.86-8,14.57-31.72,2.18-32.85C565.17,87.87,548.61,86,532.05,83.79Zm39.14,76.6q-11-1.14-22.07-2.47V120.44q11,1.32,22.07,2.47c8.82.92,16,10,16,20.31S580,161.31,571.19,160.39Zm-2-40.6q-10-1-20.06-2.26V88.83q10,1.2,20.06,2.27c6.75.71,12.26,7.69,12.26,15.58S575.93,120.5,569.18,119.79Z"></path><path fill-rule="evenodd" d="M278.25,121.06c18.73,1.53,37.45,3.54,56.17,5.87V115.25c-11.76,8.81-26.4,5.63-40.78,4.26l-2.18-.2v-72q-8.54-.8-17.07-1.47c3.42,6.25,3.86,12.6,3.86,20.5Z"></path><path fill-rule="evenodd" d="M93.31,126.2c4.4-.88,8.8-1.69,13.2-2.46v-72q7-1.2,13.94-2.23a21.91,21.91,0,0,1,13.69,2.07A18.48,18.48,0,0,1,142.9,61a20.55,20.55,0,0,1,1,11.27,21.31,21.31,0,0,1-6.39,11.64,26.17,26.17,0,0,1-15,7.43c-.77.11-1.54.19-2.31.23a23.57,23.57,0,0,1-4-.13c.19.24.39.48.6.71,4.72,5.13,12.92,4.81,19.32,2.62a33.2,33.2,0,0,0,19.27-17.66l0-.06a22.36,22.36,0,0,0,2.11-9.73A20.59,20.59,0,0,0,155.44,58a21.7,21.7,0,0,0-6-7.41A25,25,0,0,0,140.3,46a29,29,0,0,0-11.39-.62Q109.19,48,89.45,52.08c3.42,5.27,3.86,11.5,3.86,19.41Z"></path><path fill-rule="evenodd" d="M218.07,39.27a41.72,41.72,0,0,0-39.86,29.54,39.64,39.64,0,0,0-1.69,11.4,37.9,37.9,0,0,0,1.69,11.23C184,110,201.8,119.12,218.07,119.26s34.08-9,39.86-27.51a37.67,37.67,0,0,0,1.69-11.23,39.29,39.29,0,0,0-1.69-11.4A42.26,42.26,0,0,0,218.07,39.27Zm0,4.38c16.43.1,28.19,17.75,28.19,36.29s-11.76,35.11-28.19,35-28.19-16.71-28.19-35.28S201.64,43.57,218.07,43.65Z"></path><path fill-rule="evenodd" d="M703,92.21c3.42,5.72,3.86,12,3.86,19.89v54.71q19.13-1.56,38.26-4.34c40.7-7,40.7-81.88,0-74.9C731.12,89.63,717.08,91.15,703,92.21Zm17.07,70.47V93.6q8.22-.85,16.46-1.92a25.32,25.32,0,0,1,9.2.36c22.22,4.93,22.12,53.75,0,65.79a27.14,27.14,0,0,1-9.2,2.93Q728.34,161.84,720.11,162.68Z"></path><path fill-rule="evenodd" d="M375.63,57.92c2.66,10.44-3.37,23-6.81,31.3q-8.34,20.09-16.69,40.23l3.75.52q.86-2.22,1.72-4.43a21.07,21.07,0,0,1,3.32-5.71,12.89,12.89,0,0,1,5.5-3.87,17.55,17.55,0,0,1,8.6-.49q13.59,2,27.19,4.13l6.57,18.29,15.14,2.38q-6-16.31-12-32.65c-4.44-12.13-9-24.22-13.46-36.33l-3.87-10.51Q385.1,59.33,375.63,57.92Zm25.48,58.6q-18.72-2.89-37.43-5.61,9.75-22.34,19.51-44.59Q392.15,91.4,401.11,116.52Z"></path><path fill-rule="evenodd" d="M637.78,93.8c2.66,10.12-3.37,23.43-6.81,32.08q-8.36,21-16.69,41.84l3.75.2c.56-1.54,1.14-3.07,1.72-4.59a23.74,23.74,0,0,1,3.32-6,15.08,15.08,0,0,1,5.49-4.44,18.81,18.81,0,0,1,8.61-1.45q13.59.39,27.19.34,3.28,8.63,6.57,17.21,7.58-.1,15.14-.36-6.06-15.15-12-30.44c-4.44-11.36-9-22.71-13.46-34.13q-1.94-5-3.88-9.92Q647.25,94.08,637.78,93.8Zm25.48,55.06q-18.72.06-37.44-.75,9.76-23.33,19.52-46.86Q654.29,125.16,663.26,148.86Z"></path><path fill-rule="evenodd" d="M447.92,144.63l13.2,2.09v-72l13.93,2.18a28.54,28.54,0,0,1,13.7,6,27.36,27.36,0,0,1,8.75,11.73,21.91,21.91,0,0,1,1.05,11.54,15.17,15.17,0,0,1-6.4,10,18.06,18.06,0,0,1-6.77,3,22.23,22.23,0,0,1-8.18.16c-.77-.12-1.55-.28-2.32-.47a25.65,25.65,0,0,1-4-1.37c.18.28.37.57.57.84v0q11.13,16.71,22.27,33.38,9.4,1.41,18.83,2.78-8.89-12.14-17.77-24.31a22.48,22.48,0,0,1-15.27-5.44,24.38,24.38,0,0,0,11.28,1.87A23.14,23.14,0,0,0,510,113.87l0-.05a19.39,19.39,0,0,0,2.11-9.25,23.78,23.78,0,0,0-2.12-9.84,31.13,31.13,0,0,0-6-8.84,36.24,36.24,0,0,0-9.15-6.83,35.55,35.55,0,0,0-11.39-3.75q-19.74-3-39.47-6.2c3.42,6.52,3.87,12.9,3.87,20.81Z"></path><path d="M809.63,98.84a10.53,10.53,0,1,1,3.07-7.45A10.1,10.1,0,0,1,809.63,98.84ZM795.84,85a8.74,8.74,0,0,0-2.62,6.39,8.88,8.88,0,0,0,2.6,6.44,9,9,0,0,0,12.75,0,9.2,9.2,0,0,0,0-12.83,8.93,8.93,0,0,0-12.72,0Zm2.46.95h4.51a4.4,4.4,0,0,1,1.83.33A2.34,2.34,0,0,1,806,88.63a2.44,2.44,0,0,1-1.4,2.37,2,2,0,0,1,.87.62,2.2,2.2,0,0,1,.33,1.25l0,1.33a4,4,0,0,0,.09.85.84.84,0,0,0,.44.61v.22h-1.65a1.28,1.28,0,0,1-.11-.33,6.19,6.19,0,0,1-.07-.79l-.08-1.65a1.38,1.38,0,0,0-.7-1.3,2.69,2.69,0,0,0-1.18-.19h-3v4.26H798.3Zm4.36,4.54a2.43,2.43,0,0,0,1.46-.38,1.56,1.56,0,0,0,.53-1.36,1.48,1.48,0,0,0-.75-1.45,2.43,2.43,0,0,0-1.07-.2h-3.19V90.5Z"></path></svg>
+        <span class="hdr-loc" style="font-size: 10.5px; font-weight: 600; letter-spacing: .24em; text-transform: uppercase; color: var(--gold-hi);">Sandnes</span>
+      </a>
+      <nav class="desknav" aria-label="Main menu" style="display: flex; gap: 24px; align-items: center;">
+        <a class="navlink" href="#models">Models</a>
+        <a class="navlink" href="#finder">Tub finder</a>
+        <a class="navlink" href="#why">Why us</a>
+        <a class="navlink" href="#store">Store</a>
+        <a class="navlink" href="#contact">Contact</a>
+      </nav>
+      <div class="hdr-right" style="display: flex; gap: 12px; align-items: center; justify-content: flex-end;">
+        <nav class="lang" aria-label="Language"><a class="lang-o" href="Main.dc.html" hreflang="nb" lang="nb" title="Norsk">NO</a><a class="lang-o is-cur" aria-current="page" href="MainEN.dc.html" hreflang="en" lang="en" title="English">EN</a></nav>
+        <span class="hide-md" style="display: inline-flex; gap: 8px; align-items: center; font-size: 12.5px; font-weight: 600; color: #ebe8e1; white-space: nowrap;"><span class="livedot" style="background: {{openDot}};" aria-hidden="true"></span>{{openShortText}}</span>
+        <a class="btn btn-gold plain hide-sm" href="#book" onClick="{{ bookVisit }}" style="min-height: 48px; font-size: 13px; padding: 0 20px; white-space: nowrap;">Request a visit<sc-if value="{{showCro}}" hint-placeholder-val="{{ false }}"><span class="cro">A1</span></sc-if></a>
+        <button class="btn btn-ghost-light plain menu-toggle" type="button" aria-label="Open menu" aria-expanded="{{menu}}" onClick="{{ toggleMenu }}" style="min-height: 50px; padding: 0 14px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4 9h16M4 15h16"></path></svg>
+        </button>
+      </div>
+    </div>
+    <sc-if value="{{menu}}" hint-placeholder-val="{{ false }}">
+      <nav aria-label="Mobile menu" style="margin-top: 8px; border-radius: 2px; background: rgba(30,36,34,.95); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); padding: 12px 26px 22px; display: flex; flex-direction: column;">
+        <a class="navlink" href="#models" onClick="{{ closeMenu }}" style="padding: 16px 0; font-size: 18px; border-bottom: 1px solid rgba(246,244,239,.1);">Models and prices</a>
+        <a class="navlink" href="#finder" onClick="{{ closeMenu }}" style="padding: 16px 0; font-size: 18px; border-bottom: 1px solid rgba(246,244,239,.1);">Find your tub</a>
+        <a class="navlink" href="#why" onClick="{{ closeMenu }}" style="padding: 16px 0; font-size: 18px; border-bottom: 1px solid rgba(246,244,239,.1);">Why Polarbad</a>
+        <a class="navlink" href="#store" onClick="{{ closeMenu }}" style="padding: 16px 0; font-size: 18px; border-bottom: 1px solid rgba(246,244,239,.1);">The store at Forus</a>
+        <a class="navlink" href="#contact" onClick="{{ closeMenu }}" style="padding: 16px 0; font-size: 18px;">Contact</a>
+        <a class="btn btn-gold plain" href="#book" onClick="{{ bookVisit }}" style="margin-top: 12px;">Request a visit</a>
+      </nav>
+    </sc-if>
+  </div>
+</header>
+
+<!-- Hero -->
+<section id="top" class="on-dark hero" style="position: relative; min-height: 1180px; background: var(--ink); color: var(--bone); overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end;">
+  <div style="position: absolute; inset: 0; overflow: hidden;">
+    <img decoding="async" class="ph kb hero-pic" fetchpriority="high" src="/_blob/144da9af5a4c030d17a0b5c23992f9e9" alt="A couple in a glowing outdoor hot tub under string lights on a snowy winter evening, with mountains behind" style="object-position: 62% 30%;">
+  </div>
+  <div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(0deg, rgba(30,36,34,.97) 0%, rgba(30,36,34,.85) 28%, rgba(30,36,34,.6) 46%, rgba(30,36,34,0) 64%), linear-gradient(90deg, rgba(30,36,34,.45) 0%, rgba(30,36,34,0) 40%), linear-gradient(180deg, rgba(30,36,34,.6) 0%, rgba(30,36,34,0) 18%);"></div>
+  <div aria-hidden="true" class="hero-warm"></div>
+  <div aria-hidden="true" class="hide-sm">
+  </div>
+  <div class="snow" aria-hidden="true">
+    <i style="left: 7.2%; width: 2.4px; height: 2.4px; opacity: 0.64; animation-duration: 10.7s; animation-delay: -13.0s;"></i>
+    <i style="left: 3.7%; width: 2.5px; height: 2.5px; opacity: 0.59; animation-duration: 9.6s; animation-delay: -10.1s;"></i>
+    <i style="left: 82.7%; width: 1.7px; height: 1.7px; opacity: 0.42; animation-duration: 10.0s; animation-delay: -8.5s;"></i>
+    <i style="left: 57.7%; width: 2.1px; height: 2.1px; opacity: 0.57; animation-duration: 15.9s; animation-delay: -19.0s;"></i>
+    <i style="left: 29.0%; width: 4.1px; height: 4.1px; opacity: 0.43; animation-duration: 9.5s; animation-delay: -17.2s;"></i>
+    <i style="left: 18.1%; width: 1.8px; height: 1.8px; opacity: 0.67; animation-duration: 12.4s; animation-delay: -16.3s;"></i>
+    <i style="left: 6.3%; width: 3.2px; height: 3.2px; opacity: 0.38; animation-duration: 13.1s; animation-delay: -11.0s;"></i>
+    <i style="left: 31.4%; width: 2.1px; height: 2.1px; opacity: 0.67; animation-duration: 16.5s; animation-delay: -8.6s;"></i>
+    <i style="left: 69.9%; width: 2.7px; height: 2.7px; opacity: 0.48; animation-duration: 12.3s; animation-delay: -15.9s;"></i>
+    <i style="left: 72.9%; width: 3.1px; height: 3.1px; opacity: 0.51; animation-duration: 14.8s; animation-delay: -17.5s;"></i>
+    <i style="left: 75.7%; width: 4.1px; height: 4.1px; opacity: 0.43; animation-duration: 10.3s; animation-delay: -8.4s;"></i>
+    <i style="left: 76.5%; width: 2.8px; height: 2.8px; opacity: 0.67; animation-duration: 9.4s; animation-delay: -13.4s;"></i>
+    <i style="left: 59.4%; width: 3.9px; height: 3.9px; opacity: 0.67; animation-duration: 12.5s; animation-delay: -13.9s;"></i>
+    <i style="left: 47.4%; width: 2.7px; height: 2.7px; opacity: 0.72; animation-duration: 18.2s; animation-delay: -18.9s;"></i>
+    <i style="left: 99.3%; width: 1.7px; height: 1.7px; opacity: 0.80; animation-duration: 16.7s; animation-delay: -12.9s;"></i>
+    <i style="left: 2.3%; width: 2.3px; height: 2.3px; opacity: 0.60; animation-duration: 13.2s; animation-delay: -13.4s;"></i>
+    <i style="left: 76.8%; width: 2.0px; height: 2.0px; opacity: 0.42; animation-duration: 10.3s; animation-delay: -1.2s;"></i>
+    <i style="left: 8.1%; width: 2.2px; height: 2.2px; opacity: 0.60; animation-duration: 13.3s; animation-delay: -17.4s;"></i>
+    <i style="left: 86.4%; width: 3.0px; height: 3.0px; opacity: 0.50; animation-duration: 18.7s; animation-delay: -16.4s;"></i>
+    <i style="left: 95.8%; width: 2.6px; height: 2.6px; opacity: 0.43; animation-duration: 12.9s; animation-delay: -17.7s;"></i>
+    <i style="left: 48.5%; width: 2.0px; height: 2.0px; opacity: 0.67; animation-duration: 11.6s; animation-delay: -4.7s;"></i>
+    <i style="left: 36.9%; width: 2.2px; height: 2.2px; opacity: 0.66; animation-duration: 9.0s; animation-delay: -8.4s;"></i>
+    <i style="left: 61.8%; width: 4.1px; height: 4.1px; opacity: 0.72; animation-duration: 16.6s; animation-delay: -10.3s;"></i>
+    <i style="left: 87.5%; width: 1.6px; height: 1.6px; opacity: 0.79; animation-duration: 18.9s; animation-delay: -15.6s;"></i>
+    <i style="left: 63.4%; width: 2.6px; height: 2.6px; opacity: 0.38; animation-duration: 13.4s; animation-delay: -2.1s;"></i>
+    <i style="left: 34.0%; width: 1.7px; height: 1.7px; opacity: 0.38; animation-duration: 11.3s; animation-delay: -3.2s;"></i>
+    <i style="left: 36.4%; width: 1.5px; height: 1.5px; opacity: 0.36; animation-duration: 10.7s; animation-delay: -2.0s;"></i>
+    <i style="left: 25.2%; width: 3.9px; height: 3.9px; opacity: 0.54; animation-duration: 15.8s; animation-delay: -3.0s;"></i>
+    <i style="left: 99.3%; width: 2.5px; height: 2.5px; opacity: 0.61; animation-duration: 10.4s; animation-delay: -17.0s;"></i>
+    <i style="left: 34.3%; width: 2.8px; height: 2.8px; opacity: 0.50; animation-duration: 9.9s; animation-delay: -2.0s;"></i>
+    <i style="left: 95.1%; width: 3.7px; height: 3.7px; opacity: 0.64; animation-duration: 10.8s; animation-delay: -0.5s;"></i>
+    <i style="left: 52.8%; width: 1.9px; height: 1.9px; opacity: 0.89; animation-duration: 15.0s; animation-delay: -0.5s;"></i>
+    <i style="left: 36.7%; width: 3.8px; height: 3.8px; opacity: 0.44; animation-duration: 16.7s; animation-delay: -5.2s;"></i>
+    <i style="left: 33.0%; width: 3.6px; height: 3.6px; opacity: 0.47; animation-duration: 14.9s; animation-delay: -15.6s;"></i>
+  </div>
+  <div class="m-scrim" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <div class="wrap" style="position: relative; width: 100%; display: flex; flex-direction: column; gap: 26px;">
+      <span class="kicker fu d1"><b>Polarbad Sandnes</b>A little less everyday</span>
+      <h1 class="disp" style="margin: 0; font-size: clamp(2.3rem, 4.4vw, 4.5rem); line-height: 1.04; font-weight: 300; letter-spacing: -.03em; text-wrap: wrap;">
+        <span class="line"><span class="d1">{{monthName}} in Sandnes: <span class="temp-cold">around&nbsp;{{tempNow}}&nbsp;°C.</span></span></span>
+        <span class="line"><span class="d2" style="font-style: italic; color: var(--gold-hi);">Your tub: 39&nbsp;°C.</span></span><sc-if value="{{showCro}}" hint-placeholder-val="{{ false }}"><span class="cro">A4</span></sc-if>
+      </h1>
+  </div>
+  <div class="wrap" style="position: relative; width: 100%; padding-top: 36px; padding-bottom: 64px; display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-end; justify-content: space-between;">
+    <div class="hero-row" style="flex: 1 1 560px; min-width: 0; display: flex; flex-wrap: wrap; gap: 28px 56px; align-items: center; justify-content: space-between;">
+      <p class="fu d4" style="margin: 0; font-size: 18px; line-height: 1.7; color: #d8d5cc; max-width: 600px;">Step into Norway's largest spa store. Sit in the tubs, compare the series and get honest advice from the people who sell, install and service them, right here in Sandnes.</p>
+      <div class="fu d5 hero-btns" style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center;">
+        <a class="btn btn-gold hero-cta" href="#book" onClick="{{ bookVisit }}">Request a showroom visit
+          <span class="ic" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+        </a>
+        <a class="btn btn-ghost-light plain hero-cta2" href="#contact">Request a price</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Facts strip -->
+  <div class="wrap" style="position: relative; width: 100%;">
+    <dl class="facts fu d5" style="margin: 0; border-top: 1px solid rgba(246,244,239,.16);">
+      <div><dt class="disp" style="font-size: 31.5px; font-weight: 300;">25+ years</dt><dd style="margin: 6px 0 0; font-size: 13.5px; line-height: 1.5; color: #cbcfcb;">of outdoor hot tubs in Norway</dd></div>
+      <div><dt class="disp" style="font-size: 31.5px; font-weight: 300;">1,500 m²</dt><dd style="margin: 6px 0 0; font-size: 13.5px; line-height: 1.5; color: #cbcfcb;">of showroom at Forus</dd></div>
+      <div><dt class="disp" style="font-size: 31.5px; font-weight: 300; display: flex; align-items: center; gap: 10px;">4.6 <span role="img" aria-label="4.6 out of 5 stars" style="display: inline-flex; gap: 2px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="#dccbae" aria-hidden="true"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21.1l1.4-7L2 9.3l7-.8z"></path></svg><svg width="15" height="15" viewBox="0 0 24 24" fill="#dccbae" aria-hidden="true"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21.1l1.4-7L2 9.3l7-.8z"></path></svg><svg width="15" height="15" viewBox="0 0 24 24" fill="#dccbae" aria-hidden="true"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21.1l1.4-7L2 9.3l7-.8z"></path></svg><svg width="15" height="15" viewBox="0 0 24 24" fill="#dccbae" aria-hidden="true"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21.1l1.4-7L2 9.3l7-.8z"></path></svg><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="hs6"><stop offset="60%" stop-color="#dccbae"></stop><stop offset="60%" stop-color="rgba(246,244,239,.25)"></stop></linearGradient></defs><path fill="url(#hs6)" d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21.1l1.4-7L2 9.3l7-.8z"></path></svg></span></dt><dd style="margin: 6px 0 0; font-size: 13.5px; line-height: 1.5; color: #cbcfcb;">on Google, 65 reviews<sc-if value="{{showCro}}" hint-placeholder-val="{{ false }}"><span class="cro">A5</span></sc-if></dd></div>
+      <div><dt class="disp" style="font-size: 31.5px; font-weight: 300;">4 series</dt><dd style="margin: 6px 0 0; font-size: 13.5px; line-height: 1.5; color: #cbcfcb;">on display, from NOK 89,000</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- Signature moment: the dive from snow into warm water -->
+<section class="dive on-dark" aria-label="From the cold into the warm water" style="position: relative; overflow: clip; height: 1500px; background: var(--ink); color: var(--bone);">
+  <div class="dive-stage" style="position: sticky; top: 0; height: 900px; overflow: hidden;">
+    <img decoding="async" class="ph dive-img" src="/_blob/1ab3902ebfc6e83846e40b2be547a865" alt="An outdoor hot tub seen from above, surrounded by deep snow" loading="lazy" style="position: absolute; inset: 0; transform-origin: 45% 54%;">
+    <div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(30,36,34,.8) 0%, rgba(30,36,34,.4) 45%, rgba(30,36,34,0) 72%);"></div>
+    <div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(30,36,34,.92) 0%, rgba(30,36,34,0) 26%, rgba(30,36,34,0) 70%, rgba(30,36,34,.95) 100%);"></div>
+    <div class="dive-warm" aria-hidden="true" style="position: absolute; inset: 0; background: radial-gradient(80% 80% at 50% 50%, rgba(23,92,120,.55) 0%, rgba(30,36,34,.88) 100%); opacity: 0;"></div>
+    <div class="wrap dive-copy" style="position: relative; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 20px;">
+      <span class="kicker">Outside</span>
+      <p class="disp" style="margin: 0; font-size: clamp(2.18rem, 4.7vw, 4.7rem); line-height: .98; font-weight: 300; max-width: 780px;">Snow, wind and <span style="font-style: italic; color: #b9d2da;">long dark evenings.</span></p>
+    </div>
+  </div>
+  <div class="dive-seam" aria-hidden="true"></div>
+  <div class="wrap dive-end" style="position: relative; z-index: 2; height: 720px; display: flex; gap: 40px; align-items: center; justify-content: flex-end;">
+    <div class="dive-photo" aria-hidden="true"><img decoding="async" class="ph tub-breath" src="/_blob/3430dd99111b05a4e4649c58af0252ea" alt="" loading="lazy" style="object-position: 45% 60%;"><span class="glint"></span><span class="vapor v1"></span><span class="vapor v2"></span><span class="vapor v3"></span><span class="vapor v4"></span></div>
+    <div style="position: relative; order: 2; flex: 0 1 500px; min-width: 0; display: flex; flex-direction: column; gap: 28px;">
+      <div class="head">
+        <span class="kicker">Inside</span>
+        <h2 class="h2" style="font-size: clamp(2.8rem, 5.4vw, 5.2rem);">Step in.<br><span style="font-style: italic; color: var(--gold-hi);">Everything slows down.</span></h2>
+      </div>
+      <p class="lead" style="font-size: 17px; max-width: 520px;">Outside, the cold. Inside, 39 °C of quiet. The evening soak doesn't stop when the snow arrives.</p>
+    </div>
+    <span aria-hidden="true" class="disp hide-sm deg39" style="position: relative; order: 1; flex: none; font-size: clamp(7rem, 16.5vw, 16.5rem); line-height: .8; font-weight: 300; color: transparent; -webkit-text-stroke: 1.5px rgba(220,203,174,.9); letter-spacing: -.04em;">39°</span>
+  </div>
+</section>
+
+<!-- 05 Finder (floating dark panel) -->
+<div>
+<section id="finder" aria-labelledby="finder-h" class="on-dark panel" style="background: var(--ink); color: var(--bone); scroll-margin-top: 90px;">
+  <div class="sky cine" aria-hidden="true">
+    <img class="cine-img" src="/_blob/6c65a1ca6f417cda306cf774f17f35c6" alt="" loading="lazy" decoding="async">
+    <div class="cine-grade"></div>
+    <div class="cine-warm"></div>
+    <span class="cine-mist m1"></span><span class="cine-mist m2"></span>
+    <sc-if value="{{snowSeason}}" hint-placeholder-val="{{ true }}"><div class="snow fsnow"><i style="left: 30.1%; width: 5.0px; height: 5.0px; opacity: 0.77; animation-duration: 10.0s; animation-delay: -13.6s;"></i><i style="left: 31.6%; width: 6.0px; height: 6.0px; opacity: 0.72; animation-duration: 17.0s; animation-delay: -1.1s;"></i><i style="left: 1.8%; width: 6.0px; height: 6.0px; opacity: 0.85; animation-duration: 13.7s; animation-delay: -11.6s;"></i><i style="left: 19.7%; width: 6.0px; height: 6.0px; opacity: 0.84; animation-duration: 19.3s; animation-delay: -18.8s;"></i><i style="left: 10.8%; width: 3.0px; height: 3.0px; opacity: 0.84; animation-duration: 18.0s; animation-delay: -17.2s;"></i><i style="left: 61.1%; width: 3.5px; height: 3.5px; opacity: 0.91; animation-duration: 13.4s; animation-delay: -18.5s;"></i><i style="left: 7.8%; width: 3.0px; height: 3.0px; opacity: 0.57; animation-duration: 16.9s; animation-delay: -19.9s;"></i><i style="left: 40.6%; width: 3.0px; height: 3.0px; opacity: 0.61; animation-duration: 15.9s; animation-delay: -16.5s;"></i><i style="left: 3.3%; width: 4.5px; height: 4.5px; opacity: 0.72; animation-duration: 18.4s; animation-delay: -2.6s;"></i><i style="left: 10.7%; width: 4.5px; height: 4.5px; opacity: 0.70; animation-duration: 11.5s; animation-delay: -16.9s;"></i><i style="left: 97.6%; width: 3.0px; height: 3.0px; opacity: 0.70; animation-duration: 14.9s; animation-delay: -14.6s;"></i><i style="left: 37.7%; width: 3.5px; height: 3.5px; opacity: 0.94; animation-duration: 19.6s; animation-delay: -12.5s;"></i><i style="left: 78.2%; width: 6.0px; height: 6.0px; opacity: 0.89; animation-duration: 13.6s; animation-delay: -15.7s;"></i><i style="left: 36.3%; width: 4.5px; height: 4.5px; opacity: 0.82; animation-duration: 12.8s; animation-delay: -9.7s;"></i><i style="left: 65.0%; width: 3.5px; height: 3.5px; opacity: 0.76; animation-duration: 10.1s; animation-delay: -10.9s;"></i><i style="left: 64.7%; width: 3.5px; height: 3.5px; opacity: 0.86; animation-duration: 13.5s; animation-delay: -12.9s;"></i><i style="left: 87.0%; width: 3.5px; height: 3.5px; opacity: 0.81; animation-duration: 19.8s; animation-delay: -19.1s;"></i><i style="left: 93.7%; width: 5.0px; height: 5.0px; opacity: 0.71; animation-duration: 16.9s; animation-delay: -14.4s;"></i><i style="left: 66.6%; width: 3.5px; height: 3.5px; opacity: 0.69; animation-duration: 16.2s; animation-delay: -15.5s;"></i><i style="left: 44.1%; width: 3.0px; height: 3.0px; opacity: 0.79; animation-duration: 12.2s; animation-delay: -13.7s;"></i><i style="left: 5.4%; width: 3.5px; height: 3.5px; opacity: 0.56; animation-duration: 13.2s; animation-delay: -3.6s;"></i><i style="left: 61.2%; width: 3.5px; height: 3.5px; opacity: 0.77; animation-duration: 12.4s; animation-delay: -18.1s;"></i><i style="left: 11.5%; width: 4.0px; height: 4.0px; opacity: 0.87; animation-duration: 13.7s; animation-delay: -0.7s;"></i><i style="left: 58.1%; width: 3.5px; height: 3.5px; opacity: 0.93; animation-duration: 18.2s; animation-delay: -8.4s;"></i><i style="left: 59.6%; width: 6.0px; height: 6.0px; opacity: 0.75; animation-duration: 19.6s; animation-delay: -19.4s;"></i><i style="left: 10.8%; width: 3.5px; height: 3.5px; opacity: 0.75; animation-duration: 16.2s; animation-delay: -2.8s;"></i><i style="left: 22.6%; width: 6.0px; height: 6.0px; opacity: 0.63; animation-duration: 19.7s; animation-delay: -7.6s;"></i><i style="left: 98.1%; width: 4.5px; height: 4.5px; opacity: 0.72; animation-duration: 14.2s; animation-delay: -6.4s;"></i><i style="left: 12.2%; width: 3.0px; height: 3.0px; opacity: 0.78; animation-duration: 14.4s; animation-delay: -5.9s;"></i><i style="left: 27.4%; width: 4.5px; height: 4.5px; opacity: 0.92; animation-duration: 17.8s; animation-delay: -4.9s;"></i><i style="left: 60.8%; width: 3.5px; height: 3.5px; opacity: 0.71; animation-duration: 16.4s; animation-delay: -12.1s;"></i><i style="left: 53.3%; width: 3.0px; height: 3.0px; opacity: 0.65; animation-duration: 13.0s; animation-delay: -10.6s;"></i></div></sc-if>
+    <div class="cine-fade"></div>
+  </div>
+  <div class="wrap sec" style="position: relative; display: flex; flex-wrap: wrap; gap: 64px; align-items: center;">
+    <div class="rv head" style="flex: 1 1 360px; min-width: 0;">
+      <span class="kicker"><b>01</b>Not sure what you need?</span>
+      <h2 id="finder-h" class="h2">Find your tub<br><span style="font-style: italic; color: var(--gold-hi);">in one minute.</span><sc-if value="{{showCro}}" hint-placeholder-val="{{ false }}"><span class="cro">A6</span></sc-if></h2>
+      <p class="lead" style="max-width: 420px;">Three questions, one suggestion. You don't need to know a single model name.</p>
+      <div style="display: flex; gap: 8px; align-items: center; margin-top: 4px;" aria-hidden="true">
+        <span style="height: 3px; width: 56px; border-radius: 2px; background: {{p1}};"></span>
+        <span style="height: 3px; width: 56px; border-radius: 2px; background: {{p2}};"></span>
+        <span style="height: 3px; width: 56px; border-radius: 2px; background: {{p3}};"></span>
+        <span style="margin-left: 10px; font-size: 13px; font-weight: 700; color: #c8ccc8;">{{answered}} of 3</span>
+      </div>
+    </div>
+    <div class="rv" style="flex: 1.6 1 560px; min-width: 0; background: var(--bone); color: var(--text); border-radius: var(--r-lg); padding: 36px; display: flex; flex-direction: column; gap: 28px; box-shadow: 0 50px 100px -50px rgba(0,0,0,.8);">
+      <sc-for list="{{questions}}" as="q" hint-placeholder-count="3">
+        <div role="group" aria-label="{{q.label}}">
+          <div style="display: flex; gap: 14px; align-items: baseline; margin-bottom: 14px;"><span class="disp" style="font-size: 18.5px; font-style: italic; color: var(--bronze);">0{{q.num}}</span><span class="disp" style="font-size: 20px; font-weight: 400; color: var(--ink); letter-spacing: -.015em;">{{q.label}}</span></div>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <sc-for list="{{q.opts}}" as="o" hint-placeholder-count="3">
+              <button type="button" class="chip" aria-pressed="{{o.sel}}" onClick="{{o.pick}}" style="background: {{o.bg}}; color: {{o.fg}}; border-color: {{o.bd}};">{{o.label}}</button>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+      <sc-if value="{{rec}}" hint-placeholder-val="{{ false }}">
+        <div class="on-dark" style="border-radius: var(--r-md); background: var(--ink); color: var(--bone); padding: 28px; display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: space-between;">
+          <div style="flex: 1 1 280px; min-width: 0;">
+            <span class="kicker">Our suggestion</span>
+            <div class="disp" style="font-size: 33px; font-weight: 300; margin-top: 10px;">{{rec.name}}</div>
+            <div style="font-size: 15px; font-weight: 700; margin-top: 4px; color: var(--gold-hi);">{{rec.price}}</div>
+            <p style="margin: 10px 0 0; font-size: 15px; line-height: 1.65; color: #c8ccc8;">{{rec.why}} {{rec.extra}}</p>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 10px; flex: 0 1 240px; align-items: flex-start;">
+            <a class="btn btn-gold plain" href="#book" onClick="{{rec.see}}" style="width: 100%;">Request a visit</a>
+            <a class="tlink" href="#contact" onClick="{{rec.quote}}">Get a price on {{rec.short}}</a>
+            <button type="button" class="tlink" onClick="{{resetQuiz}}" style="font-weight: 600; opacity: .8;">Start again</button>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- 02 Models and prices: series selector -->
+<section id="models" aria-labelledby="models-h" class="sec models-sec" style="background: var(--sand); scroll-margin-top: 90px;">
+  <div class="wrap" style="position: relative; display: flex; flex-direction: column; gap: 64px;">
+    <div class="rv" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 32px;">
+      <div class="head" style="max-width: 640px;">
+        <span class="kicker"><b>02</b>Models and prices</span>
+        <h2 id="models-h" class="h2">Four series.<br><span class="soft">Clear prices.</span><sc-if value="{{showCro}}" hint-placeholder-val="{{ false }}"><span class="cro">A6</span><span class="cro">A7</span></sc-if></h2>
+        <p class="lead">Every series is on the floor in Sandnes. Filter by how many people will share the tub.</p>
+      </div>
+      <div role="group" aria-label="Number of seats" style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center;">
+        <span style="font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); margin-right: 8px;">Seats</span>
+        <sc-for list="{{seatOpts}}" as="s" hint-placeholder-count="4">
+          <button type="button" class="chip" aria-pressed="{{s.sel}}" onClick="{{s.pick}}" style="background: {{s.bg}}; color: {{s.fg}}; border-color: {{s.bd}};">{{s.label}}</button>
+        </sc-for>
+      </div>
+    </div>
+    <div class="spanels rv" role="group" aria-label="Choose a series">
+      <sc-for list="{{seriesList}}" as="x" hint-placeholder-count="4">
+        <div class="{{x.cls}}" style="opacity: {{x.op}};">
+          <button type="button" class="sp-hit" aria-pressed="{{x.sel}}" onClick="{{x.pick}}" aria-label="{{x.name}}: {{x.prefix}} {{x.price}}"></button>
+          <span class="sp-glow" aria-hidden="true"></span>
+          <img decoding="async" class="sp-tub" src="{{x.img}}" alt="{{x.alt}}" loading="lazy">
+          <div class="sp-top"><span class="cap">{{x.n}}</span><span class="sp-tag">{{x.tag}}</span></div>
+          <div class="sp-closed" aria-hidden="true"><span class="disp sp-vname">{{x.name}}</span><span class="sp-vprice">{{x.price}}</span></div>
+          <div class="sp-open">
+            <span class="cap" style="color: var(--gold-hi);">{{x.brand}}</span>
+            <span class="disp sp-name">{{x.name}}</span>
+            <p class="sp-desc">{{x.desc}}</p>
+            <span class="sp-meta">{{x.seats}} · {{x.models}}</span>
+            <div class="sp-price"><span class="cap" style="color: #c8ccc8;">{{x.prefix}}</span><span class="disp">{{x.price}}</span><span class="sp-was">{{x.was}}</span></div>
+            <div class="sp-cta">
+              <a class="btn btn-gold" href="#book" onClick="{{x.see}}">See it in store <span class="ic" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
+              <a class="tlink" href="#contact" onClick="{{x.quote}}" style="color: var(--bone);">Request a price</a>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+    <div class="finishes rv">
+      <div style="display: flex; flex-direction: column; gap: 8px; max-width: 360px;">
+        <span class="cap">Finishes</span>
+        <span class="disp" style="font-size: 26px; line-height: 1.15; color: var(--ink);">Arctic Spas shell colours</span>
+        <span style="font-size: 13px; line-height: 1.6; color: var(--muted);">Shown from Arctic Spas product images. Availability varies by series, so see the real samples in store.</span>
+      </div>
+      <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 28px;">
+        <li class="sw"><img decoding="async" src="/_blob/6eb06dfba3d6d33fc2cebb9f4dff37f4" alt="" loading="lazy">Dakota</li>
+        <li class="sw"><img decoding="async" src="/_blob/b5c4d2de09832bbf31a6412e97feb0fd" alt="" loading="lazy">Kalahari</li>
+        <li class="sw"><img decoding="async" src="/_blob/4170e6787a875d5d9dc8a24b7e1c9711" alt="" loading="lazy">Espresso</li>
+        <li class="sw"><img decoding="async" src="/_blob/c69707a4edaae83517930704718e3be1" alt="" loading="lazy">Platinum Swirl</li>
+        <li class="sw"><img decoding="async" src="/_blob/f016683fdd3aa2baa23197bad0ba4b15" alt="" loading="lazy">Odyssey</li>
+      </ul>
+    </div>
+
+    <p style="margin: 0; font-size: 13px; line-height: 1.6; color: var(--muted);">Prices taken from polarbad.no on 23.11.2026 (campaign prices; "from" prices are for the smallest model in each series).<sc-if value="{{showCro}}" hint-placeholder-val="{{ false }}"><span class="cro">A10</span></sc-if></p>
+  </div>
+</section>
+
+<!-- Moments: sideways strip of real-life scenarios -->
+<section aria-labelledby="moments-h" style="background: var(--bone); padding-bottom: 152px;">
+  <div class="manifesto on-dark">
+  <img decoding="async" class="ph settle" src="/_blob/ed12a4e06cfc0ea7b715a03caee97bdd" alt="" aria-hidden="true" loading="lazy" style="position: absolute; inset: 0; object-position: 40% 62%;">
+  <div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(270deg, rgba(30,36,34,.9) 0%, rgba(30,36,34,.66) 40%, rgba(30,36,34,.08) 70%, rgba(30,36,34,.15) 100%), linear-gradient(0deg, var(--bone) 0%, rgba(30,36,34,0) 18%);"></div>
+  <div class="wrap rv mf-copy" style="position: relative; display: flex; flex-direction: column; align-items: flex-end; text-align: right; gap: 30px;">
+    <span aria-hidden="true" style="width: 1px; height: 96px; background: var(--gold);"></span>
+    <h2 id="moments-h" class="disp" style="margin: 0; font-size: clamp(1.85rem, 3.53vw, 3.36rem); line-height: 1.14; font-weight: 300; color: var(--bone); max-width: 560px;">We don't sell hot tubs. <span style="font-style: italic; color: var(--gold-hi);">We sell the quiet twenty minutes at the end of the day that belong only to you.</span></h2>
+    <span class="cap" style="color: #ebe8e1;">Four places to slow down · Scroll sideways <span class="nudge" aria-hidden="true">→</span></span>
+  </div>
+  </div>
+  <div class="moments-wrap">
+  <ul class="moments" tabindex="0" aria-label="Moments with a hot tub">
+    <li><figure><div class="zoom m-img"><img decoding="async" class="ph" src="/_blob/0f39fee171b313ffe38085305e88f542" alt="" loading="lazy" style="object-position: 50% 35%;"></div><figcaption><span class="cap">01</span><span class="disp">At the summer cabin</span></figcaption></figure></li>
+    <li><figure><div class="zoom m-img"><img decoding="async" class="ph" src="/_blob/3705e24b62b34cf2c29d6220d68c5a63" alt="" loading="lazy"></div><figcaption><span class="cap">02</span><span class="disp">In the mountains</span></figcaption></figure></li>
+    <li><figure><div class="zoom m-img"><img decoding="async" class="ph" src="/_blob/e5174c4218af7955093603db46740944" alt="" loading="lazy" style="object-position: 50% 70%;"></div><figcaption><span class="cap">03</span><span class="disp">With your partner</span></figcaption></figure></li>
+    <li><figure><div class="zoom m-img"><img decoding="async" class="ph" src="/_blob/35ba36e9adcbe7dc72a9eaec2de1b05f" alt="" loading="lazy"></div><figcaption><span class="cap">04</span><span class="disp">With friends</span></figcaption></figure></li>
+  </ul>
+  </div>
+</section>
+
+<!-- 04 Why Polarbad: product anatomy -->
+<section id="why" aria-labelledby="why-h" class="sec why-sec" style="background: var(--mist); scroll-margin-top: 90px;">
+  <div class="wrap" style="display: flex; flex-direction: column; gap: 64px;">
+    <div class="rv head" style="max-width: 820px;">
+      <span class="kicker"><b>03</b>Why Polarbad</span>
+      <h2 id="why-h" class="h2">Built for the cold.<br><span class="soft">Cheap to run. Easy to service.</span></h2>
+    </div>
+    <div class="feat rv">
+      <ol class="feat-list">
+        <sc-for list="{{anatomy}}" as="p" hint-placeholder-count="6">
+          <li class="{{p.cls}}">
+            <button type="button" class="frow" aria-expanded="{{p.sel}}" onClick="{{p.pick}}">
+              <span class="fn">{{p.n}}</span>
+              <span class="disp ft">{{p.title}}</span>
+              <span class="fa" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+            </button>
+            <div class="fx"><p>{{p.text}}</p></div>
+          </li>
+        </sc-for>
+      </ol>
+      <div class="feat-stage">
+        <sc-for list="{{anatomy}}" as="p" hint-placeholder-count="6">
+          <figure class="{{p.vcls}}" aria-hidden="{{p.hid}}">
+            <sc-if value="{{p.isImg}}" hint-placeholder-val="{{ true }}"><img decoding="async" class="fv-img" src="{{p.img}}" alt="{{p.alt}}" loading="lazy" style="object-position: {{p.pos}};"></sc-if>
+            <sc-if value="{{p.isProd}}" hint-placeholder-val="{{ false }}"><img decoding="async" class="fv-prod" src="{{p.img}}" alt="{{p.alt}}" loading="lazy"></sc-if>
+            <sc-if value="{{p.isStat}}" hint-placeholder-val="{{ false }}"><div class="fv-stat"><span class="cap" style="color: var(--gold-hi);">Running costs</span><span class="disp fv-num">NOK 150–300</span><span class="fv-unit">a month with normal use</span><span class="fv-fine">Twice a week with water at 39 °C. Excluding grid fees and electricity tax. Polarbad’s own figures.</span></div></sc-if>
+            <figcaption class="fv-cap"><span class="fv-idx">{{p.n}}<i>/06</i></span><span class="disp">{{p.proof}}</span></figcaption>
+          </figure>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Peace of mind: photo with overlapping commitments panel -->
+<section aria-labelledby="trust-h" style="background: var(--mist); padding-bottom: 152px;">
+  <div class="on-dark peace-hero" style="position: relative; height: 680px; overflow: hidden; background: var(--ink);">
+    <img decoding="async" class="ph settle" src="/_blob/7b4c1a624c461534efc0294aaed6090b" alt="Two people relaxing in a hot tub on a garden deck, framed by green leaves" loading="lazy" style="position: absolute; inset: 0; object-position: 50% 60%;">
+    <div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(30,36,34,.88) 0%, rgba(30,36,34,.5) 45%, rgba(30,36,34,.15) 100%);"></div>
+    <div class="wrap" style="position: relative; padding-top: 120px;">
+      <div class="head rv" style="max-width: 900px;">
+        <span class="kicker">Peace of mind</span>
+        <h2 id="trust-h" class="h2">What you can count on.<br><span class="soft">Before and long after you buy.</span></h2>
+      </div>
+    </div>
+  </div>
+  <div class="wrap" style="position: relative; margin-top: -230px;">
+    <div class="peace-panel rv">
+    <ul class="trust">
+      <li>
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#7b5e3f" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.2-7 10-4-1.8-7-5.5-7-10V6z"></path><path d="M9 12l2 2 4-4"></path></svg>
+        <h3 class="disp">Lifetime shell warranty</h3>
+        <span class="cap">Arctic Spas</span>
+      </li>
+      <li>
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#7b5e3f" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 6.5a4 4 0 0 0-5.3 5.3L4 17l3 3 5.2-5.2a4 4 0 0 0 5.3-5.3l-2.5 2.5-2.5-.5-.5-2.5z"></path></svg>
+        <h3 class="disp">Parts and labour covered</h3>
+        <span class="cap">All series</span>
+      </li>
+      <li>
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#7b5e3f" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h11v9H3z"></path><path d="M14 10h4l3 3v3h-7z"></path><circle cx="7" cy="17.5" r="1.6"></circle><circle cx="17" cy="17.5" r="1.6"></circle></svg>
+        <h3 class="disp">Delivered and installed</h3>
+        <span class="cap">All of Norway</span>
+      </li>
+      <li>
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#7b5e3f" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z"></path><circle cx="12" cy="9" r="2.5"></circle></svg>
+        <h3 class="disp">Local service at Forus</h3>
+        <span class="cap">Sandnes</span>
+      </li>
+    </ul>
+      <div style="display: flex; justify-content: space-between; align-items: center; gap: 16px 32px; flex-wrap: wrap; margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--line);">
+        <p style="margin: 0; max-width: 620px; font-size: 13px; line-height: 1.6; color: var(--muted);">Warranty terms differ by series and component. Ask the store for the full terms for the model you're considering.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 Customer story: one genuine story, told properly -->
+<section id="stories" aria-labelledby="stories-h" class="story">
+  <div class="story-img">
+    <div class="zoom" style="position: absolute; inset: 0;">
+      <img decoding="async" class="ph" src="/_blob/40561463029cd06076f81332147291d0" alt="Anne Grethe relaxing in her Polarbad hot tub in the garden at home" loading="lazy" style="object-position: 40% 55%;">
+    </div>
+    <div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(0deg, rgba(30,36,34,.55) 0%, rgba(30,36,34,0) 35%);"></div>
+    <span class="cap" style="position: absolute; left: 32px; bottom: 28px; color: #eeebe4;">Riskatun, near Sandnes</span>
+    <div class="story-inset hide-sm"><img decoding="async" class="ph" src="/_blob/2771952e0ec18a444d032ba8b74ce54c" alt="Anne Grethe smiling in her hot tub" loading="lazy"></div>
+  </div>
+  <div class="story-copy">
+    <span class="kicker rv"><b>04</b>A customer story</span>
+    <figure class="rv" style="margin: 0; display: flex; flex-direction: column; gap: 26px;">
+      <span class="disp" aria-hidden="true" style="font-size: 168px; line-height: .5; height: 74px; color: var(--gold);">“</span>
+      <blockquote id="stories-h" class="disp" style="margin: 0; font-size: clamp(2.5rem, 4.6vw, 4.6rem); line-height: 1.02; font-weight: 300; font-style: italic; color: var(--ink);">My hot tub has truly worked wonders.</blockquote>
+      <figcaption style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
+        <span class="disp" style="font-size: 24px; color: var(--ink);">Anne Grethe</span>
+        <span aria-hidden="true" style="width: 28px; height: 1px; background: var(--bronze);"></span>
+        <span class="cap">Polarbad customer for almost 20 years</span>
+      </figcaption>
+    </figure>
+    <figure class="expert rv">
+      <span class="cap">An expert view</span>
+      <blockquote style="margin: 0; font-size: 15.5px; line-height: 1.75; color: var(--body); max-width: 560px;">“As a chiropractor, I see people with back and joint pain every day. Regular use of warm baths and hot tubs can help relieve that pain in everyday life.”</blockquote>
+      <figcaption style="font-size: 13px; color: var(--muted);">Espen Refsland, chiropractor, Eureka Kiropraktikk</figcaption>
+    </figure>
+    <div class="rv" style="display: flex; justify-content: space-between; align-items: center; gap: 12px 24px; flex-wrap: wrap; padding-top: 22px; border-top: 1px solid var(--line);">
+      <span style="font-size: 13px; color: var(--muted);">Quotes translated from Norwegian. Published on polarbad.no.</span>
+      <a class="tlink" href="https://www.polarbad.no/kampanje/helsegevinst">Read the full story</a>
+    </div>
+  </div>
+</section>
+
+<!-- 07 Store: the address as a landmark -->
+<section id="store" aria-labelledby="store-h" class="sec" style="background: var(--sand); scroll-margin-top: 90px; overflow: hidden;">
+  <div class="wrap" style="display: flex; flex-direction: column; gap: 56px;">
+    <div class="rv" style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px 48px;">
+    <div class="head" style="max-width: 820px;">
+      <span class="kicker"><b>05</b>The store at Forus<sc-if value="{{showCro}}" hint-placeholder-val="{{ false }}"><span class="cro">A3</span></sc-if></span>
+      <h2 id="store-h" class="h2">Come by. Sit down.<br><span class="soft">Ask us anything.</span></h2>
+    </div>
+    <a href="https://g.page/polarbadsandnes?share" style="display: inline-flex; align-items: center; gap: 10px; font-size: 16px; color: var(--ink); text-decoration: none; padding-bottom: 6px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z"></path><circle cx="12" cy="9" r="2.5"></circle></svg>Sjøveien 4, 4315 Sandnes</a>
+    </div>
+    <div class="mosaic rv">
+      <div class="zoom" style="grid-column: span 4; grid-row: span 3; border-radius: var(--r-lg);"><img decoding="async" class="ph grade-warm" src="/_blob/5681c7e0b8b755628f49d78b5e3d81d7" alt="The Polarbad showroom in Sandnes: a large bright hall with rows of hot tubs on display" loading="lazy"></div>
+      <div class="zoom" style="grid-column: span 2; grid-row: span 3; border-radius: var(--r-lg);"><img decoding="async" class="ph grade-warm" src="/_blob/2a8a4dacf5f11e426f1b6d46fa9bb953" alt="The Polarbad building at Sjøveien 4 in Sandnes, with large glass windows" loading="lazy"></div>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 56px;">
+      <div class="rv store-info" style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 26px;">
+        <p style="margin: 0; font-size: 16px; line-height: 1.75; color: var(--body); max-width: 420px;">The former Sven Kvia building at Forus. Easy access from the motorway.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 16px 28px; align-items: center;">
+          <a class="btn btn-dark" href="https://g.page/polarbadsandnes?share">Get directions
+            <span class="ic" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+          </a>
+          <button type="button" class="tlink" onClick="{{toggleTour}}" aria-expanded="{{tour}}">{{tourLabel}}<sc-if value="{{showCro}}" hint-placeholder-val="{{ false }}"><span class="cro">A8</span></sc-if></button>
+        </div>
+        <sc-if value="{{tour}}" hint-placeholder-val="{{ false }}">
+          <div style="height: 220px; border-radius: var(--r-md); background: var(--ink); color: #c8ccc8; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; text-align: center; padding: 20px;">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#dccbae" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"></path><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"></path></svg>
+            <strong style="color: var(--bone);">3D tour (Matterport)</strong>
+            <span style="font-size: 14px;">Loads only when a visitor clicks, so the page stays fast on mobile.</span>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+    <div class="team rv">
+      <div style="display: flex; flex-direction: column; gap: 18px;">
+        <span class="cap">The team at Forus</span>
+        <h3 class="disp" style="margin: 0; font-size: clamp(1.68rem, 2.52vw, 2.35rem); line-height: 1.1; font-weight: 400; color: var(--ink);">Five people. <span style="font-style: italic; color: var(--bronze);">One team, from first visit to service.</span></h3>
+        <p style="margin: 0; font-size: 16px; line-height: 1.75; color: var(--body); max-width: 460px;">The people who advise you in the showroom also work on the technical side. The answers you get come from hands-on experience with installation and service.</p>
+        <p style="margin: 0; font-size: 13px; color: var(--muted);">Polarbad Sandnes is run by Arctic Spas Massasjebad AS, org. no. 991 271 988.</p>
+      </div>
+      <ul class="tgrid">
+        <li class="tm"><div class="tm-img"><img src="/_blob/729a5142fdf2ad4a1ea69f780c04b1fd" alt="Leif A. Wiik" loading="lazy" decoding="async"></div><span class="disp tm-name">Leif A. Wiik</span><span class="tm-role">Managing director</span><span class="tm-area">Sales and technical</span></li>
+        <li class="tm"><div class="tm-img"><img src="/_blob/233592cee9fff2511aaadaed169db3d7" alt="Arne Henning Lothe" loading="lazy" decoding="async"></div><span class="disp tm-name">Arne Henning Lothe</span><span class="tm-role">Chair of the board</span><span class="tm-area">Sales and technical</span></li>
+        <li class="tm"><div class="tm-img"><img src="/_blob/43b254dcc32effd1f91eaf04f9817e77" alt="Elisabeth Lothe" loading="lazy" decoding="async"></div><span class="disp tm-name">Elisabeth Lothe</span><span class="tm-role">Sales adviser</span><span class="tm-area">Sales</span></li>
+        <li class="tm"><div class="tm-img"><img src="/_blob/922362358f5d2e4dc747ba45db8cac4d" alt="Trond Petter Sjursen" loading="lazy" decoding="async"></div><span class="disp tm-name">Trond Petter Sjursen</span><span class="tm-role">Technician</span><span class="tm-area">Technical and sales</span></li>
+        <li class="tm"><div class="tm-img"><img src="/_blob/7e97dc72d8c08359a2cb25d4ed2832a4" alt="Samek Poprawa" loading="lazy" decoding="async"></div><span class="disp tm-name">Samek Poprawa</span><span class="tm-role">Technician</span><span class="tm-area">Technical</span></li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- 09 FAQ -->
+<section aria-labelledby="faq-h" class="sec" style="background: var(--bone);">
+  <div class="wrap" style="display: flex; flex-direction: column; align-items: center; gap: 56px; max-width: 1000px;">
+    <div class="rv head" style="align-items: center; text-align: center;">
+      <span class="kicker"><b>06</b>Questions and answers<sc-if value="{{showCro}}" hint-placeholder-val="{{ false }}"><span class="cro">A10</span></sc-if></span>
+      <h2 id="faq-h" class="h2" style="font-size: clamp(2.3rem, 3.8vw, 3.6rem);">What people ask<br><span class="soft">before they buy.</span></h2>
+      <p style="margin: 0; font-size: 16px; color: var(--body);">Can't find the answer? Call <a href="tel:+4797672000" style="font-weight: 700;">+47 976 72 000</a>.</p>
+    </div>
+    <div class="rv" style="width: 100%; border-top: 1px solid rgba(30,36,34,.16);">
+      <sc-for list="{{faqs}}" as="f" hint-placeholder-count="6">
+        <div style="border-bottom: 1px solid rgba(30,36,34,.16);">
+          <button type="button" class="faqbtn" aria-expanded="{{f.open}}" onClick="{{f.toggle}}"><span>{{f.q}}</span><span aria-hidden="true" style="flex: none; width: 42px; height: 42px; border-radius: 0; border: 0; display: inline-flex; align-items: center; justify-content: center; font-family: 'Mulish', sans-serif; font-size: 26px; font-weight: 300; color: {{f.signFg}}; background: {{f.signBg}};">{{f.sign}}</span></button>
+          <sc-if value="{{f.open}}" hint-placeholder-val="{{ false }}"><p style="margin: 0 0 28px; font-size: 16px; line-height: 1.8; color: var(--body); max-width: 660px;">{{f.a}}</p></sc-if>
+        </div>
+      </sc-for>
+    </div>
+    <div class="guides rv">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; padding-top: 8px;"><span class="cap">More tips and advice in our guides</span><a class="tlink" href="https://www.polarbad.no/verdt-a-vite">All guides</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 Contact -->
+<section id="contact" aria-labelledby="contact-h" class="sec on-dark contact-dark" style="position: relative; background: var(--ink); color: var(--bone); scroll-margin-top: 90px; overflow: hidden;">
+  <img decoding="async" class="ph grade-warm" src="/_blob/d45ec4421de6e274c57476ffe62d4b3f" alt="" aria-hidden="true" loading="lazy" style="position: absolute; inset: 0;">
+  <div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(30,36,34,.95) 0%, rgba(30,36,34,.8) 42%, rgba(30,36,34,.38) 100%), radial-gradient(50% 60% at 78% 40%, rgba(220,203,174,.16) 0%, rgba(220,203,174,0) 100%);"></div>
+  <div class="wrap" style="position: relative; display: flex; flex-wrap: wrap; gap: 72px; align-items: flex-start;">
+    <div class="rv head" style="flex: 1 1 360px; min-width: 0;">
+      <span class="kicker"><b>07</b>Get a quote<sc-if value="{{showCro}}" hint-placeholder-val="{{ false }}"><span class="cro">A2</span></sc-if></span>
+      <h2 id="contact-h" class="h2">Tell us a little.<br><span class="soft">We'll call you.</span></h2>
+      <p class="lead" style="font-size: 17px;">Four fields. No model names. An adviser in Sandnes will get in touch.</p>
+      <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; font-size: 15px; color: var(--text);">
+        <li style="display: flex; gap: 16px; align-items: baseline; padding: 15px 0; border-top: 1px solid var(--line);"><span class="dot" aria-hidden="true"></span>No-obligation quote</li>
+        <li style="display: flex; gap: 16px; align-items: baseline; padding: 15px 0; border-top: 1px solid var(--line);"><span class="dot" aria-hidden="true"></span>Advice on placement, power and groundwork</li>
+        <li style="display: flex; gap: 16px; align-items: baseline; padding: 15px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);"><span class="dot" aria-hidden="true"></span>Local delivery, installation and service</li>
+      </ul>
+    </div>
+    <div class="rv" style="flex: 1.4 1 520px; min-width: 0; background: var(--paper); color: var(--text); border-radius: var(--r-lg); padding: 44px; border: 1px solid var(--line); box-shadow: var(--shadow);">
+      <sc-if value="{{notSent}}" hint-placeholder-val="{{ true }}">
+        <div style="display: flex; flex-direction: column; gap: 22px;">
+          <div>
+            <div style="font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px;">What are you interested in?</div>
+            <div role="group" aria-label="Interest" style="display: flex; flex-wrap: wrap; gap: 8px;">
+              <sc-for list="{{interests}}" as="i" hint-placeholder-count="4">
+                <button type="button" class="chip" aria-pressed="{{i.sel}}" onClick="{{i.pick}}" style="background: {{i.bg}}; color: {{i.fg}}; border-color: {{i.bd}};">{{i.label}}</button>
+              </sc-for>
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 16px;">
+            <label class="field">Name *<input type="text" autocomplete="name" value="{{fName}}" onChange="{{setFName}}"></label>
+            <label class="field">Mobile *<input type="tel" autocomplete="tel" inputmode="tel" value="{{fPhone}}" onChange="{{setFPhone}}"></label>
+            <label class="field">Postcode<input type="text" inputmode="numeric" autocomplete="postal-code" value="{{fPost}}" onChange="{{setFPost}}"></label>
+            <label class="field">Email (optional)<input type="email" autocomplete="email" value="{{fEmail}}" onChange="{{setFEmail}}"></label>
+          </div>
+          <label class="field">Anything we should know? (optional)<textarea rows="3" value="{{fMsg}}" onChange="{{setFMsg}}" placeholder="E.g. mountain cabin, room for 6, delivery wanted in March"></textarea></label>
+          <label class="consent" style="display: flex; gap: 12px; align-items: flex-start; font-size: 14px; line-height: 1.55; color: var(--body); cursor: pointer;"><input type="checkbox" checked="{{fConsent}}" onChange="{{toggleConsent}}" style="width: 22px; height: 22px; margin-top: 0; accent-color: #1e2422; flex: none;">I agree that my details may be stored to handle my enquiry. <a href="https://www.polarbad.no/personvernerklaering">Privacy policy</a></label>
+          <sc-if value="{{fErr}}" hint-placeholder-val="{{ false }}"><p role="alert" style="margin: 0; color: #a3321f; font-size: 14px; font-weight: 700;">{{fErr}}</p></sc-if>
+          <button type="button" class="btn btn-dark" onClick="{{submitForm}}" style="width: 100%; min-height: 58px; justify-content: space-between; font-size: 15px;">Send enquiry
+            <span class="ic" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+          </button>
+          <p style="margin: 0; font-size: 13px; color: var(--muted); text-align: center;">Your details are only used to handle your enquiry.</p>
+          <p style="margin: 0; font-size: 13px; color: var(--muted); text-align: center;">Or call us on <a href="tel:+4797672000" style="font-weight: 700;">+47 976 72 000</a></p>
+        </div>
+      </sc-if>
+      <sc-if value="{{sent}}" hint-placeholder-val="{{ false }}">
+        <div style="display: flex; flex-direction: column; gap: 18px; align-items: flex-start; padding: 12px 0;">
+          <span style="width: 56px; height: 56px; border-radius: 28px; background: #e2efe7; display: inline-flex; align-items: center; justify-content: center;"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1b7f5a" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg></span>
+          <h3 class="disp" style="margin: 0; font-size: 35px; font-weight: 300; color: var(--ink);">Thank you, {{fFirst}}.</h3>
+          <p style="margin: 0; font-size: 17px; line-height: 1.7;">We've received your enquiry about <strong>{{fInterestLabel}}</strong> and will call you on {{fPhone}}.</p>
+          <p style="margin: 0; font-size: 15px; color: var(--muted);">While you wait: would you like to see the tubs in person?</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center;">
+            <a class="btn btn-dark plain" href="#book" onClick="{{bookVisit}}">Request a visit</a>
+            <button type="button" class="tlink" onClick="{{resetForm}}">Send another enquiry</button>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer style="background: var(--sand); color: var(--body); padding-top: 96px; padding-bottom: 36px;">
+  <div class="wrap" style="display: flex; flex-direction: column; gap: 56px;">
+    <div class="rv partners" style="display: flex; flex-wrap: wrap; gap: 14px 24px; align-items: center; padding-bottom: 32px; border-bottom: 1px solid var(--line);">
+      <span style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--muted);">Proud partner of</span>
+      <span class="disp" style="font-size: 20px; font-weight: 400; color: var(--ink); white-space: nowrap;">Karsten Warholm</span>
+      <span class="dot" aria-hidden="true"></span>
+      <span class="disp" style="font-size: 20px; font-weight: 400; color: var(--ink); white-space: nowrap;">Viking FK</span>
+      <span class="dot" aria-hidden="true"></span>
+      <span class="disp" style="font-size: 20px; font-weight: 400; color: var(--ink); white-space: nowrap;">Sandnes Håndballklubb</span>
+      <span class="dot" aria-hidden="true"></span>
+      <span class="disp" style="font-size: 20px; font-weight: 400; color: var(--ink); white-space: nowrap;">Lura IL</span>
+      <span class="dot" aria-hidden="true"></span>
+      <span class="disp" style="font-size: 20px; font-weight: 400; color: var(--ink); white-space: nowrap;">Figgjo Ski og Skiskyting</span>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(190px, 100%), 1fr)); gap: 40px;">
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <svg viewBox="0 0 870.31 206.89" fill="currentColor" role="img" aria-label="Polarbad" style="display: block; height: 40px; width: 168px; color: var(--ink);"><path d="M680,56.18q-16.11,0-32.79-.68c-71-2.85-143.11-14.33-212.86-25.44S292.4,7.48,221.51,4.65C142.11,1.5,72.65,9.79,9.16,30c-.23.07-5.57,1.76-8.35,2.34L0,28.42c2.58-.53,7.9-2.22,8-2.23C71.89,5.83,141.79-2.53,221.67.66,292.8,3.49,365.06,15,434.94,26.11c69.63,11.09,141.63,22.55,212.39,25.4,79.24,3.18,148.57-5,211.93-25.07l.82-.26,1.24,3.8-.83.27C805.57,47.64,746.24,56.18,680,56.18Z"></path><path d="M680,206.89q-17.06,0-34.72-.75c-70.35-3-141.82-14.36-210.93-25.36-69.76-11.1-141.9-22.59-212.8-25.41C142.1,152.21,72.65,160.5,9.16,180.72L8,176.91c63.94-20.36,133.85-28.71,213.72-25.53,71.13,2.83,143.39,14.33,213.27,25.45,69,11,140.35,22.34,210.47,25.31,78.53,3.33,147.23-4.45,210-23.79l.13,0c2.26-.69,9.84-3,12.37-3.65l.49,1.91,1.69-1.13.2,1.87-1.42,1.23c-2.41.63-9.92,2.91-12.17,3.59l-.13,0C802.81,198.74,744.74,206.89,680,206.89Z"></path><path fill-rule="evenodd" d="M532.05,83.79c3.42,6.42,3.87,12.79,3.87,20.69v54.71q23.57,3,47.13,5.29c15.89,1.41,31-27.85-3.51-42.18,25.86-8,14.57-31.72,2.18-32.85C565.17,87.87,548.61,86,532.05,83.79Zm39.14,76.6q-11-1.14-22.07-2.47V120.44q11,1.32,22.07,2.47c8.82.92,16,10,16,20.31S580,161.31,571.19,160.39Zm-2-40.6q-10-1-20.06-2.26V88.83q10,1.2,20.06,2.27c6.75.71,12.26,7.69,12.26,15.58S575.93,120.5,569.18,119.79Z"></path><path fill-rule="evenodd" d="M278.25,121.06c18.73,1.53,37.45,3.54,56.17,5.87V115.25c-11.76,8.81-26.4,5.63-40.78,4.26l-2.18-.2v-72q-8.54-.8-17.07-1.47c3.42,6.25,3.86,12.6,3.86,20.5Z"></path><path fill-rule="evenodd" d="M93.31,126.2c4.4-.88,8.8-1.69,13.2-2.46v-72q7-1.2,13.94-2.23a21.91,21.91,0,0,1,13.69,2.07A18.48,18.48,0,0,1,142.9,61a20.55,20.55,0,0,1,1,11.27,21.31,21.31,0,0,1-6.39,11.64,26.17,26.17,0,0,1-15,7.43c-.77.11-1.54.19-2.31.23a23.57,23.57,0,0,1-4-.13c.19.24.39.48.6.71,4.72,5.13,12.92,4.81,19.32,2.62a33.2,33.2,0,0,0,19.27-17.66l0-.06a22.36,22.36,0,0,0,2.11-9.73A20.59,20.59,0,0,0,155.44,58a21.7,21.7,0,0,0-6-7.41A25,25,0,0,0,140.3,46a29,29,0,0,0-11.39-.62Q109.19,48,89.45,52.08c3.42,5.27,3.86,11.5,3.86,19.41Z"></path><path fill-rule="evenodd" d="M218.07,39.27a41.72,41.72,0,0,0-39.86,29.54,39.64,39.64,0,0,0-1.69,11.4,37.9,37.9,0,0,0,1.69,11.23C184,110,201.8,119.12,218.07,119.26s34.08-9,39.86-27.51a37.67,37.67,0,0,0,1.69-11.23,39.29,39.29,0,0,0-1.69-11.4A42.26,42.26,0,0,0,218.07,39.27Zm0,4.38c16.43.1,28.19,17.75,28.19,36.29s-11.76,35.11-28.19,35-28.19-16.71-28.19-35.28S201.64,43.57,218.07,43.65Z"></path><path fill-rule="evenodd" d="M703,92.21c3.42,5.72,3.86,12,3.86,19.89v54.71q19.13-1.56,38.26-4.34c40.7-7,40.7-81.88,0-74.9C731.12,89.63,717.08,91.15,703,92.21Zm17.07,70.47V93.6q8.22-.85,16.46-1.92a25.32,25.32,0,0,1,9.2.36c22.22,4.93,22.12,53.75,0,65.79a27.14,27.14,0,0,1-9.2,2.93Q728.34,161.84,720.11,162.68Z"></path><path fill-rule="evenodd" d="M375.63,57.92c2.66,10.44-3.37,23-6.81,31.3q-8.34,20.09-16.69,40.23l3.75.52q.86-2.22,1.72-4.43a21.07,21.07,0,0,1,3.32-5.71,12.89,12.89,0,0,1,5.5-3.87,17.55,17.55,0,0,1,8.6-.49q13.59,2,27.19,4.13l6.57,18.29,15.14,2.38q-6-16.31-12-32.65c-4.44-12.13-9-24.22-13.46-36.33l-3.87-10.51Q385.1,59.33,375.63,57.92Zm25.48,58.6q-18.72-2.89-37.43-5.61,9.75-22.34,19.51-44.59Q392.15,91.4,401.11,116.52Z"></path><path fill-rule="evenodd" d="M637.78,93.8c2.66,10.12-3.37,23.43-6.81,32.08q-8.36,21-16.69,41.84l3.75.2c.56-1.54,1.14-3.07,1.72-4.59a23.74,23.74,0,0,1,3.32-6,15.08,15.08,0,0,1,5.49-4.44,18.81,18.81,0,0,1,8.61-1.45q13.59.39,27.19.34,3.28,8.63,6.57,17.21,7.58-.1,15.14-.36-6.06-15.15-12-30.44c-4.44-11.36-9-22.71-13.46-34.13q-1.94-5-3.88-9.92Q647.25,94.08,637.78,93.8Zm25.48,55.06q-18.72.06-37.44-.75,9.76-23.33,19.52-46.86Q654.29,125.16,663.26,148.86Z"></path><path fill-rule="evenodd" d="M447.92,144.63l13.2,2.09v-72l13.93,2.18a28.54,28.54,0,0,1,13.7,6,27.36,27.36,0,0,1,8.75,11.73,21.91,21.91,0,0,1,1.05,11.54,15.17,15.17,0,0,1-6.4,10,18.06,18.06,0,0,1-6.77,3,22.23,22.23,0,0,1-8.18.16c-.77-.12-1.55-.28-2.32-.47a25.65,25.65,0,0,1-4-1.37c.18.28.37.57.57.84v0q11.13,16.71,22.27,33.38,9.4,1.41,18.83,2.78-8.89-12.14-17.77-24.31a22.48,22.48,0,0,1-15.27-5.44,24.38,24.38,0,0,0,11.28,1.87A23.14,23.14,0,0,0,510,113.87l0-.05a19.39,19.39,0,0,0,2.11-9.25,23.78,23.78,0,0,0-2.12-9.84,31.13,31.13,0,0,0-6-8.84,36.24,36.24,0,0,0-9.15-6.83,35.55,35.55,0,0,0-11.39-3.75q-19.74-3-39.47-6.2c3.42,6.52,3.87,12.9,3.87,20.81Z"></path><path d="M809.63,98.84a10.53,10.53,0,1,1,3.07-7.45A10.1,10.1,0,0,1,809.63,98.84ZM795.84,85a8.74,8.74,0,0,0-2.62,6.39,8.88,8.88,0,0,0,2.6,6.44,9,9,0,0,0,12.75,0,9.2,9.2,0,0,0,0-12.83,8.93,8.93,0,0,0-12.72,0Zm2.46.95h4.51a4.4,4.4,0,0,1,1.83.33A2.34,2.34,0,0,1,806,88.63a2.44,2.44,0,0,1-1.4,2.37,2,2,0,0,1,.87.62,2.2,2.2,0,0,1,.33,1.25l0,1.33a4,4,0,0,0,.09.85.84.84,0,0,0,.44.61v.22h-1.65a1.28,1.28,0,0,1-.11-.33,6.19,6.19,0,0,1-.07-.79l-.08-1.65a1.38,1.38,0,0,0-.7-1.3,2.69,2.69,0,0,0-1.18-.19h-3v4.26H798.3Zm4.36,4.54a2.43,2.43,0,0,0,1.46-.38,1.56,1.56,0,0,0,.53-1.36,1.48,1.48,0,0,0-.75-1.45,2.43,2.43,0,0,0-1.07-.2h-3.19V90.5Z"></path></svg>
+        <span class="disp" style="font-style: italic; color: var(--bronze); font-size: 17.5px; font-weight: 300;">A little less everyday</span>
+        <span style="font-size: 14px; line-height: 1.8;">Sjøveien 4, 4315 Sandnes<br><a href="tel:+4797672000">+47 976 72 000</a><br><a href="mailto:sandnes@polarbad.no">sandnes@polarbad.no</a></span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px; font-size: 14px;">
+        <strong style="color: var(--ink); font-size: 11px; letter-spacing: .18em; text-transform: uppercase;">Products</strong>
+        <a href="https://www.polarbad.no/massasjebad" style="color: var(--body);">Hot tubs</a>
+        <a href="https://www.polarbad.no/motstromsbasseng" style="color: var(--body);">Swim spas</a>
+        <a href="https://www.polarbad.no/spaboy" style="color: var(--body);">SpaBoy</a>
+        <a href="https://www.polarbad.no/arctic-spas" style="color: var(--body);">Arctic Spas</a>
+        <a href="https://www.polarbadbutikken.no/" style="color: var(--body);">Online shop, chemicals and accessories</a>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px; font-size: 14px;">
+        <strong style="color: var(--ink); font-size: 11px; letter-spacing: .18em; text-transform: uppercase;">Help</strong>
+        <a href="https://www.polarbad.no/kjopeguide" style="color: var(--body);">Buying guide</a>
+        <a href="https://www.polarbad.no/service" style="color: var(--body);">Book service</a>
+        <a href="https://www.polarbad.no/verdt-a-vite" style="color: var(--body);">Tips and advice</a>
+        <a href="#contact" style="color: var(--body);">Contact</a>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px; font-size: 14px;">
+        <strong style="color: var(--ink); font-size: 11px; letter-spacing: .18em; text-transform: uppercase;">Other stores</strong>
+        <a href="https://www.polarbad.no/butikker/bergen" style="color: var(--body);">Bergen</a>
+        <a href="https://www.polarbad.no/butikker/oslo" style="color: var(--body);">Oslo</a>
+        <a href="https://www.polarbad.no/butikker/trondheim" style="color: var(--body);">Trondheim</a>
+        <a href="https://www.polarbad.no/butikker/alesund" style="color: var(--body);">Ålesund</a>
+        <a href="https://www.polarbad.no/butikker/molde" style="color: var(--body);">Molde</a>
+        <a href="https://www.polarbad.no/butikker/nord-norge" style="color: var(--body);">Northern Norway</a>
+      </div>
+    </div>
+    <div class="fhours">
+      <strong class="fh-title">Opening hours</strong>
+      <ul class="fh-g">
+        <li>Mon–Wed &amp; Fri 10–17</li>
+        <li>Thu 10–19</li>
+        <li>Sat 10–15</li>
+        <li>Sun closed</li>
+      </ul>
+    </div>
+    <div style="color: #e0dbd1; padding-top: 8px;"><svg viewBox="0 0 870.31 206.89" fill="currentColor" aria-hidden="true" style="display: block; width: 100%; height: auto;"><path d="M680,56.18q-16.11,0-32.79-.68c-71-2.85-143.11-14.33-212.86-25.44S292.4,7.48,221.51,4.65C142.11,1.5,72.65,9.79,9.16,30c-.23.07-5.57,1.76-8.35,2.34L0,28.42c2.58-.53,7.9-2.22,8-2.23C71.89,5.83,141.79-2.53,221.67.66,292.8,3.49,365.06,15,434.94,26.11c69.63,11.09,141.63,22.55,212.39,25.4,79.24,3.18,148.57-5,211.93-25.07l.82-.26,1.24,3.8-.83.27C805.57,47.64,746.24,56.18,680,56.18Z"></path><path d="M680,206.89q-17.06,0-34.72-.75c-70.35-3-141.82-14.36-210.93-25.36-69.76-11.1-141.9-22.59-212.8-25.41C142.1,152.21,72.65,160.5,9.16,180.72L8,176.91c63.94-20.36,133.85-28.71,213.72-25.53,71.13,2.83,143.39,14.33,213.27,25.45,69,11,140.35,22.34,210.47,25.31,78.53,3.33,147.23-4.45,210-23.79l.13,0c2.26-.69,9.84-3,12.37-3.65l.49,1.91,1.69-1.13.2,1.87-1.42,1.23c-2.41.63-9.92,2.91-12.17,3.59l-.13,0C802.81,198.74,744.74,206.89,680,206.89Z"></path><path fill-rule="evenodd" d="M532.05,83.79c3.42,6.42,3.87,12.79,3.87,20.69v54.71q23.57,3,47.13,5.29c15.89,1.41,31-27.85-3.51-42.18,25.86-8,14.57-31.72,2.18-32.85C565.17,87.87,548.61,86,532.05,83.79Zm39.14,76.6q-11-1.14-22.07-2.47V120.44q11,1.32,22.07,2.47c8.82.92,16,10,16,20.31S580,161.31,571.19,160.39Zm-2-40.6q-10-1-20.06-2.26V88.83q10,1.2,20.06,2.27c6.75.71,12.26,7.69,12.26,15.58S575.93,120.5,569.18,119.79Z"></path><path fill-rule="evenodd" d="M278.25,121.06c18.73,1.53,37.45,3.54,56.17,5.87V115.25c-11.76,8.81-26.4,5.63-40.78,4.26l-2.18-.2v-72q-8.54-.8-17.07-1.47c3.42,6.25,3.86,12.6,3.86,20.5Z"></path><path fill-rule="evenodd" d="M93.31,126.2c4.4-.88,8.8-1.69,13.2-2.46v-72q7-1.2,13.94-2.23a21.91,21.91,0,0,1,13.69,2.07A18.48,18.48,0,0,1,142.9,61a20.55,20.55,0,0,1,1,11.27,21.31,21.31,0,0,1-6.39,11.64,26.17,26.17,0,0,1-15,7.43c-.77.11-1.54.19-2.31.23a23.57,23.57,0,0,1-4-.13c.19.24.39.48.6.71,4.72,5.13,12.92,4.81,19.32,2.62a33.2,33.2,0,0,0,19.27-17.66l0-.06a22.36,22.36,0,0,0,2.11-9.73A20.59,20.59,0,0,0,155.44,58a21.7,21.7,0,0,0-6-7.41A25,25,0,0,0,140.3,46a29,29,0,0,0-11.39-.62Q109.19,48,89.45,52.08c3.42,5.27,3.86,11.5,3.86,19.41Z"></path><path fill-rule="evenodd" d="M218.07,39.27a41.72,41.72,0,0,0-39.86,29.54,39.64,39.64,0,0,0-1.69,11.4,37.9,37.9,0,0,0,1.69,11.23C184,110,201.8,119.12,218.07,119.26s34.08-9,39.86-27.51a37.67,37.67,0,0,0,1.69-11.23,39.29,39.29,0,0,0-1.69-11.4A42.26,42.26,0,0,0,218.07,39.27Zm0,4.38c16.43.1,28.19,17.75,28.19,36.29s-11.76,35.11-28.19,35-28.19-16.71-28.19-35.28S201.64,43.57,218.07,43.65Z"></path><path fill-rule="evenodd" d="M703,92.21c3.42,5.72,3.86,12,3.86,19.89v54.71q19.13-1.56,38.26-4.34c40.7-7,40.7-81.88,0-74.9C731.12,89.63,717.08,91.15,703,92.21Zm17.07,70.47V93.6q8.22-.85,16.46-1.92a25.32,25.32,0,0,1,9.2.36c22.22,4.93,22.12,53.75,0,65.79a27.14,27.14,0,0,1-9.2,2.93Q728.34,161.84,720.11,162.68Z"></path><path fill-rule="evenodd" d="M375.63,57.92c2.66,10.44-3.37,23-6.81,31.3q-8.34,20.09-16.69,40.23l3.75.52q.86-2.22,1.72-4.43a21.07,21.07,0,0,1,3.32-5.71,12.89,12.89,0,0,1,5.5-3.87,17.55,17.55,0,0,1,8.6-.49q13.59,2,27.19,4.13l6.57,18.29,15.14,2.38q-6-16.31-12-32.65c-4.44-12.13-9-24.22-13.46-36.33l-3.87-10.51Q385.1,59.33,375.63,57.92Zm25.48,58.6q-18.72-2.89-37.43-5.61,9.75-22.34,19.51-44.59Q392.15,91.4,401.11,116.52Z"></path><path fill-rule="evenodd" d="M637.78,93.8c2.66,10.12-3.37,23.43-6.81,32.08q-8.36,21-16.69,41.84l3.75.2c.56-1.54,1.14-3.07,1.72-4.59a23.74,23.74,0,0,1,3.32-6,15.08,15.08,0,0,1,5.49-4.44,18.81,18.81,0,0,1,8.61-1.45q13.59.39,27.19.34,3.28,8.63,6.57,17.21,7.58-.1,15.14-.36-6.06-15.15-12-30.44c-4.44-11.36-9-22.71-13.46-34.13q-1.94-5-3.88-9.92Q647.25,94.08,637.78,93.8Zm25.48,55.06q-18.72.06-37.44-.75,9.76-23.33,19.52-46.86Q654.29,125.16,663.26,148.86Z"></path><path fill-rule="evenodd" d="M447.92,144.63l13.2,2.09v-72l13.93,2.18a28.54,28.54,0,0,1,13.7,6,27.36,27.36,0,0,1,8.75,11.73,21.91,21.91,0,0,1,1.05,11.54,15.17,15.17,0,0,1-6.4,10,18.06,18.06,0,0,1-6.77,3,22.23,22.23,0,0,1-8.18.16c-.77-.12-1.55-.28-2.32-.47a25.65,25.65,0,0,1-4-1.37c.18.28.37.57.57.84v0q11.13,16.71,22.27,33.38,9.4,1.41,18.83,2.78-8.89-12.14-17.77-24.31a22.48,22.48,0,0,1-15.27-5.44,24.38,24.38,0,0,0,11.28,1.87A23.14,23.14,0,0,0,510,113.87l0-.05a19.39,19.39,0,0,0,2.11-9.25,23.78,23.78,0,0,0-2.12-9.84,31.13,31.13,0,0,0-6-8.84,36.24,36.24,0,0,0-9.15-6.83,35.55,35.55,0,0,0-11.39-3.75q-19.74-3-39.47-6.2c3.42,6.52,3.87,12.9,3.87,20.81Z"></path><path d="M809.63,98.84a10.53,10.53,0,1,1,3.07-7.45A10.1,10.1,0,0,1,809.63,98.84ZM795.84,85a8.74,8.74,0,0,0-2.62,6.39,8.88,8.88,0,0,0,2.6,6.44,9,9,0,0,0,12.75,0,9.2,9.2,0,0,0,0-12.83,8.93,8.93,0,0,0-12.72,0Zm2.46.95h4.51a4.4,4.4,0,0,1,1.83.33A2.34,2.34,0,0,1,806,88.63a2.44,2.44,0,0,1-1.4,2.37,2,2,0,0,1,.87.62,2.2,2.2,0,0,1,.33,1.25l0,1.33a4,4,0,0,0,.09.85.84.84,0,0,0,.44.61v.22h-1.65a1.28,1.28,0,0,1-.11-.33,6.19,6.19,0,0,1-.07-.79l-.08-1.65a1.38,1.38,0,0,0-.7-1.3,2.69,2.69,0,0,0-1.18-.19h-3v4.26H798.3Zm4.36,4.54a2.43,2.43,0,0,0,1.46-.38,1.56,1.56,0,0,0,.53-1.36,1.48,1.48,0,0,0-.75-1.45,2.43,2.43,0,0,0-1.07-.2h-3.19V90.5Z"></path></svg></div>
+    <div style="border-top: 1px solid var(--line); padding-top: 22px; display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: space-between; font-size: 13px; color: var(--muted);">
+      <span>Arctic Spas Massasjebad AS · Org. no. 991 271 988</span>
+      <span style="display: flex; gap: 20px; flex-wrap: wrap; align-items: center;"><a href="https://www.kilowott.com" target="_blank" rel="noopener" style="color: var(--muted); text-decoration: none;">Powered by Kilowott</a><a href="https://www.polarbad.no/personvernerklaering" style="color: var(--muted);">Privacy</a><a href="https://www.facebook.com/arcticspasmassasjebad/" style="color: var(--muted);">Facebook</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- Booking drawer -->
+<sc-if value="{{bookOpen}}" hint-placeholder-val="{{ false }}">
+  <div class="drawer-wrap">
+    <button type="button" class="drawer-scrim" aria-label="Close" onClick="{{closeBook}}"></button>
+    <aside id="book" class="drawer" role="dialog" aria-modal="true" aria-labelledby="book-h">
+      <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+        <span class="kicker"><b>Forus</b>Showroom</span>
+        <button type="button" class="xbtn" aria-label="Close" onClick="{{closeBook}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+      </div>
+      <div style="border-radius: var(--r-md); overflow: hidden; height: 170px; flex: none;"><img decoding="async" class="ph grade-warm" src="/_blob/84f7284df2a7c5766b1ec7f88fe4812c" alt="Hot tubs on display in the Polarbad showroom in Sandnes"></div>
+      <sc-if value="{{notBooked}}" hint-placeholder-val="{{ true }}">
+        <div style="display: flex; flex-direction: column; gap: 22px;">
+          <div>
+            <h2 id="book-h" class="disp" style="margin: 0 0 6px; font-size: 31.5px; font-weight: 300; color: var(--ink);">Request a visit<sc-if value="{{showCro}}" hint-placeholder-val="{{ false }}"><span class="cro">A1</span></sc-if></h2>
+            <p style="margin: 0; font-size: 14px; line-height: 1.55; color: var(--muted);">Tell us when suits you. We’ll call to confirm a time.</p>
+          </div>
+          <div>
+            <div style="font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px;">Preferred day</div>
+            <div role="group" aria-label="Choose a day" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px;">
+              <sc-for list="{{days}}" as="d" hint-placeholder-count="6">
+                <button type="button" class="chip" aria-pressed="{{d.sel}}" onClick="{{d.pick}}" style="background: {{d.bg}}; color: {{d.fg}}; border-color: {{d.bd}}; border-radius: 2px; text-align: center; padding: 8px 4px; line-height: 1.25;"><span style="display: block;">{{d.label}}</span><span style="display: block; font-size: 12px; font-weight: 500; opacity: .8;">{{d.date}}</span></button>
+              </sc-for>
+            </div>
+          </div>
+          <div>
+            <div style="font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px;">Preferred time</div>
+            <div role="group" aria-label="Choose a time" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px;">
+              <sc-for list="{{slots}}" as="t" hint-placeholder-count="7">
+                <button type="button" class="chip" aria-pressed="{{t.sel}}" onClick="{{t.pick}}" style="background: {{t.bg}}; color: {{t.fg}}; border-color: {{t.bd}}; text-align: center; padding: 8px 4px;">{{t.time}}</button>
+              </sc-for>
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px;">
+            <label class="field">Name<input type="text" autocomplete="name" value="{{bName}}" onChange="{{setBName}}"></label>
+            <label class="field">Mobile<input type="tel" autocomplete="tel" inputmode="tel" value="{{bPhone}}" onChange="{{setBPhone}}"></label>
+          </div>
+          <sc-if value="{{bErr}}" hint-placeholder-val="{{ false }}"><p role="alert" style="margin: 0; color: #a3321f; font-size: 14px; font-weight: 700;">{{bErr}}</p></sc-if>
+          <button type="button" class="btn btn-dark" onClick="{{submitBooking}}" style="width: 100%; justify-content: space-between;">Send request
+            <span class="ic" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+          </button>
+          <p style="margin: 0; font-size: 13px; color: var(--muted); text-align: center;">No obligation. Prefer to call? <a href="tel:+4797672000" style="font-weight: 700;">+47 976 72 000</a></p>
+        </div>
+      </sc-if>
+      <sc-if value="{{booked}}" hint-placeholder-val="{{ false }}">
+        <div style="display: flex; flex-direction: column; gap: 18px; align-items: flex-start;">
+          <span style="width: 56px; height: 56px; border-radius: 28px; background: #e2efe7; display: inline-flex; align-items: center; justify-content: center;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1b7f5a" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg></span>
+          <h2 class="disp" style="margin: 0; font-size: 31.5px; font-weight: 300; color: var(--ink);">Thank you, {{bFirst}}. <span style="font-style: italic; color: var(--bronze);">Request received.</span></h2>
+          <p style="margin: 0; font-size: 16px; line-height: 1.7;"><span class="cap">Your preferred time</span><br><strong>{{bookedWhen}}</strong><br>Sjøveien 4, Forus, 4315 Sandnes</p>
+          <p style="margin: 0; font-size: 14px; color: var(--muted);">We’ll call you on {{bPhone}} to confirm the time. Nothing is booked until then.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: center;">
+            <a class="btn btn-dark plain" href="https://g.page/polarbadsandnes?share">Get directions</a>
+            <button type="button" class="tlink" onClick="{{resetBooking}}">Change request</button>
+          </div>
+        </div>
+      </sc-if>
+    </aside>
+  </div>
+</sc-if>
+
+<sc-if value="{{snowSeason}}" hint-placeholder-val="{{ true }}"><div class="site-snow" aria-hidden="true"><i style="left: 55.2%; width: 3.0px; height: 3.0px; opacity: 0.60; animation-duration: 20.8s, 4.7s; animation-delay: -1.0s, -6.9s;"></i><i style="left: 23.5%; width: 4.0px; height: 4.0px; opacity: 0.80; animation-duration: 16.9s, 7.9s; animation-delay: -25.0s, -6.0s;"></i><i style="left: 76.3%; width: 5.5px; height: 5.5px; opacity: 0.71; animation-duration: 24.2s, 4.5s; animation-delay: -13.3s, -6.6s;"></i><i style="left: 20.1%; width: 4.0px; height: 4.0px; opacity: 0.87; animation-duration: 26.4s, 5.6s; animation-delay: -10.2s, -3.6s;"></i><i style="left: 38.6%; width: 5.5px; height: 5.5px; opacity: 0.90; animation-duration: 19.4s, 4.1s; animation-delay: -2.6s, -5.7s;"></i><i style="left: 99.3%; width: 3.5px; height: 3.5px; opacity: 0.67; animation-duration: 20.9s, 6.2s; animation-delay: -20.9s, -1.8s;"></i><i style="left: 60.9%; width: 4.0px; height: 4.0px; opacity: 0.70; animation-duration: 22.7s, 4.7s; animation-delay: -4.8s, -2.8s;"></i><i style="left: 92.7%; width: 3.0px; height: 3.0px; opacity: 0.61; animation-duration: 22.4s, 5.2s; animation-delay: -2.9s, -0.5s;"></i><i style="left: 81.4%; width: 4.0px; height: 4.0px; opacity: 0.80; animation-duration: 19.2s, 6.7s; animation-delay: -18.9s, -7.2s;"></i><i style="left: 95.8%; width: 4.5px; height: 4.5px; opacity: 0.63; animation-duration: 27.8s, 7.8s; animation-delay: -16.5s, -7.1s;"></i><i style="left: 49.1%; width: 3.0px; height: 3.0px; opacity: 0.62; animation-duration: 17.5s, 7.5s; animation-delay: -4.5s, -0.6s;"></i><i style="left: 80.5%; width: 4.5px; height: 4.5px; opacity: 0.80; animation-duration: 20.8s, 7.3s; animation-delay: -1.5s, -2.1s;"></i><i style="left: 29.0%; width: 4.5px; height: 4.5px; opacity: 0.64; animation-duration: 16.4s, 4.3s; animation-delay: -9.5s, -7.2s;"></i><i style="left: 98.3%; width: 3.0px; height: 3.0px; opacity: 0.79; animation-duration: 20.7s, 5.0s; animation-delay: -26.8s, -4.2s;"></i><i style="left: 72.9%; width: 2.5px; height: 2.5px; opacity: 0.46; animation-duration: 17.0s, 7.4s; animation-delay: -22.3s, -7.1s;"></i><i style="left: 60.1%; width: 2.5px; height: 2.5px; opacity: 0.64; animation-duration: 22.1s, 7.4s; animation-delay: -8.6s, -4.3s;"></i><i style="left: 27.6%; width: 3.5px; height: 3.5px; opacity: 0.80; animation-duration: 14.1s, 6.7s; animation-delay: -26.7s, -0.2s;"></i><i style="left: 59.4%; width: 4.5px; height: 4.5px; opacity: 0.74; animation-duration: 25.9s, 6.3s; animation-delay: -7.2s, -3.2s;"></i><i style="left: 95.9%; width: 4.0px; height: 4.0px; opacity: 0.86; animation-duration: 15.9s, 4.4s; animation-delay: -2.6s, -0.2s;"></i><i style="left: 44.7%; width: 2.5px; height: 2.5px; opacity: 0.51; animation-duration: 26.1s, 6.6s; animation-delay: -3.5s, -4.3s;"></i><i style="left: 32.4%; width: 3.0px; height: 3.0px; opacity: 0.67; animation-duration: 17.1s, 4.7s; animation-delay: -5.2s, -3.0s;"></i><i style="left: 71.0%; width: 3.0px; height: 3.0px; opacity: 0.70; animation-duration: 14.6s, 6.8s; animation-delay: -24.5s, -6.2s;"></i><i style="left: 79.1%; width: 3.0px; height: 3.0px; opacity: 0.45; animation-duration: 20.5s, 4.3s; animation-delay: -21.4s, -1.4s;"></i><i style="left: 71.1%; width: 5.5px; height: 5.5px; opacity: 0.56; animation-duration: 23.8s, 5.3s; animation-delay: -1.2s, -3.1s;"></i><i style="left: 30.9%; width: 2.5px; height: 2.5px; opacity: 0.86; animation-duration: 18.1s, 6.0s; animation-delay: -15.4s, -7.6s;"></i><i style="left: 9.9%; width: 4.0px; height: 4.0px; opacity: 0.72; animation-duration: 21.1s, 6.9s; animation-delay: -27.1s, -2.5s;"></i><i style="left: 69.9%; width: 5.5px; height: 5.5px; opacity: 0.69; animation-duration: 21.8s, 4.3s; animation-delay: -22.8s, -7.8s;"></i><i style="left: 35.5%; width: 4.0px; height: 4.0px; opacity: 0.59; animation-duration: 27.9s, 4.4s; animation-delay: -2.1s, -0.6s;"></i><i style="left: 81.4%; width: 4.5px; height: 4.5px; opacity: 0.79; animation-duration: 20.3s, 6.5s; animation-delay: -0.6s, -5.2s;"></i><i style="left: 44.3%; width: 4.0px; height: 4.0px; opacity: 0.68; animation-duration: 19.5s, 5.6s; animation-delay: -6.3s, -0.4s;"></i><i style="left: 43.4%; width: 2.5px; height: 2.5px; opacity: 0.56; animation-duration: 23.9s, 7.3s; animation-delay: -20.3s, -3.6s;"></i><i style="left: 23.6%; width: 3.5px; height: 3.5px; opacity: 0.62; animation-duration: 20.8s, 6.5s; animation-delay: -27.0s, -0.7s;"></i><i style="left: 48.0%; width: 4.5px; height: 4.5px; opacity: 0.67; animation-duration: 24.0s, 7.6s; animation-delay: -21.8s, -5.0s;"></i><i style="left: 75.9%; width: 4.0px; height: 4.0px; opacity: 0.75; animation-duration: 26.0s, 6.8s; animation-delay: -19.1s, -2.0s;"></i><i style="left: 91.7%; width: 5.5px; height: 5.5px; opacity: 0.62; animation-duration: 22.6s, 7.3s; animation-delay: -27.0s, -7.9s;"></i><i style="left: 0.6%; width: 2.5px; height: 2.5px; opacity: 0.59; animation-duration: 18.4s, 5.6s; animation-delay: -4.1s, -4.4s;"></i><i style="left: 8.0%; width: 5.5px; height: 5.5px; opacity: 0.59; animation-duration: 27.2s, 7.0s; animation-delay: -12.9s, -0.9s;"></i><i style="left: 95.6%; width: 3.5px; height: 3.5px; opacity: 0.77; animation-duration: 16.9s, 5.3s; animation-delay: -18.0s, -5.5s;"></i><i style="left: 26.1%; width: 2.5px; height: 2.5px; opacity: 0.88; animation-duration: 18.5s, 5.0s; animation-delay: -23.7s, -1.2s;"></i><i style="left: 68.1%; width: 3.0px; height: 3.0px; opacity: 0.54; animation-duration: 22.4s, 5.1s; animation-delay: -10.6s, -7.5s;"></i><i style="left: 46.7%; width: 5.5px; height: 5.5px; opacity: 0.65; animation-duration: 22.6s, 5.1s; animation-delay: -4.9s, -3.1s;"></i><i style="left: 27.2%; width: 2.5px; height: 2.5px; opacity: 0.53; animation-duration: 27.5s, 4.1s; animation-delay: -22.7s, -7.5s;"></i><i style="left: 70.5%; width: 2.5px; height: 2.5px; opacity: 0.46; animation-duration: 21.0s, 4.2s; animation-delay: -17.0s, -5.6s;"></i><i style="left: 24.0%; width: 2.5px; height: 2.5px; opacity: 0.45; animation-duration: 21.6s, 4.4s; animation-delay: -8.7s, -3.6s;"></i><i style="left: 89.4%; width: 4.0px; height: 4.0px; opacity: 0.62; animation-duration: 15.9s, 7.2s; animation-delay: -23.0s, -4.2s;"></i><i style="left: 4.9%; width: 3.0px; height: 3.0px; opacity: 0.53; animation-duration: 19.6s, 6.2s; animation-delay: -6.3s, -6.4s;"></i></div></sc-if>
+
+<!-- Mobile sticky CTA -->
+<div class="mbar" role="region" aria-label="Quick actions">
+  <a class="mbar-call" href="tel:+4797672000" aria-label="Call us on +47 976 72 000"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"></path></svg></a>
+  <a class="btn btn-ghost-light plain" href="#contact" style="flex: 1; min-height: 52px; padding: 0 12px;">Get a price</a>
+  <a class="btn btn-gold plain" href="#book" onClick="{{bookVisit}}" style="flex: 1.5; min-height: 52px; padding: 0 12px;">Request a visit</a>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"showCro":{"editor":"boolean","default":false,"section":"Presentation"},"$preview":{"width":1440,"height":17000}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = {
+      menu: false, bookOpen: false, selSeries: 'classic', selPoint: 0, visit: 'store', day: 0, slot: '', bName: '', bPhone: '', booked: false, bErr: '',
+      tab: 'tubs', seats: 'all', q1: '', q2: '', q3: '', faq: 0, tour: false,
+      fInterest: 'tubs', fName: '', fPhone: '', fPost: '', fEmail: '', fMsg: '', fConsent: false, fErr: '', sent: false,
+      gEmail: '', gErr: '', guideSent: false
+    };
+  }
+
+  renderVals() {
+    const s = this.state;
+    const self = this;
+    const chip = (sel) => sel
+      ? { sel: true, bg: '#1e2422', fg: '#f6f4ef', bd: '#1e2422' }
+      : { sel: false, bg: 'transparent', fg: '#222826', bd: 'rgba(30,36,34,.18)' };
+    const set = (k) => (e) => self.setState({ [k]: e && e.target ? e.target.value : e });
+
+    // Opening hours (from polarbad.no/butikker/sandnes)
+    const DAYS = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    const SHORT = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+    const MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    const closeAt = (wd) => wd === 0 ? 0 : (wd === 4 ? 19 : (wd === 6 ? 15 : 17));
+    const now = new Date();
+    const wdNow = now.getDay();
+    const hNow = now.getHours() + now.getMinutes() / 60;
+    const isOpen = closeAt(wdNow) > 0 && hNow >= 10 && hNow < closeAt(wdNow);
+    const nextOpen = () => {
+      if (closeAt(wdNow) > 0 && hNow < 10) return 'today at 10:00';
+      for (let i = 1; i < 8; i++) { const w = (wdNow + i) % 7; if (closeAt(w)) return (i === 1 ? 'tomorrow' : DAYS[w]) + ' at 10:00'; }
+      return '';
+    };
+    // Typical Sandnes temperature for the month and time of day (real build: live from the Yr weather API)
+    const TYP = [1, 1, 3, 6, 10, 13, 15, 15, 12, 8, 5, 2][now.getMonth()];
+    const tNum = TYP + (hNow < 7 || hNow >= 20 ? -2 : (hNow >= 11 && hNow < 17 ? 1 : 0));
+    const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    const monthName = MONTHS[now.getMonth()];
+    const tempNow = tNum < 0 ? '−' + Math.abs(tNum) : String(tNum);
+    const openShortText = isOpen ? 'Open until ' + closeAt(wdNow) + ':00' : 'Opens ' + nextOpen();
+    const order = [1,2,3,4,5,6,0];
+    const hours = order.map((w) => ({
+      day: DAYS[w],
+      time: closeAt(w) ? '10:00 to ' + closeAt(w) + ':00' : 'Closed',
+      bg: w === wdNow ? '#ebe6dc' : 'transparent',
+      fw: w === wdNow ? '800' : '400',
+      cls: (w === wdNow ? 'is-today' : '') + (closeAt(w) ? '' : ' is-closed'),
+      fh: closeAt(w) ? '10:00–' + closeAt(w) + ':00' : 'Closed',
+      barW: closeAt(w) ? Math.round((closeAt(w) - 10) / 9 * 100) + '%' : '0%',
+      barBg: w === wdNow ? '#7b5e3f' : '#1e2422'
+    }));
+
+    // Booking
+    const dayList = [];
+    let d = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    let guard = 0;
+    while (dayList.length < 6 && guard < 20) {
+      const w = d.getDay(); const c = closeAt(w);
+      const isToday = d.toDateString() === now.toDateString();
+      if (c) {
+        const times = [];
+        for (let h = 10; h < c; h++) { if (!isToday || h > hNow + 1) times.push((h < 10 ? '0' : '') + h + ':00'); }
+        if (times.length) dayList.push({ w, label: isToday ? 'Today' : SHORT[w], date: d.getDate() + ' ' + MON[d.getMonth()], times, long: (isToday ? 'Today' : DAYS[w]) + ' ' + d.getDate() + ' ' + MON[d.getMonth()] });
+      }
+      d = new Date(d.getFullYear(), d.getMonth(), d.getDate() + 1); guard++;
+    }
+    const dayIdx = Math.min(s.day, dayList.length - 1);
+    const days = dayList.map((x, i) => Object.assign({ label: x.label, date: x.date, pick: () => self.setState({ day: i, slot: '' }) }, chip(i === dayIdx)));
+    const curDay = dayList[dayIdx] || { times: [], long: '' };
+    const slots = curDay.times.map((t) => Object.assign({ time: t, pick: () => self.setState({ slot: t }) }, chip(t === s.slot)));
+    const VT = [{ id: 'store', label: 'Store visit' }, { id: 'wet', label: 'Wet test (suggested)' }];
+    const visitTypes = VT.map((v) => Object.assign({ label: v.label, pick: () => self.setState({ visit: v.id }) }, chip(v.id === s.visit)));
+    const digits = (p) => (p || '').replace(/\D/g, '').length;
+
+    // Tabs (photos from polarbad.no)
+    const TABS = {
+      tubs: { label: 'Hot tubs', title: 'Outdoor hot tubs', img: '/_blob/7b4c1a624c461534efc0294aaed6090b', alt: 'Two people relaxing in a hot tub on a garden deck, framed by green leaves',
+        text: 'Arctic Spas Custom, Classic and Core, plus Polarbad’s own series. The tubs are adapted to our cold Nordic climate and stay warm even at -30 °C.',
+        points: ['From 3 to 9 seats', 'Over 20 models to choose from', 'Every series is on display in Sandnes'],
+        cta: 'See models and prices', ctaHref: '#models', more: 'About Arctic Spas', moreHref: 'https://www.polarbad.no/arctic-spas' },
+      swim: { label: 'Swim spas', title: 'Swim spas', img: '/_blob/35ba36e9adcbe7dc72a9eaec2de1b05f', alt: 'Four friends raising a toast in a swim spa on a summer day',
+        text: 'Swim and train at home, then relax in the same pool afterwards. See the range in store and get advice on space and use.',
+        points: ['[Models and prices missing: to be taken from polarbad.no/motstromsbasseng]', 'Suitable for year-round use [confirm]', 'Advice on placement and groundwork'],
+        cta: 'Get a quote on a swim spa', ctaHref: '#contact', more: 'See swim spas', moreHref: 'https://www.polarbad.no/motstromsbasseng' },
+      spaboy: { label: 'SpaBoy', title: 'SpaBoy: water that looks after itself', img: '/_blob/69126ba05998bccdaa146c0dbc5e6b33', alt: 'A hand holding a phone showing the SpaBoy app next to a hot tub',
+        text: 'The world’s first fully automatic saltwater hot tub with app control. SpaBoy monitors and maintains ideal water conditions automatically. No more manual testing or guesswork with chemicals.',
+        points: ['Automatic water care', 'Controlled from the app', 'Available on Arctic Spas tubs'],
+        cta: 'Ask about SpaBoy', ctaHref: '#contact', more: 'More about SpaBoy', moreHref: 'https://www.polarbad.no/spaboy' },
+      service: { label: 'Service', title: 'Service and accessories', img: '/_blob/84f7284df2a7c5766b1ec7f88fe4812c', alt: 'Hot tubs on display in the Polarbad showroom in Sandnes',
+        text: 'Our technicians in Sandnes handle service and repairs. Chemicals, covers and accessories are available in store or in the online shop.',
+        points: ['Our own local technicians', 'Insulated service panels on all sides of Arctic Spas tubs', 'Chemicals and accessories in the online shop'],
+        cta: 'Book service', ctaHref: 'https://www.polarbad.no/service', more: 'Go to the online shop', moreHref: 'https://www.polarbadbutikken.no/' }
+    };
+    const tabs = Object.keys(TABS).map((k) => ({ label: TABS[k].label, sel: k === s.tab, fg: k === s.tab ? '#1e2422' : '#8a918d', bd: k === s.tab ? '#1e2422' : 'transparent', pick: () => self.setState({ tab: k }) }));
+    const tab = Object.assign({}, TABS[s.tab], { ctaClick: () => { if (s.tab === 'swim') self.setState({ fInterest: 'swim' }); if (s.tab === 'spaboy') self.setState({ fInterest: 'tubs' }); } });
+
+    // Series (prices from polarbad.no/massasjebad, 23.11.2026; shell images from polarbad.no)
+    const SERIES = [
+      { id: 'polarbad', n: '01', brand: 'Polarbad', name: 'Polarbad series', tag: 'Best value', img: '/_blob/4d9d7965914aadf47b538dac1bee725d', alt: 'Top view of the Polarbad Benidorm hot tub shell', desc: 'Polarbad’s own series. The most affordable way to your own hot tub.', seats: '6 to 7 seats', models: 'Benidorm, Valencia, Alicante', prefix: 'Price from', price: 'NOK 89,000', was: '', min: 6, max: 7 },
+      { id: 'core', n: '02', brand: 'Arctic Spas', name: 'Core', tag: 'Campaign', img: '/_blob/ae2499cb7f6f77cc40e33935c0fa12e4', alt: 'Top view of the Arctic Spas Lunar hot tub shell', desc: 'Arctic Spas quality at a lower price, built for the Nordic climate.', seats: 'Seat count on request', models: 'Lunar, Orion, Nova', prefix: 'Offer from', price: 'NOK 99,900', was: 'RRP 175,000', min: 0, max: 99 },
+      { id: 'classic', n: '03', brand: 'Arctic Spas', name: 'Classic', tag: 'Campaign', img: '/_blob/d2e6b65d1d4b6f18a3456d7120fa9ef4', alt: 'Top view of the Arctic Spas McKinley hot tub shell', desc: 'A lot of tub for the money. Forever Floor comes with every model.', seats: '3 to 7 seats', models: 'McKinley, Mustang, Totem, Eagle, Timberwolf, Whistler', prefix: 'Offer from', price: 'NOK 160,000', was: 'RRP 201,000', min: 3, max: 7 },
+      { id: 'custom', n: '04', brand: 'Arctic Spas', name: 'Custom', tag: 'Top of the range', img: '/_blob/86dc88a3f10bbb8a8bd7d640c0f4ecbb', alt: 'Top view of the Arctic Spas Summit hot tub shell', desc: 'The flagship series with the most options. Forever Floor included, available with SpaBoy.', seats: '3 to 9 seats', models: 'Summit XL, Summit, Tundra, Kodiak, Klondiker, Yukon, Cub, Arctic Fox', prefix: 'Offer from', price: 'NOK 199,000', was: 'RRP 248,000', min: 3, max: 9 }
+    ];
+    const SEATS = [{ id: 'all', label: 'All', a: 0, b: 99 }, { id: '3', label: '3 to 5', a: 3, b: 5 }, { id: '6', label: '6 to 7', a: 6, b: 7 }, { id: '8', label: '8 to 9', a: 8, b: 9 }];
+    const seatOpts = SEATS.map((x) => Object.assign({ label: x.label, pick: () => self.setState({ seats: x.id }) }, chip(x.id === s.seats)));
+    const sr = SEATS.find((x) => x.id === s.seats) || SEATS[0];
+    const series = SERIES.filter((x) => x.max >= sr.a && x.min <= sr.b).map((x) => Object.assign({}, x, {
+      quote: () => self.setState({ fInterest: 'tubs', fMsg: 'I would like a price on ' + (x.brand === 'Polarbad' ? 'the Polarbad series' : 'the Arctic Spas ' + x.name + ' series') }),
+      see: () => self.setState({ visit: 'store', bookOpen: true })
+    }));
+
+    // Series selector
+    const matchIds = series.map((x) => x.id);
+    const curId = matchIds.indexOf(s.selSeries) >= 0 ? s.selSeries : (matchIds[0] || s.selSeries);
+    const seriesList = SERIES.map((x) => { const sel = x.id === curId; return { n: x.n, name: x.name, from: x.price, brand: x.brand, tag: x.tag, img: x.img, alt: x.alt, desc: x.desc, seats: x.seats, models: x.models, prefix: x.prefix, price: x.price, was: x.was, cls: sel ? 'sp on' : 'sp', see: () => self.setState({ visit: 'store', bookOpen: true }), quote: () => self.setState({ fInterest: 'tubs', fMsg: 'I would like a price on ' + (x.brand === 'Polarbad' ? 'the Polarbad series' : 'the Arctic Spas ' + x.name + ' series') }), sel, op: matchIds.indexOf(x.id) >= 0 ? 1 : .35, fg: sel ? '#1e2422' : '#8a918d', fs: sel ? 'italic' : 'normal', lw: sel ? '36px' : '0px', pick: () => self.setState({ selSeries: x.id }) }; });
+    const cur = (function (x) { return Object.assign({}, x, {
+      quote: () => self.setState({ fInterest: 'tubs', fMsg: 'I would like a price on ' + (x.brand === 'Polarbad' ? 'the Polarbad series' : 'the Arctic Spas ' + x.name + ' series') }),
+      see: () => self.setState({ visit: 'store', bookOpen: true })
+    }); })(SERIES.find((x) => x.id === curId) || SERIES[0]);
+
+    // Quiz
+    const Q = [
+      { key: 'q1', label: 'How many people will use it?', opts: [['2', '2 to 3'], ['4', '4 to 6'], ['7', '7 or more']] },
+      { key: 'q2', label: 'Where will the tub go?', opts: [['garden', 'In the garden at home'], ['cabin', 'At the cabin']] },
+      { key: 'q3', label: 'Rough budget?', opts: [['low', 'Under NOK 120,000'], ['mid', 'NOK 120,000 to 180,000'], ['high', 'Over NOK 180,000']] }
+    ];
+    const questions = Q.map((q, i) => ({ num: i + 1, label: q.label, opts: q.opts.map((o) => Object.assign({ label: o[1], pick: () => self.setState({ [q.key]: o[0] }) }, chip(s[q.key] === o[0]))) }));
+    const answered = ['q1', 'q2', 'q3'].filter((k) => s[k]).length;
+    const bar = (n) => answered >= n ? '#dccbae' : 'rgba(246,244,239,.2)';
+    let rec = null;
+    if (answered === 3) {
+      if (s.q3 === 'low') {
+        rec = s.q2 === 'cabin'
+          ? { name: 'Arctic Spas Core', short: 'Core', price: 'Offer from NOK 99,900', why: 'Arctic Spas quality built for the cold, at a lower price. A good choice for the cabin.' }
+          : { name: 'Polarbad series', short: 'the Polarbad series', price: 'From NOK 89,000', why: 'Our most affordable series, with 6 to 7 seats.' };
+      } else if (s.q3 === 'mid') {
+        rec = { name: 'Arctic Spas Classic', short: 'Classic', price: 'Offer from NOK 160,000', why: 'A lot of tub for the money, with Forever Floor as standard.' };
+      } else {
+        rec = { name: 'Arctic Spas Custom', short: 'Custom', price: 'Offer from NOK 199,000', why: 'The flagship series with the most options, available with SpaBoy.' };
+      }
+      rec.extra = s.q1 === '7' ? (s.q3 === 'high' ? 'Take a look at the 9-seat Summit XL.' : 'Ask us about the 7-seat models.') : '';
+      const nm = rec.name;
+      rec.see = () => self.setState({ visit: 'store', bookOpen: true });
+      rec.quote = () => self.setState({ fInterest: 'tubs', fMsg: 'Suggestion from "Find your tub": ' + nm });
+    }
+
+    // Reasons
+    const reasons = [
+      { n: '01', title: 'Made for the Nordic climate', text: 'Arctic Spas have 10 cm of insulation in the walls and floor and keep the water warm even at -30 °C.' },
+      { n: '02', title: 'Low running costs', text: 'Heat from the pumps is reused to warm the water, so less energy goes to waste.' },
+      { n: '03', title: 'Forever Floor base', text: 'A composite base that never rots and needs no concrete slab. Included with every Custom and Classic tub.' },
+      { n: '04', title: 'SpaBoy: automatic water care', text: 'The world’s first fully automatic saltwater hot tub with app control. Less time on maintenance, more time in the tub.' },
+      { n: '05', title: 'Easy to service', text: 'No foam filling. Insulated service panels on every side give access to all components.' },
+      { n: '06', title: 'Comfort seating', text: 'Seats shaped for a wide range of body sizes, with armrests at several heights and adjustable headrests.' }
+    ];
+
+    const VIS = [{ k: 'isImg', img: '/_blob/a8a9e3fa0d923a6b0d14a8d1496db591', alt: 'Snow-covered cabins in the Norwegian mountains', proof: 'Warm at -30 °C, with 10 cm of insulation', pos: '50% 55%' },{ k: 'isStat', img: '', alt: '', proof: 'Heat from the pumps warms the water', pos: '50% 50%' },{ k: 'isProd', img: '/_blob/9c1c1a88c1427ebc76fb86bca05a36e3', alt: 'The Forever Floor composite base under an Arctic Spas hot tub', proof: 'Never rots. No concrete slab needed', pos: '50% 50%' },{ k: 'isImg', img: '/_blob/69126ba05998bccdaa146c0dbc5e6b33', alt: 'Controlling a hot tub with the SpaBoy app on a phone', proof: 'Water care, handled from your phone', pos: '40% 40%' },{ k: 'isImg', img: '/_blob/945becdb0a9a019f7d944de7435371e9', alt: 'Hot tubs on display in the Polarbad showroom', proof: 'Service panels on every side', pos: '60% 50%' },{ k: 'isImg', img: '/_blob/d78f73771faddc3594d9335de2ef2a30', alt: 'A woman enjoying the massage jets in a hot tub', proof: 'Seats shaped for every body', pos: '45% 50%' }];
+    // Product anatomy (hotspot positions on the top-view shell image, in %)
+    const SPOTS = [[9, 50], [84, 84], [50, 36], [50, 10], [92, 44], [30, 74]];
+    const anatomy = reasons.map((r, i) => { const sel = i === s.selPoint; const sp = SPOTS[i]; return Object.assign({}, r, { d: String(i + 1), sel, hs: !!sp, left: sp ? sp[0] + '%' : '0', top: sp ? sp[1] + '%' : '0', dotBg: sel ? '#1e2422' : '#f6f4ef', dotFg: sel ? '#f6f4ef' : '#1e2422', tfg: sel ? '#1e2422' : '#5e6662', vcls: sel ? 'fv on' : 'fv', cls: sel ? 'fitem on' : 'fitem', hid: sel ? 'false' : 'true', isImg: VIS[i].k === 'isImg', isProd: VIS[i].k === 'isProd', isStat: VIS[i].k === 'isStat', img: VIS[i].img, alt: VIS[i].alt, proof: VIS[i].proof, pos: VIS[i].pos, pick: () => self.setState({ selPoint: i }) }); });
+    const hotspots = anatomy.filter((p) => p.hs);
+
+    // FAQ
+    const FAQ = [
+      ['What does it cost to run a hot tub?', 'With normal use, twice a week with water at 39 °C, our tubs use 1,500 to 2,500 kWh a year. That is roughly NOK 150 to 300 a month, excluding grid fees and electricity tax (Polarbad\'s own figures).'],
+      ['Should I drain the tub for winter?', 'We recommend keeping the tub running and turning the temperature down rather than draining it. Frost damage after draining is not covered by the warranty.'],
+      ['Which series is right for me?', 'Try the one-minute tub finder above, or request a visit and we will help you compare the series side by side.'],
+      ['Can I just drop in?', 'Yes. You are welcome during opening hours. Request a visit if you would like an adviser ready when you arrive.']
+    ];
+    const faqs = FAQ.map((f, i) => ({ q: f[0], a: f[1], open: s.faq === i, sign: s.faq === i ? '−' : '+', signBg: 'transparent', signFg: s.faq === i ? '#7b5e3f' : '#1e2422', toggle: () => self.setState({ faq: s.faq === i ? -1 : i }) }));
+
+    // Contact form
+    const INT = [['tubs', 'Hot tub'], ['swim', 'Swim spa'], ['service', 'Service'], ['unsure', 'Not sure, I want advice']];
+    const interests = INT.map((x) => Object.assign({ label: x[1], pick: () => self.setState({ fInterest: x[0] }) }, chip(s.fInterest === x[0])));
+    const LBL = { tubs: 'a hot tub', swim: 'a swim spa', service: 'service', unsure: 'getting advice' };
+    const fInterestLabel = LBL[s.fInterest] || 'a hot tub';
+
+    return {
+      showCro: !!this.props.showCro,
+      tbcClass: this.props.showCro ? 'show-tbc' : '',
+      weekday: DAYS[wdNow],
+      menu: s.menu,
+      toggleMenu: () => self.setState({ menu: !s.menu }),
+      closeMenu: () => self.setState({ menu: false }),
+      bookVisit: () => self.setState({ menu: false, bookOpen: true }),
+      bookOpen: s.bookOpen, closeBook: () => self.setState({ bookOpen: false }),
+      tempNow, monthName,
+      openShortText, openShort: isOpen ? 'Open now' : 'Closed now', openColor: isOpen ? '#1b7f5a' : '#a3321f', openDot: isOpen ? '#5fd39b' : '#e8a090',
+      hours,
+      visitTypes, isWet: s.visit === 'wet', days, slots,
+      bName: s.bName, bPhone: s.bPhone, setBName: set('bName'), setBPhone: set('bPhone'),
+      bErr: s.bErr, notBooked: !s.booked, booked: s.booked,
+      bFirst: (s.bName || '').trim().split(' ')[0],
+      bookedVisit: s.visit === 'wet' ? 'Wet test' : 'Store visit',
+      bookedWhen: curDay.long + ' at ' + s.slot,
+      submitBooking: () => {
+        if (!s.slot) return self.setState({ bErr: 'Please choose a preferred time.' });
+        if (!s.bName.trim()) return self.setState({ bErr: 'Please enter your name.' });
+        if (digits(s.bPhone) < 8) return self.setState({ bErr: 'Please enter a valid mobile number (8 digits).' });
+        self.setState({ booked: true, bErr: '' });
+      },
+      resetBooking: () => self.setState({ booked: false }),
+      askCampaign: () => self.setState({ fInterest: 'tubs', fMsg: 'Please send me the winter campaign list.' }),
+      snowSeason: [10, 11, 0, 1, 2].indexOf(now.getMonth()) >= 0,
+      tabs, tab, seatOpts, series, seriesList, cur, anatomy, hotspots,
+      questions, answered, rec, p1: bar(1), p2: bar(2), p3: bar(3),
+      resetQuiz: () => self.setState({ q1: '', q2: '', q3: '' }),
+      reasons, faqs,
+      tour: s.tour, tourLabel: s.tour ? 'Hide the 3D tour' : 'Take a 3D tour', toggleTour: () => self.setState({ tour: !s.tour }),
+      interests, fInterestLabel,
+      fName: s.fName, fPhone: s.fPhone, fPost: s.fPost, fEmail: s.fEmail, fMsg: s.fMsg, fConsent: s.fConsent,
+      setFName: set('fName'), setFPhone: set('fPhone'), setFPost: set('fPost'), setFEmail: set('fEmail'), setFMsg: set('fMsg'),
+      toggleConsent: () => self.setState({ fConsent: !s.fConsent }),
+      fErr: s.fErr, sent: s.sent, notSent: !s.sent,
+      fFirst: (s.fName || '').trim().split(' ')[0],
+      submitForm: () => {
+        if (!s.fName.trim()) return self.setState({ fErr: 'Please enter your name.' });
+        if (digits(s.fPhone) < 8) return self.setState({ fErr: 'Please enter a valid mobile number (8 digits).' });
+        if (!s.fConsent) return self.setState({ fErr: 'Please agree to us storing your details so we can contact you.' });
+        self.setState({ sent: true, fErr: '' });
+      },
+      resetForm: () => self.setState({ sent: false, fName: '', fPhone: '', fPost: '', fEmail: '', fMsg: '', fConsent: false }),
+      gEmail: s.gEmail, setGEmail: set('gEmail'), gErr: s.gErr, guideSent: s.guideSent, guideOpen: !s.guideSent,
+      sendGuide: () => {
+        if (!/^\S+@\S+\.\S+$/.test(s.gEmail || '')) return self.setState({ gErr: 'Please enter a valid email address.' });
+        self.setState({ guideSent: true, gErr: '' });
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>
