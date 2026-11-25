@@ -2,6 +2,13 @@ import sys
 src, dst = sys.argv[1], sys.argv[2]
 s = open(src, encoding='utf-8').read()
 R = [
+('alt="Sunlit showroom at Polarbad Sandnes, with hot tubs by the large windows"','alt="Solfylt utstilling hos Polarbad Sandnes, med massasjebad ved de store vinduene"'),
+('<p class="lead">Norway’s largest spa store, in the former Sven Kvia building at Forus. Easy access from the motorway.</p>','<p class="lead">Norges største spabutikk, i det gamle Sven Kvia-bygget på Forus. Enkel adkomst fra motorveien.</p>'),
+('alt="Close-up of a hot tub on display in the Polarbad showroom"','alt="Nærbilde av et massasjebad i Polarbads utstilling"'),
+('alt="A hot tub with its cover open, ready to try in the showroom"','alt="Et massasjebad med lokket åpent, klart til å prøves i butikken"'),
+('<span class="disp ss-t">Every series on the floor</span>','<span class="disp ss-t">Alle seriene utstilt</span>'),
+('<span class="disp ss-t">Sit in the tubs</span>','<span class="disp ss-t">Sett deg i badene</span>'),
+
 ('alt="A couple in a glowing outdoor hot tub under string lights on a snowy winter evening, with mountains behind"','alt="Et par i et opplyst utendørs massasjebad under lysslynger en snørik vinterkveld, med fjell bak"'),
 ('<strong class="fh-title">Opening hours</strong>','<strong class="fh-title">Åpningstider</strong>'),
 ('<li>Mon–Wed &amp; Fri 10–17</li>','<li>Man–ons og fre 10–17</li>'),

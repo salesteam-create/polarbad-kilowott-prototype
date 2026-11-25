@@ -732,6 +732,23 @@ p{text-wrap:pretty}
 .hdr-right .btn-gold{min-height:44px !important;padding:0 18px !important;font-size:11.5px !important;letter-spacing:.14em !important}
 @media (max-width:1080px){.hdr{grid-template-columns:1fr auto !important}}
 @media (max-width:720px){.hdr{height:60px !important;padding:0 8px 0 18px !important}.lang-o{min-height:44px !important;min-width:36px !important}}
+
+/* store: cinematic showroom band */
+.store-hero{position:relative;min-height:720px;display:flex;align-items:flex-end;overflow:hidden;background:var(--ink);margin-bottom:72px}
+.store-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 55%;animation:storeDrift 30s ease-in-out infinite alternate}
+@keyframes storeDrift{from{transform:scale(1.02)}to{transform:scale(1.1) translateX(-1.5%)}}
+.store-hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(30,36,34,.92) 0%,rgba(30,36,34,.7) 38%,rgba(30,36,34,.1) 72%),linear-gradient(0deg,rgba(30,36,34,.75) 0%,rgba(30,36,34,0) 45%)}
+.store-hero-in{position:relative;width:100%;padding-top:140px;padding-bottom:88px;display:flex;flex-direction:column;align-items:flex-start;gap:22px}
+.store-hero-in .h2{max-width:640px}
+.store-hero-in .lead{max-width:480px;color:#d8d5cc}
+.store-addr{display:inline-flex;align-items:center;gap:10px;font-size:15px;color:var(--gold-hi);text-decoration:none}
+.store-addr:hover{color:#fff}
+.store-strip{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.store-strip li{display:flex;flex-direction:column;gap:8px}
+.ss-img{aspect-ratio:4 / 3;border-radius:var(--r-md);overflow:hidden;margin-bottom:10px}
+.ss-t{font-size:21px;color:var(--ink)}
+@media (prefers-reduced-motion: reduce){.store-hero-img{animation:none}}
+@media (max-width:720px){.store-hero{min-height:620px;margin-bottom:48px}.store-hero-img{animation:none;object-position:70% 55%}.store-hero-shade{background:linear-gradient(0deg,rgba(30,36,34,.95) 0%,rgba(30,36,34,.7) 55%,rgba(30,36,34,.25) 100%)}.store-hero-in{padding-top:200px;padding-bottom:56px}.store-strip{grid-template-columns:minmax(0,1fr);gap:28px}}
 </style>
 </helmet>
 
@@ -1125,37 +1142,34 @@ p{text-wrap:pretty}
 </section>
 
 <!-- 07 Store: the address as a landmark -->
-<section id="butikken" aria-labelledby="butikken-h" class="sec" style="background: var(--sand); scroll-margin-top: 90px; overflow: hidden;">
-  <div class="wrap" style="display: flex; flex-direction: column; gap: 56px;">
-    <div class="rv" style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px 48px;">
-    <div class="head" style="max-width: 820px;">
+<section id="butikken" aria-labelledby="butikken-h" class="sec" style="background: var(--sand); scroll-margin-top: 90px; overflow: hidden; padding-top: 0;">
+  <div class="store-hero on-dark">
+    <img decoding="async" class="ph store-hero-img" src="images/a80518166b5d41898b65c7cc5b65f9a2.webp" alt="Solfylt utstilling hos Polarbad Sandnes, med massasjebad ved de store vinduene" loading="lazy">
+    <div class="store-hero-shade" aria-hidden="true"></div>
+    <div class="wrap store-hero-in rv">
       <span class="kicker"><b>05</b>Butikken på Forus<sc-if value="{{showCro}}" hint-placeholder-val="{{ false }}"><span class="cro">A3</span></sc-if></span>
       <h2 id="butikken-h" class="h2">Kom innom. Sett deg ned.<br><span class="soft">Spør oss om alt.</span></h2>
-    </div>
-    <a href="https://g.page/polarbadsandnes?share" style="display: inline-flex; align-items: center; gap: 10px; font-size: 16px; color: var(--ink); text-decoration: none; padding-bottom: 6px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z"></path><circle cx="12" cy="9" r="2.5"></circle></svg>Sjøveien 4, 4315 Sandnes</a>
-    </div>
-    <div class="mosaic rv">
-      <div class="zoom" style="grid-column: span 4; grid-row: span 3; border-radius: var(--r-lg);"><img decoding="async" class="ph grade-warm" src="images/5681c7e0b8b755628f49d78b5e3d81d7.webp" alt="Polarbads utstilling i Sandnes: en stor, lys hall med rader av massasjebad" loading="lazy"></div>
-      <div class="zoom" style="grid-column: span 2; grid-row: span 3; border-radius: var(--r-lg);"><img decoding="async" class="ph grade-warm" src="images/2a8a4dacf5f11e426f1b6d46fa9bb953.webp" alt="Polarbad-bygget i Sjøveien 4 i Sandnes, med store glassvinduer" loading="lazy"></div>
-    </div>
-    <div style="display: flex; flex-wrap: wrap; gap: 56px;">
-      <div class="rv store-info" style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 26px;">
-        <p style="margin: 0; font-size: 16px; line-height: 1.75; color: var(--body); max-width: 420px;">Det gamle Sven Kvia-bygget på Forus. Enkel adkomst fra motorveien.</p>
-        <div style="display: flex; flex-wrap: wrap; gap: 16px 28px; align-items: center;">
-          <a class="btn btn-dark" href="https://g.page/polarbadsandnes?share">Veibeskrivelse
-            <span class="ic" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
-          </a>
-          <button type="button" class="tlink" onClick="{{toggleTour}}" aria-expanded="{{tour}}">{{tourLabel}}<sc-if value="{{showCro}}" hint-placeholder-val="{{ false }}"><span class="cro">A8</span></sc-if></button>
-        </div>
-        <sc-if value="{{tour}}" hint-placeholder-val="{{ false }}">
+      <p class="lead">Norges største spabutikk, i det gamle Sven Kvia-bygget på Forus. Enkel adkomst fra motorveien.</p>
+      <a class="store-addr" href="https://g.page/polarbadsandnes?share"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z"></path><circle cx="12" cy="9" r="2.5"></circle></svg>Sjøveien 4, 4315 Sandnes</a>
+      <div style="display: flex; flex-wrap: wrap; gap: 16px 28px; align-items: center;">
+        <a class="btn btn-gold" href="https://g.page/polarbadsandnes?share">Veibeskrivelse <span class="ic" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
+        <button type="button" class="tlink" onClick="{{toggleTour}}" aria-expanded="{{tour}}" style="color: var(--bone);">{{tourLabel}}</button>
+      </div>
+      <sc-if value="{{tour}}" hint-placeholder-val="{{ false }}">
           <div style="height: 220px; border-radius: var(--r-md); background: var(--ink); color: #c8ccc8; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; text-align: center; padding: 20px;">
             <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#dccbae" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"></path><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"></path></svg>
             <strong style="color: var(--bone);">3D-omvisning (Matterport)</strong>
             <span style="font-size: 14px;">Lastes først når besøkende klikker, så siden blir rask på mobil.</span>
           </div>
         </sc-if>
-      </div>
     </div>
+  </div>
+  <div class="wrap" style="display: flex; flex-direction: column; gap: 56px;">
+    <ul class="store-strip rv">
+      <li><div class="zoom ss-img"><img decoding="async" class="ph" src="images/6076d2ce1883705a609ba9e2dab280e0.webp" alt="Nærbilde av et massasjebad i Polarbads utstilling" loading="lazy"></div><span class="cap">01</span><span class="disp ss-t">Alle seriene utstilt</span></li>
+      <li><div class="zoom ss-img"><img decoding="async" class="ph" src="images/ad73f983e72ba7cb480dcb9aaa1c0972.webp" alt="Et massasjebad med lokket åpent, klart til å prøves i butikken" loading="lazy"></div><span class="cap">02</span><span class="disp ss-t">Sett deg i badene</span></li>
+      <li><div class="zoom ss-img"><img decoding="async" class="ph" src="images/c0354382af43639ae449761d64de384e.webp" alt="The Polarbad building at Sjøveien 4 in Sandnes" loading="lazy"></div><span class="cap">03</span><span class="disp ss-t">Sjøveien 4, Forus</span></li>
+    </ul>
     <div class="team rv">
       <div style="display: flex; flex-direction: column; gap: 18px;">
         <span class="cap">Teamet på Forus</span>
