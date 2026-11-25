@@ -792,6 +792,32 @@ p{text-wrap:pretty}
 .plogos ul{align-items:flex-start !important}
 .plogos li{display:grid !important;grid-template-rows:60px auto;justify-items:center;align-items:center;row-gap:12px}
 @media (max-width:720px){.plogos li{grid-template-rows:46px auto}}
+
+/* row cover images */
+.sp-cover{position:absolute;z-index:1;top:12px;bottom:12px;right:12px;width:220px;border-radius:3px;background:radial-gradient(70% 80% at 50% 45%,#fbfaf7 0%,#e9e5dd 100%);display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(255,255,255,.4);transition:opacity .4s}
+.sp-cover img{height:170px;width:auto;max-width:none;transform:rotate(90deg);filter:drop-shadow(0 10px 14px rgba(30,36,34,.25));transition:transform .6s var(--ease)}
+.sp:not(.on):hover .sp-cover img{transform:rotate(90deg) scale(1.06)}
+.sp:not(.on) .sp-tub{opacity:0 !important}
+.sp.on .sp-cover{opacity:0;pointer-events:none}
+@media (min-width:721px){.sp-vprice{margin-right:250px !important}}
+@media (max-width:720px){.sp-cover{width:96px;top:8px;bottom:8px;right:8px}.sp-cover img{height:88px}.sp-closed{right:116px !important}}
+
+.sp-cover{padding:8px}
+.sp-cover img{height:auto !important;width:auto !important;max-height:100%;max-width:100%;transform:none !important;object-fit:contain}
+.sp:not(.on):hover .sp-cover img{transform:scale(1.06) !important}
+@media (max-width:720px){.spanels .sp .sp-closed{right:114px !important}.spanels .sp .sp-vprice{margin-right:0 !important}}
+
+@media (min-width:721px){
+  .spanels .sp:not(.on){height:150px}
+  .spanels .sp:not(.on):hover{height:158px}
+  .sp-cover{width:210px;padding:6px}
+}
+@media (max-width:720px){
+  .spanels .sp:not(.on){height:104px}
+  .sp-cover{width:104px}
+  .spanels .sp .sp-closed{flex-direction:column !important;align-items:flex-start !important;gap:4px !important;top:38px !important;right:124px !important}
+  .sp-vname{font-size:22px !important;white-space:normal !important;line-height:1.1}
+}
 </style>
 </helmet>
 
@@ -1018,6 +1044,7 @@ p{text-wrap:pretty}
           <button type="button" class="sp-hit" aria-pressed="{{x.sel}}" onClick="{{x.pick}}" aria-label="{{x.name}}: {{x.prefix}} {{x.price}}"></button>
           <span class="sp-glow" aria-hidden="true"></span>
           <img decoding="async" class="sp-tub" src="{{x.img}}" alt="{{x.alt}}" loading="lazy">
+          <span class="sp-cover" aria-hidden="true"><img decoding="async" src="{{x.img}}" alt="" loading="lazy"></span>
           <div class="sp-top"><span class="cap">{{x.n}}</span><span class="sp-tag">{{x.tag}}</span></div>
           <div class="sp-closed" aria-hidden="true"><span class="disp sp-vname">{{x.name}}</span><span class="sp-vprice">{{x.price}}</span></div>
           <div class="sp-open">
