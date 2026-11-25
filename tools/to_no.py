@@ -2,6 +2,13 @@ import sys
 src, dst = sys.argv[1], sys.argv[2]
 s = open(src, encoding='utf-8').read()
 R = [
+('text-transform: uppercase;">Opening hours</strong>','text-transform: uppercase;">Åpningstider</strong>'),
+('<dt>Mon–Wed</dt>','<dt>Man–ons</dt>'),
+('<dt>Thu</dt>','<dt>Tor</dt>'),
+('<dt>Fri</dt>','<dt>Fre</dt>'),
+('<dt>Sat</dt>','<dt>Lør</dt>'),
+('<dt>Sun</dt><dd>Closed</dd>','<dt>Søn</dt><dd>Stengt</dd>'),
+
 ('alt="Sunlit showroom at Polarbad Sandnes, with hot tubs by the large windows"','alt="Solfylt utstilling hos Polarbad Sandnes, med massasjebad ved de store vinduene"'),
 ('<p class="lead">Norway’s largest spa store, in the former Sven Kvia building at Forus. Easy access from the motorway.</p>','<p class="lead">Norges største spabutikk, i det gamle Sven Kvia-bygget på Forus. Enkel adkomst fra motorveien.</p>'),
 ('alt="Close-up of a hot tub on display in the Polarbad showroom"','alt="Nærbilde av et massasjebad i Polarbads utstilling"'),
