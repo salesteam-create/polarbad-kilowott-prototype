@@ -2,6 +2,7 @@ import sys
 src, dst = sys.argv[1], sys.argv[2]
 s = open(src, encoding='utf-8').read()
 R = [
+('<li>Mon, Tue, Wed, Fri 10–17</li>','<li>Man, tir, ons, fre 10–17</li>'),
 ('<div class="fh2"><strong>Opening hours</strong>','<div class="fh2"><strong>Åpningstider</strong>'),
 ('<dt>Sun</dt><dd>Closed</dd>','<dt>Søn</dt><dd>Stengt</dd>'),
 
